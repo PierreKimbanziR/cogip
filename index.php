@@ -20,7 +20,7 @@ $explode_url = explode('/', $url);
 //----------
 
 if ($explode_url[0] == 'home') {
-    echo 'Show homePage';
+    homePage();
 
 //----------
     //  CONTACTS
@@ -30,7 +30,8 @@ if ($explode_url[0] == 'home') {
     if (!empty($explode_url[1])) {
         echo "this is the contact n°" . $explode_url[1] . " page";
     } else {
-        listContacts();
+        echo "this is the all contacts page";
+
     }
 
 //----------
@@ -51,12 +52,12 @@ if ($explode_url[0] == 'home') {
 
 } elseif ($explode_url[0] == 'invoices') {
     if (isset($explode_url[1])) {
-        echo "this is the company n°" . $explode_url[1] . " page";
+        echo "this is the invoice n°" . $explode_url[1] . " page";
 
     } else {
-        echo 'show all companies';
+        echo 'show all invoices';
     }
 
 } else {
-    echo "Landing main page";
+    header('Location: home');
 }

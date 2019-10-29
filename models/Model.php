@@ -1,7 +1,8 @@
 <?php
-function getContacts()
+function getHome()
 {
-    //Chercher les contacts dans la DB
+    $firstname = $_SESSION['firstname'];
+    return $firstname;
 };
 
 function getContact($id)

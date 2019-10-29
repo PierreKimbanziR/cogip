@@ -1,6 +1,6 @@
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark orange darken-1">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/cogip/home">
         <img src="img/cogip-logo.png" height="40" alt="mdb logo" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
@@ -10,19 +10,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link active" href="#">Home </a>
+                <a class="nav-link active" href="/cogip/home">Home </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Invoices</a>
+                <a class="nav-link" href="/cogip/invoices">Invoices</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Companies
                 </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" href="#">All</a>
-                    <a class="dropdown-item" href="#">Clients</a>
-                    <a class="dropdown-item" href="#">Providers</a>
+                    <a class="dropdown-item" href="/cogip/companies">All</a>
+                    <a class="dropdown-item" href="/cogip/companies">Clients</a>
+                    <a class="dropdown-item" href="/cogip/companies">Providers</a>
                 </div>
             </li>
             <li class="nav-item">
