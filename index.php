@@ -42,21 +42,19 @@ if ($explode_url[0] == 'home') {
 } elseif ($explode_url[0] == 'companies') {
     if (isset($explode_url[1])) {
         echo "this is the company n°" . $explode_url[1] . " page";
-
     } else {
         echo 'show all companies';
     }
-
 //----------
     //  INVOICES
     //----------
 
 } elseif ($explode_url[0] == 'invoices') {
+    require 'controllers/InvoiceController.php';
     if (isset($explode_url[1])) {
-        echo "this is the invoice n°" . $explode_url[1] . " page";
-
+        showInvoiceId($explode_url[1]);
     } else {
-        echo 'show all invoices';
+        showInvoices();
     }
 
 } else {
