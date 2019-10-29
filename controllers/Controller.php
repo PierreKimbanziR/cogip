@@ -5,12 +5,14 @@ require 'models/Model.php';
 function listContacts()
 {
     $contacts = getContacts();
-    require 'contactsView.php';
+    require 'views/contact/contactsView.php';
+    require 'models/contact/ContactIdModel.php';
 }
 
 function showContact()
 {
     $contact = getContact(id);
-    require 'contactView.php';
+    require 'models/contact/ContactsModel.php';
+    require 'views/contact/contactId.php';
 
 }
