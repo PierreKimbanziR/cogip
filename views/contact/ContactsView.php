@@ -4,9 +4,10 @@ include "components/header.php";
 include "components/navbar.php";
 ?>
 
-
-<table class="table">
-    <thead>
+<div class="container" >
+<h1 class="text-center ">List of contacts</h1>
+<table class="table table-striped">
+    <thead class="black white-text">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Firstname</th>
@@ -15,22 +16,30 @@ include "components/navbar.php";
         </tr>
     </thead>
     <tbody>
-
-        <!-- On pourrait utiliser { ... } à la place de : -->
+    
+        <!-- On pourrait utiliser { ... } à la place de :  -->
         <?php foreach ($contacts as $contact): ?>
-        <tr>
-            <th scope="row"><?php echo $contact['id'] ?></th>
-            <td><?php echo $contact['firstname'] ?></td>
+
+        <!-- id dans le tr pour appliquer un JS quand on clic sur tr-->
+        <tr id="<?php echo $contact['id'];?>" class="example hoverable">   
+            
+            <th scope="row">  
+            <a href='contacts/<?php echo $contact['id'];?>'>
+            <?php echo $contact["id"];?></a>
+            </th>
+
+            <td ><?php echo $contact['firstname'] ?></td>
             <td><?php echo $contact['lastname'] ?></td>
             <td>@<?php echo $contact['email'] ?></td>
         </tr>
+
 
         <!-- Fin de endforeach  -->
         <?php endforeach?>
 
     </tbody>
 </table>
-
+</div>
 
 <?php
 // Inclure Footer ...
