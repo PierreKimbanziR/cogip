@@ -1,10 +1,10 @@
 <?php
-require("../components/header.php");
-require("../components/navbar.php");
+require("components/header.php");
+require("components/navbar.php");
 
 
-print_r($getInvoices);
+print_r($invoices);
 
 
 
-require("../components/footer.php");
+require("components/footer.php");

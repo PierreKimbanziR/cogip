@@ -4,9 +4,10 @@
 //Show all invoices
 function getInvoices()
 {
+    include("config/db.php");
     $sql = $conn->prepare("SELECT invoiceNumber, description, createdAt FROM invoices ORDER BY createdAt ASC");
-    $sql->execute(array());
-    $getInvoices = $sql->fetch();
+    $sql->execute();
+    $getInvoices = $sql->fetchAll();
     return $getInvoices;
 }
 
