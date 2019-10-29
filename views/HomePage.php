@@ -5,7 +5,15 @@ include "components/navbar.php";
 ?>
 
 <div class="container">
-    <p id="joke" class="lead"></p>
+    <div class="alert alert-warning shadow mt-5" role="alert">
+        <h1>Hi,<b><?php echo htmlspecialchars(!empty($_SESSION['firstname'])) ? ($_SESSION["firstname"]) : ($_SESSION["username"]); ?></b>.
+            did you know that :</h1>
+        <p id="joke" class="lead">
+        </p>
+        <div class="d-flex justify-content-center">
+            <button id="newJoke" class="btn peach-gradient waves-effect">Learn something else</button>
+        </div>
+    </div>
 </div>
 
 
@@ -25,4 +33,4 @@ document.getElementById('newJoke').addEventListener('click', () => {
 })
 </script>
 <?php
-include "components/header.php";?>
+include "components/footer.php";?>

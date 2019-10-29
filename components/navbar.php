@@ -26,7 +26,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contacts</a>
+                <a class="nav-link" href="/cogip/contacts">Contacts</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -48,9 +48,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-default"
                     aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">My Account</a>
+                    <a class="dropdown-item" href="/cogip/auth/logout">Log Out</a>
                 </div>
             </li>
         </ul>
