@@ -7,7 +7,7 @@ function getContact()
     include "../config/db.php";
 
     // Prepare la conn, Selection de tous de la table contacts
-    $stmt = $conn->prepare("SELECT * FROM contacts WHERE id=2");
+    $stmt = $conn->prepare("SELECT * FROM contacts WHERE id=1");
     $stmt->execute();
 
     // FetchAll ramène tout de ma DB et mettre le résultat dans $row

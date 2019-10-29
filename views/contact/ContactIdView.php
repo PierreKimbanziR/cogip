@@ -6,7 +6,7 @@
 
 <?php // print_r($contact) ?>
 <div class="container">
-<h1 class="text-center"><strong>Contact : <?php echo $contact['firstname']; ?></strong></h1>
+<h1 class="text-center"><strong>Contact : <?php echo $contact['id']; ?></strong></h1>
 <p><strong>Contact : </strong></p>
 <p><strong>Company : </strong></p>
 <p><strong>Email : </strong></p>
