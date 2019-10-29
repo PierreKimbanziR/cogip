@@ -1,7 +1,7 @@
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark orange darken-1">
     <a class="navbar-brand" href="/cogip/home">
-        <img src="img/cogip-logo.png" height="40" alt="mdb logo" />
+        <img src="static/img/cogip-logo.png" height="40" alt="mdb logo" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
