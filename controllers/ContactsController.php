@@ -1,39 +1,36 @@
 <?php
 
+function showContacts()
+{
+    // importer Modèle contactS
+    require 'models/contact/ContactsModel.php';
+    $contacts = getContacts();
+    //print_r($contacts);
+    // importer View contactS
+    include 'views/contact/ContactsView.php';
+}
 
-    function showContacts() {
-        // importer Modèle contactS
-        require '../models/contact/ContactsModel.php';
-        $contacts = getContacts();
-        //print_r($contacts);
-        // importer View contactS
-        include '../views/contact/ContactsView.php';
-    }
-
-    // Appel fonction
-   // showContacts();
-
+// Appel fonction
+// showContacts();
 
 // ----------------------------------------------------------
 // Affichage ID
 
-function showContactId($id) {
+function showContactId($id)
+{
     // importer Modèle contactS
-    require '../models/contact/ContactIdModel.php';
-    $contact = getContact();
+    require 'models/contact/ContactIdModel.php';
+    $contact = getContact($id);
     print_r($contact);
 
     // importer View contactS
-    include '../views/contact/ContactIdView.php';
+    include 'views/contact/ContactIdView.php';
 }
 
 // Appel fonction
-showContactId(1);
+//showContactId(1);
 
 // ----------------------------------------------------------
-
-
-
 
 // function getContact(id) {
 //     // importer Modèle contact ID
@@ -43,4 +40,3 @@ showContactId(1);
 //     require 'views/contact/ContactId.php';
 
 // }
-

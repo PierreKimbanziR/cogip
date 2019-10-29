@@ -27,10 +27,11 @@ if ($explode_url[0] == 'home') {
     //----------
 
 } elseif ($explode_url[0] == 'contacts') {
+    require 'controllers/ContactsController.php';
     if (!empty($explode_url[1])) {
-        echo "this is the contact n°" . $explode_url[1] . " page";
+        showContactId($explode_url[1]);
     } else {
-        echo "this is the all contacts page";
+        showContacts();
 
     }
 
