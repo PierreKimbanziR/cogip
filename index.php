@@ -5,7 +5,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
-require 'controllers/controller.php';
+require 'controllers/Controller.php';
 
 $url         = $_GET['p'];
 $explode_url = explode('/', $url);
