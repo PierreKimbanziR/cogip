@@ -21,7 +21,8 @@ function showContactId($id) {
     // importer Modèle contactS
     require '../models/contact/ContactIdModel.php';
     $contact = getContact();
-    //print_r($contact);
+    print_r($contact);
+    print_r($contact);
     // importer View contactS
     include '../views/contact/ContactIdView.php';
 }
