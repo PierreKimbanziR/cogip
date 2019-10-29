@@ -14,6 +14,7 @@ function getInvoices()
 //Show an invoice
 function getInvoice($invoiceID)
 {
+    include("config/db.php");
     $sql = $conn->prepare("SELECT * FROM invoices WHERE id = ?");
     $sql->execute(array($invoiceID));
     $getInvoice = $sql->fetch();
