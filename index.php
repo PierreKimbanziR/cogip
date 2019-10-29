@@ -5,6 +5,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
+include "config/db.php";
+
 require 'controllers/Controller.php';
 
 $url         = $_GET['p'];
@@ -32,7 +34,6 @@ if ($explode_url[0] == 'home') {
         showContactId($explode_url[1]);
     } else {
         showContacts();
-
     }
 
 //----------
@@ -41,22 +42,21 @@ if ($explode_url[0] == 'home') {
 
 } elseif ($explode_url[0] == 'companies') {
     if (isset($explode_url[1])) {
-        echo "this is the company n°" . $explode_url[1] . " page";
-
+        showCompanyId($explode_url[1]);
     } else {
-        echo 'show all companies';
-    }
+        showCompanies();
 
+    }
 //----------
     //  INVOICES
     //----------
 
 } elseif ($explode_url[0] == 'invoices') {
+    require 'controllers/InvoiceController.php';
     if (isset($explode_url[1])) {
-        echo "this is the invoice n°" . $explode_url[1] . " page";
-
+        showInvoiceId($explode_url[1]);
     } else {
-        echo 'show all invoices';
+        showInvoices();
     }
 
 } else {
