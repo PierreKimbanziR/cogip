@@ -2,15 +2,17 @@
 
 require 'models/Model.php';
 
-function listContacts()
+function homePage()
 {
-    $contacts = getContacts();
-    require 'contactsView.php';
+    $firstname = getHome();
+
+    require 'views/HomePage.php';
 }
 
-function showContact()
+function post()
 {
-    $contact = getContact(id);
-    require 'contactView.php';
+    $post     = getPost($_GET['id']);
+    $comments = getComments($_GET['id']);
 
+    require 'postView.php';
 }
