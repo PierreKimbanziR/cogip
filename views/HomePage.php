@@ -5,13 +5,13 @@ include "components/navbar.php";
 ?>
 
 <div class="container">
-    <div class="alert alert-warning shadow mt-5" role="alert">
+    <div class="alert alert-secondary shadow mt-5" role="alert">
         <h1>Hi,<b><?php echo htmlspecialchars(!empty($_SESSION['firstname'])) ? ($_SESSION["firstname"]) : ($_SESSION["username"]); ?></b>.
             did you know that :</h1>
         <p id="joke" class="lead">
         </p>
         <div class="d-flex justify-content-center">
-            <button id="newJoke" class="btn peach-gradient waves-effect">Learn something else</button>
+            <button id="newJoke" class="btn blue-gradient waves-effect">Learn something else</button>
         </div>
     </div>
 
@@ -20,7 +20,7 @@ include "components/navbar.php";
     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th class="th-sm">Name
+                <th class="th-sm"><div>Name</div>
                 </th>
                 <th class="th-sm">Position
                 </th>

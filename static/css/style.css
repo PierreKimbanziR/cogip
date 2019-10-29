@@ -3,9 +3,9 @@
 }
 
 .st-sort-ascent:before {
-  content: '\25B2';
+  content: 'UP';
 }
 
 .st-sort-descent:before {
-  content: '\25BC';
+  content: 'DOWN';
 }
