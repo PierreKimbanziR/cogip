@@ -1,10 +1,10 @@
 <?php
-require_once("../config/db.php");
+
 
 //Show all invoices
 function getInvoices()
 {
-    $sql = $conn->prepare("SELECT invoiceNumber, description, createdAt IN invoices ORDER BY createdAt");
+    $sql = $conn->prepare("SELECT invoiceNumber, description, createdAt FROM invoices ORDER BY createdAt ASC");
     $sql->execute(array());
     $getInvoices = $sql->fetch();
     return $getInvoices;
@@ -13,7 +13,7 @@ function getInvoices()
 //Show an invoice
 function getInvoice($invoiceID)
 {
-    $sql = $conn->prepare("SELECT * IN invoices WHERE id = ?");
+    $sql = $conn->prepare("SELECT * FROM invoices WHERE id = ?");
     $sql->execute(array($invoiceID));
     $getInvoice = $sql->fetch();
     return $getInvoice;
