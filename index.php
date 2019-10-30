@@ -42,7 +42,7 @@ if ($explode_url[0] == 'home') {
 
 } elseif ($explode_url[0] == 'companies') {
     require 'controllers/CompaniesController.php';
-    if (isset($explode_url[1])) {
+    if (!empty($explode_url[1])) {
         showCompanyId($explode_url[1]);
     } else {
         showCompanies();

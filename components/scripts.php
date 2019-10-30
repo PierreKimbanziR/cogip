@@ -7,4 +7,4 @@
 </script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
-<script type="text/javascript" src="static/js/datatables.min.js"></script>
+<script type="text/javascript" src="/cogip/static/js/datatables.min.js"></script>

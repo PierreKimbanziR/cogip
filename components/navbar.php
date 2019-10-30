@@ -1,10 +1,10 @@
 <!--Navbar -->
 <header class="text-center p-3">
-    <img style="height:120px;" src="static/img/cogip-logo2.png" alt="" srcset="">
+    <img style="height:120px;" src="/cogip/static/img/cogip-logo2.png" alt="" srcset="">
 </header>
-<nav class="mb-1 navbar z-depth-2 scrolling-navbar sticky-top navbar-expand-lg navbar-dark grey darken-3">
+<nav class="mb-1 navbar z-depth-2 scrolling-navbar sticky-top navbar-expand-lg navbar-dark grey darken-3 pb-0 pt-0">
     <a class="navbar-brand" href="/cogip/home">
-        <img src="static/img/cogip-logo3.png" height="40" alt="mdb logo" />
+        <img src="/cogip/static/img/cogip-logo3.png" height="40" alt="mdb logo" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
