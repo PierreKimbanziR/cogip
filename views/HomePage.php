@@ -20,7 +20,8 @@ include "components/navbar.php";
     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th class="th-sm"><div>Name</div>
+                <th class="th-sm">
+                    <div>Name</div>
                 </th>
                 <th class="th-sm">Position
                 </th>
@@ -536,11 +537,10 @@ document.getElementById('newJoke').addEventListener('click', () => {
     getUserAsync('https://api.chucknorris.io/jokes/random');
 })
 
-$(document).ready(function () {
-$('#dtBasicExample').DataTable();
-$('.dataTables_length').addClass('bs-select');
+$(document).ready(function() {
+    $('#dtBasicExample').DataTable();
+    $('.dataTables_length').addClass('bs-select');
 });
-
 </script>
 <?php
 include "components/footer.php";

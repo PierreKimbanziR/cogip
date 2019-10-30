@@ -1,9 +1,6 @@
 <?php
-require("components/header.php");
-require("components/navbar.php");
-
-
-
+require "components/header.php";
+require "components/navbar.php";
 
 ?>
 
@@ -25,17 +22,17 @@ require("components/navbar.php");
 
 
 
-            <?php foreach ($invoices as $invoice) :
-                $date = explode(" ", $invoice['createdAt']);
-                ?>
-                <tr id="<?= $invoice['id'] ?>" class="click overable">
-                    <td><?= htmlspecialchars($date[0]) ?></td>
-                    <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
-                    <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
-                    <td><?= ($invoice['type'] == 0) ? "OUT" : "IN" ?></td>
-                </tr>
+            <?php foreach ($invoices as $invoice):
+    $date = explode(" ", $invoice['createdAt']);
+    ?>
+            <tr id="<?=$invoice['id']?>" class="click overable">
+                <td><?=htmlspecialchars($date[0])?></td>
+                <td><?=htmlspecialchars($invoice['invoiceNumber'])?></td>
+                <td><?=htmlspecialchars($invoice['amount'] . "€")?></td>
+                <td><?=($invoice['type'] == 0) ? "OUT" : "IN"?></td>
+            </tr>
 
-            <?php endforeach ?>
+            <?php endforeach?>
 
 
 
@@ -57,23 +54,23 @@ require("components/navbar.php");
     </table>
 
 </div>
-<?php require("components/scripts.php") ?>
+<?php require "components/scripts.php"?>
 <script>
-    $(document).ready(function() {
-        $('#dtBasicExample').DataTable();
-        $('.dataTables_length').addClass('bs-select');
-    });
+$(document).ready(function() {
+    $('#dtBasicExample').DataTable();
+    $('.dataTables_length').addClass('bs-select');
+});
 </script>
 <script>
-    var linkTo = (id) => {
-        //console.log(id);
-        document.location = `invoices/${id}`;
-    }
+var linkTo = (id) => {
+    //console.log(id);
+    document.location = `/cogip/invoices/${id}`;
+}
 
-    Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
-        console.log($btn);
-        $btn.addEventListener('click', () => (linkTo($btn.id), false));
-    });
+Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
+    console.log($btn);
+    $btn.addEventListener('click', () => (linkTo($btn.id), false));
+});
 </script>
 
 
@@ -81,4 +78,4 @@ require("components/navbar.php");
 
 
 <?php
-require("components/footer.php");
+require "components/footer.php";

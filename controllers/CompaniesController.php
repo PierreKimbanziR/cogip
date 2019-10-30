@@ -1,7 +1,6 @@
 <?php
 
-function showCompanies() {
-    
+function showCompanies()
 {
     require 'models/companies/CompaniesModel.php';
     $companies = getCompanies();
@@ -9,7 +8,6 @@ function showCompanies() {
     include 'views/companies/CompaniesView.php';
 }
 //showCompanies();
-
 
 function showCompanyId($id)
 {
@@ -20,6 +18,3 @@ function showCompanyId($id)
 
 }
 //showCompany();
-
-
-}
