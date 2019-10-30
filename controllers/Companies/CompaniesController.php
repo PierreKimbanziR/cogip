@@ -1,20 +1,25 @@
 <?php
 
-require 'models/CompaniesModel.php'
-
-function listCompanies() {
+function showCompanies() {
     
 {
+    require 'models/companies/CompaniesModel.php';
     $companies = getCompanies();
-    require 'companiesView.php';
+    //print_r($companies);
+    include 'views/companies/CompaniesView.php';
 }
+//showCompanies();
 
-function showCompanies()
+
+function showCompanyId($id)
 {
-    $contact = getCompany(id);
-    require 'companyView.php';
+    require 'models/contact/CompanyModel.php';
+    $contact = getCompany($id);
+    print_r($company);
+    include 'views/companies/companyView.php';
 
 }
+//showCompany();
 
 
 }

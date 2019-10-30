@@ -1,10 +1,11 @@
 <?php
- function getCompany(){
+ function getCompany($id){
 
     require '../../config/db.php';
 
-    $stmt=$conn->prepare("SELECT * FROM companies WHERE [id]");
+    $stmt=$conn->prepare("SELECT * FROM companies WHERE id='$id'");
     $stmt->execute();
 
-    $row=$stmt->fetchAll();
+    $row=$stmt->fetch();
+    return $row; 
  }
