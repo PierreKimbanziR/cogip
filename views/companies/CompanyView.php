@@ -6,11 +6,11 @@ include "components/navbar.php";
 
 <div class="container col-8 border example hoverable">
     <div class="black white-text">
-    <h1 class="text-center"><strong>Company:</strong><?php echo $company['companyname'];?></h1>
-    <p><strong>Company Name : </strong><?php echo $company['companyname'];?></p>
-    <p><strong>Vat number : </strong><?php echo $company['vatnumber'];?></p>
-    <p><strong>Invoices: </strong><?php echo $company['invoices'];?></p>
-    <p><strong>Contacts: </strong><?php echo $company['contacts'];?></p>
+    <h1 class="text-center"><strong>Company:</strong><?php echo $company['name'];?></h1>
+    <p><strong>Company Name : </strong><?php echo $company['name'];?></p>
+    <p><strong>Vat number : </strong><?php echo $company['vat'];?></p>
+    <p><strong>Role: </strong><?php echo $company['role'];?></p>
+    <p><strong>Country: </strong><?php echo $company['country'];?></p>
     <p><a href="../companies">Return to companies</p>
 </div>
 

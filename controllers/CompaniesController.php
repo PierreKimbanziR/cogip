@@ -14,8 +14,7 @@ function showCompanies()
 function showCompanyId($id)
 {
     require 'models/companies/CompanyModel.php';
-    $contact = getCompany($id);
-    print_r($company);
+    $company = getCompany($id);
     include 'views/companies/CompanyView.php';
 
 }

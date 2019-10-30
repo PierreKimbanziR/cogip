@@ -6,14 +6,15 @@ include "components/navbar.php";
 
 <div class="container" >
 <h1 class="text-center ">List of companies</h1>
-<table class="table table-striped">
+<table id ="searchCompany" class="table table-striped">
     <thead class="black white-text">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Company name</th>
             <th scope="col">Country</th>
-            <th scope="col">Vat number</th>
-            <th scope="col">Type</th>
+            <th scope="col">Vat</th>
+            <th scope="col">Role</th>
+            <th scope="col">Date</th>
         </tr>
     </thead>
     <tbody>
@@ -29,10 +30,11 @@ include "components/navbar.php";
             <?php echo $company["id"];?></a>
             </th>
 
-            <td><?php echo $company['companyname'] ?></td>
+            <td><?php echo $company['name'] ?></td>
             <td><?php echo $company['country'] ?></td>
-            <td><?php echo $company['vatnumber'] ?></td>
-            <td><?php echo $company['type'] ?></td>
+            <td><?php echo $company['vat'] ?></td>
+            <td><?php echo $company['role'] ?></td>
+            <td><?php echo $company['createdAt'] ?></td>
         </tr>
 
 
@@ -42,10 +44,11 @@ include "components/navbar.php";
     </tbody>
 </table>
 </div>
+
 <?php include('components/scripts.php') ?>
 <script>
     $(document).ready(function() {
-        $('#searchShow').DataTable();
+        $('#searchCompany').DataTable();
         $('.dataTables_length').addClass('bs-select');
     });
 </script>
@@ -65,6 +68,6 @@ var linkTo = (id) => {
 
 <?php
 // Inclure Footer ...
-include "components/scripts.php";
+
 include "components/footer.php";
 ?>
