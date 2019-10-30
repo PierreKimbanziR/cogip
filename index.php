@@ -5,6 +5,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
+$hello = 'aaa';
+
 include "config/db.php";
 
 require 'controllers/Controller.php';
