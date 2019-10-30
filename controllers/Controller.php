@@ -4,7 +4,8 @@ require 'models/Model.php';
 
 function homePage()
 {
-    $firstname = getHome();
+    $firstname  = getHome();
+    $page_title = 'Home';
     require 'views/HomePage.php';
 }
 

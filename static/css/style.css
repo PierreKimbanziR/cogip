@@ -13,3 +13,12 @@
 .container {
   margin-top: 20px;
 }
+
+header {
+  background: url('../img/building.jpg');
+  background-size: 100% 100%;
+}
+
+.click {
+  cursor: pointer;
+}
