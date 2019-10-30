@@ -6,6 +6,7 @@ require("components/navbar.php");
 
 
 ?>
+
 <div class="container">
     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <thead>
@@ -27,7 +28,7 @@ require("components/navbar.php");
             <?php foreach ($invoices as $invoice) :
                 $date = explode(" ", $invoice['createdAt']);
                 ?>
-                <tr>
+                <tr id="<?= $invoice['id'] ?>" class="click overable">
                     <td><?= htmlspecialchars($date[0]) ?></td>
                     <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
                     <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
@@ -54,6 +55,7 @@ require("components/navbar.php");
             </tr>
         </tfoot>
     </table>
+
 </div>
 <?php require("components/scripts.php") ?>
 <script>
@@ -62,6 +64,18 @@ require("components/navbar.php");
         $('.dataTables_length').addClass('bs-select');
     });
 </script>
+<script>
+    var linkTo = (id) => {
+        //console.log(id);
+        document.location = `invoices/${id}`;
+    }
+
+    Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
+        console.log($btn);
+        $btn.addEventListener('click', () => (linkTo($btn.id), false));
+    });
+</script>
+
 
 
 

@@ -1,4 +1,5 @@
 <?php
+echo $id;
 
 function showInvoices()
 {
