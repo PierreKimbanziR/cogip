@@ -24,7 +24,7 @@ include "components/navbar.php";
         <?php foreach ($contacts as $contact): ?>
 
         <!-- id dans le tr pour appliquer un JS quand on clic sur tr-->
-        <tr id="<?php echo $contact['id'];?>" class="example hoverable">   
+        <tr id="<?php echo $contact['id'];?>" class="example hoverable click">   
             
             <th scope="row">  
             <a href='contacts/<?php echo $contact['id'];?>'>
