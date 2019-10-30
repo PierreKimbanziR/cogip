@@ -5,7 +5,7 @@
 function getInvoices()
 {
     include("config/db.php");
-    $sql = $conn->prepare("SELECT invoiceNumber, description, createdAt FROM invoices ORDER BY createdAt ASC");
+    $sql = $conn->prepare("SELECT * FROM invoices ORDER BY createdAt ASC");
     $sql->execute();
     $getInvoices = $sql->fetchAll();
     return $getInvoices;
