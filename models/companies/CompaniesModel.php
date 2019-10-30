@@ -1,19 +1,16 @@
 <?php
 
-function getCompanies (){
+function getCompanies()
+{
 
-    require '../../config/db.php';
+    require 'config/db.php';
 
-    $stmt=$conn->prepare("SELECT * FROM companies");
-    $stmt->execute(); 
+    $stmt = $conn->prepare("SELECT * FROM companies");
+    $stmt->execute();
 
-    $row = $stmt -> fetchAll();
+    $row = $stmt->fetchAll();
     return $row;
-    
-
 
 }
 
 getCompanies();
-
-
