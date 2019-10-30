@@ -6,13 +6,16 @@ include "components/navbar.php";
 
 <div class="container" >
 <h1 class="text-center ">List of contacts</h1>
-<table class="table table-striped">
+<table class="table table-striped table-bordered table-sm">
     <thead class="black white-text">
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Firstname</th>
             <th scope="col">Lastname</th>
             <th scope="col">Email</th>
+            <th scope="col">Companies</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Created </th>
         </tr>
     </thead>
     <tbody>
@@ -31,7 +34,13 @@ include "components/navbar.php";
             <td ><?php echo $contact['firstname'] ?></td>
             <td><?php echo $contact['lastname'] ?></td>
             <td>@<?php echo $contact['email'] ?></td>
+            <td ><?php echo $contact['name'] // name Table companies ?></td>
+            <td><?php echo $contact['telephone'] ?></td>
+            <td><?php echo $contact['createdAt'] ?></td>
+
         </tr>
+
+
 
 
         <!-- Fin de endforeach  -->
