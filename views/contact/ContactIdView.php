@@ -5,8 +5,8 @@ include "components/navbar.php";
 $email=$contact['email'];
 ?>
 
-<div class="container col-8 border ">
-    <h1 class="text-center "><strong>Contact :</strong><?php echo $contact['firstname'].' '.$contact['lastname'];?></h1>
+<div class="container col-8 border example hoverable ">
+    <div class="black white-text"><h1 class="text-center "><strong>Contact :</strong><?php echo $contact['firstname'].' '.$contact['lastname'];?></h1></div>
     <p><strong>Contact : </strong><?php echo $contact['firstname'].' '.$contact['lastname'];?></p>
     <p><strong>Company : </strong>
     
