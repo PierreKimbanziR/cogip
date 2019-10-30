@@ -9,7 +9,7 @@ function getCompanies (){
 
     $row = $stmt -> fetchAll();
     return $row;
-    ;
+    
 
 
 }

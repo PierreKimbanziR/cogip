@@ -29,10 +29,10 @@ include "components/navbar.php";
             <?php echo $company["id"];?></a>
             </th>
 
-            <td ><?php echo $company['Company name'] ?></td>
-            <td><?php echo $company['Country'] ?></td>
-            <td>@<?php echo $company['Vat number'] ?></td>
-            <td><?php echo $company['Type'] ?></td>
+            <td><?php echo $company['companyname'] ?></td>
+            <td><?php echo $company['country'] ?></td>
+            <td><?php echo $company['vatnumber'] ?></td>
+            <td><?php echo $company['type'] ?></td>
         </tr>
 
 
