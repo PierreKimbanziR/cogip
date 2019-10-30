@@ -9,13 +9,16 @@ include "config/db.php";
 
 require 'controllers/Controller.php';
 
-$url         = $_GET['p'];
+$url = $_GET['p'];
+
+echo $url;
+
 $explode_url = explode('/', $url);
 
 // Debug router
-// echo "<pre>";
-// print_r($explode_url);
-// echo "</pre>";
+echo "<pre>";
+print_r($explode_url);
+echo "</pre>";
 
 //----------
 //  HOME
@@ -42,7 +45,6 @@ if ($explode_url[0] == 'home') {
 
 } elseif ($explode_url[0] == 'companies') {
     require 'controllers/CompaniesController.php';
-
     if (isset($explode_url[1])) {
         showCompanyId($explode_url[1]);
     } else {
