@@ -28,8 +28,8 @@ function deleteInvoice($invoiceID)
 
 //Add an invoice to the database
 function addInvoice($invoiceNumber, $clientID, $clientType, $description, $amount, $type)
-{}
+{ }
 
 //Modify an invoice in the database
 function modifyInvoice($invoiceNumber)
-{}
+{ }
