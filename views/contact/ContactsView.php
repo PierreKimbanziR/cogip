@@ -50,6 +50,18 @@ include "components/navbar.php";
 </table>
 </div>
 
+<script>
+var linkTo = (id) => {
+    //console.log(id);
+    document.location = `contacts/${id}`;
+}
+
+  Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
+    console.log($btn);
+    $btn.addEventListener('click', () => (linkTo($btn.id), false));
+  });
+</script>
+
 <?php
 // Inclure Footer ...
 include "components/footer.php";

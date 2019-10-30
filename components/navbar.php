@@ -1,7 +1,10 @@
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark orange darken-1">
+<header class="text-center p-3">
+    <img style="height:120px;" src="static/img/cogip-logo2.png" alt="" srcset="">
+</header>
+<nav class="mb-1 navbar z-depth-2 scrolling-navbar sticky-top navbar-expand-lg navbar-dark grey darken-3">
     <a class="navbar-brand" href="/cogip/home">
-        <img src="img/cogip-logo.png" height="40" alt="mdb logo" />
+        <img src="static/img/cogip-logo3.png" height="40" alt="mdb logo" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,6 +33,7 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
+            <?php if ($_SESSION['level'] == 3): ?>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Admin
@@ -41,6 +45,7 @@
                     <a class="dropdown-item" href="#">New Company</a>
                 </div>
             </li>
+            <?php endif?>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">

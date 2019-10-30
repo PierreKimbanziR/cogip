@@ -1,0 +1,24 @@
+.dataTables_filter {
+  float: right;
+}
+
+.st-sort-ascent:before {
+  content: 'UP';
+}
+
+.st-sort-descent:before {
+  content: 'DOWN';
+}
+
+.container {
+  margin-top: 20px;
+}
+
+header {
+  background: url('../img/building.jpg');
+  background-size: 100% 100%;
+}
+
+.click {
+  cursor: pointer;
+}

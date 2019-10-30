@@ -1,7 +1,15 @@
 <?php
-require("../components/header.php");
-require("../components/navbar.php");
-require("../models/InvoiceModel.php");
-$invoices = getInvoices();
-require("../views/InvoicesView.php");
-require("../components/footer.php");
+
+function showInvoices()
+{
+    require("models/InvoiceModel.php");
+    $invoices = getInvoices();
+    require("views/InvoicesView.php");
+}
+
+function showInvoiceId($id)
+{
+    require("models/InvoiceModel.php");
+    $invoices = getInvoice($id);
+    require("views/InvoicesView.php");
+}
