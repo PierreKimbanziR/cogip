@@ -11,6 +11,6 @@ function showInvoices()
 function showInvoiceId($id)
 {
     require("models/InvoiceModel.php");
-    $invoices = getInvoice($id);
-    require("views/InvoicesView.php");
+    $invoice = getInvoice($id);
+    require("views/InvoiceView.php");
 }
