@@ -9,16 +9,13 @@ include "config/db.php";
 
 require 'controllers/Controller.php';
 
-$url = $_GET['p'];
-
-echo $url;
-
+$url         = $_GET['p'];
 $explode_url = explode('/', $url);
 
 // Debug router
-echo "<pre>";
-print_r($explode_url);
-echo "</pre>";
+// echo "<pre>";
+// print_r($explode_url);
+// echo "</pre>";
 
 //----------
 //  HOME
