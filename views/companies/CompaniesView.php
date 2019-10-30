@@ -22,10 +22,10 @@ include "components/navbar.php";
         <?php foreach ($companies as $company): ?>
 
         <!-- id dans le tr pour appliquer un JS quand on clic sur tr-->
-        <tr id="<?php echo $company['id'];?>" class="example hoverable">   
+        <tr id="<?php echo $company['id'];?>" class="example hoverable click">   
             
             <th scope="row">  
-            <a href='company/<?php echo $company['id'];?>'>
+            <a href='companies/<?php echo $company['id'];?>'>
             <?php echo $company["id"];?></a>
             </th>
 
@@ -42,6 +42,17 @@ include "components/navbar.php";
     </tbody>
 </table>
 </div>
+<script>
+var linkTo = (id) => {
+    //console.log(id);
+    document.location = `companies/${id}`;
+}
+
+  Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
+    console.log($btn);
+    $btn.addEventListener('click', () => (linkTo($btn.id), false));
+  });
+</script>
 
 <?php
 // Inclure Footer ...
