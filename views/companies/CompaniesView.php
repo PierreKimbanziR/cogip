@@ -45,5 +45,6 @@ include "components/navbar.php";
 
 <?php
 // Inclure Footer ...
+include "components/scripts.php";
 include "components/footer.php";
 ?>
