@@ -1,12 +1,12 @@
 <?php
 // Inclure Header ...
-// include "components/header.php";
-// include "components/navbar.php";
+// Inclure Navbar ...
+include "components/header.php";
+include "components/navbar.php";
 ?>
 
-<div class="container" >
+<div class="container">
     <h1 class="text-center">Add an contact</h1>
-
     <form method="post" action="">
 
     <div>   
@@ -37,29 +37,13 @@
     <div>
     <button name="submit" value="submit" title="Add a new contact !" type="submit">Add a new contact !</button>
     </div> 
-
     </form>
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
 
 <!-- Script bootstrap  -->
 <?php 
-// include('components/scripts.php') 
-?>
-<?php
+include('components/scripts.php') 
+
 // Inclure Footer ...
-// include "components/footer.php";
+include "components/footer.php";
 ?>
