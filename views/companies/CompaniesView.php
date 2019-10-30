@@ -42,6 +42,15 @@ include "components/navbar.php";
     </tbody>
 </table>
 </div>
+<?php include('components/scripts.php') ?>
+<script>
+    $(document).ready(function() {
+        $('#searchShow').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
+</script>
+
+
 <script>
 var linkTo = (id) => {
     //console.log(id);

@@ -11,6 +11,7 @@ include "components/navbar.php";
     <p><strong>Vat number : </strong><?php echo $company['vatnumber'];?></p>
     <p><strong>Invoices: </strong><?php echo $company['invoices'];?></p>
     <p><strong>Contacts: </strong><?php echo $company['contacts'];?></p>
+    <p><a href="../companies">Return to companies</p>
 </div>
 
 <?php
