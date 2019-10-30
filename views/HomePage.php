@@ -5,7 +5,7 @@ include "components/navbar.php";
 ?>
 
 <div class="container">
-    <div class="alert alert-secondary shadow mt-5" role="alert">
+    <div class="alert alert-secondary shadow" role="alert">
         <h1>Hi,<b><?php echo htmlspecialchars(!empty($_SESSION['firstname'])) ? ($_SESSION["firstname"]) : ($_SESSION["username"]); ?></b>.
             did you know that :</h1>
         <p id="joke" class="lead">
