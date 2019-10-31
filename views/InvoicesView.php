@@ -28,7 +28,7 @@ require "components/navbar.php";
             <tr id="<?=$invoice['id']?>" class="click overable">
                 <td><?=htmlspecialchars($date[0])?></td>
                 <td><?=htmlspecialchars($invoice['invoiceNumber'])?></td>
-                <td><?=htmlspecialchars($invoice['amount'] . "€")?></td>
+                <td><?=(($invoice['type'] == 0) ? '+ ' : '- ') . htmlspecialchars($invoice['amount'] . "€")?></td>
                 <td><?=($invoice['type'] == 0) ? "OUT" : "IN"?></td>
             </tr>
 
