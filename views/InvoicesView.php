@@ -84,7 +84,7 @@ require "components/navbar.php";
     $(document).ready(function() {
         $('#dtBasicExample').DataTable({
             "order": [
-                [1, "asc"]
+                [0, "desc"]
             ]
         });
         $('.dataTables_length').addClass('bs-select');
