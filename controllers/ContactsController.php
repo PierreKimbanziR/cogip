@@ -4,13 +4,12 @@ function showContacts()
 {
     // importer Modèle contactS / liaison DB
     require 'models/contact/ContactsModel.php';
-    $contacts = getContacts();
-    $page_title='View Contacts';
+    $contacts   = getContacts();
+    $page_title = 'View Contacts';
     //print_r($contacts);
     // importer View contactS
     include 'views/contact/ContactsView.php';
 }
-
 
 // ----------------------------------------------------------
 // Affichage ID
@@ -19,9 +18,9 @@ function showContactId($id)
 {
     // importer Modèle contactId /  / liaison DB
     require 'models/contact/ContactIdModel.php';
-    $contact = getContact($id);
-    $page_title='View Contact';
-    $email=$contact['email'];
+    $contact    = getContact($id);
+    $page_title = 'View Contact';
+    $email      = $contact['email'];
     //print_r($contact);
     // importer View contactS
     include 'views/contact/ContactIdView.php';
@@ -31,23 +30,13 @@ function showContactId($id)
 // Affichage Add Contact
 
 function createContact()
-<<<<<<< HEAD
-=======
-
->>>>>>> 2596ed8aceb6856971c56de9761548a2ecbf6c58
 {
     // importer Modèle ContactAddModel / liaison DB
     require 'models/contact/ContactAddModel.php';
-    $page_title='Add Contact';
+    $page_title = 'Add Contact';
     // importer View Add - Va servir également pour Update
     include 'views/contact/ContactAddView.php';
 }
 
 // ----------------------------------------------------------
 // Affichage Update Contact
-<<<<<<< HEAD
-function updateContact(){}
-=======
-function updateContact(){}
-
->>>>>>> 2596ed8aceb6856971c56de9761548a2ecbf6c58
