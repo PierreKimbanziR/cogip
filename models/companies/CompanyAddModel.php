@@ -1,5 +1,6 @@
 <?php
 
+
 function addCompany(){
     
     include 'config/db.php';
