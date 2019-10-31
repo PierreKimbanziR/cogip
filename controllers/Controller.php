@@ -11,6 +11,5 @@ function homePage()
 
 function showDashboard()
 {
-
     require 'views/AdminDashboardView.php';
 }

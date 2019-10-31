@@ -39,7 +39,7 @@
                     aria-haspopup="true" aria-expanded="false">Admin
                 </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="/cogip/admin">Dashboard</a>
                     <a class="dropdown-item" href="#">New Contact</a>
                     <a class="dropdown-item" href="#">New Invoice</a>
                     <a class="dropdown-item" href="#">New Company</a>

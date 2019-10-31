@@ -6,7 +6,11 @@ include "components/navbar.php";
 
 <div class="container" >
 <h1 class="text-center">Admin Dashboard</h1>
-
+<div class="mt-4 row d-flex justify-content-between">
+    <button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus"></i> New Invoice</button>
+    <button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus"></i> Add Contact</button>
+    <button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus"></i> Add Company</button>
+</div>
 </div>
 
 
