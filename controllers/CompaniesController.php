@@ -19,3 +19,10 @@ function showCompanyId($id)
 
 }
 
+function createCompany()
+{
+    require 'models/companies/CompanyAddModel.php';
+    $page_title='Add Company';
+    include 'views/company/CompanyAddView.php';
+}
+
