@@ -1,8 +1,10 @@
 <?php
 // Inclure Header ...
 // Inclure Navbar ...
-include "components/header.php";
-include "components/navbar.php";
+//include "components/header.php";
+//include "components/navbar.php";
+
+
 ?>
 
 <div class="container">
@@ -34,6 +36,12 @@ include "components/navbar.php";
     <input title="Telephone" type="text" name="telephone" placeholder="Telephone" size="22" maxlength="30" required>
     </div>
 
+    <!-- input antiRobot -->
+    <div>
+    <input type="text" name="vilainRobot" size="22" maxlength="30">
+    </div>
+    <!-- Fin input antiRobot -->
+
     <div>
     <button name="submit" value="submit" title="Add a new contact !" type="submit">Add a new contact !</button>
     </div> 
@@ -42,8 +50,8 @@ include "components/navbar.php";
 
 <!-- Script bootstrap  -->
 <?php 
-include('components/scripts.php') 
+//include('components/scripts.php') 
 
 // Inclure Footer ...
-include "components/footer.php";
+//include "components/footer.php";
 ?>
