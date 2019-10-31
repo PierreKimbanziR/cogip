@@ -18,44 +18,64 @@ $name=$country=$vat=$role=$telephone='';
 $name_error=$country_error=$vat_error=$role_error=$telephone='';
 
 
-$name = $_POST['name'];
-$country= $_POST['country'];
-$vat = $_POST['vat'];
-$role= $_POST['role'];
-$telephone= $_POST['telephone'];
+
 
 if ($_SERVER['REQUEST_METHOD']=='POST'){
 
-    if (empty($_POST['name'])){
+    if (empty(trim($_POST['name']))){
         $name_error ="Name of the company is required.";
         echo $name_error;
     }
-    else {
+    else if {
         $name=test_input($_POST['name']);
         if (!preg_match('/^[a-z][a-z\s]*$/',$name)){
             $name_error="Only letters and white space allowed.";
             echo $name_error;
         }
     }
+    else {
+        $name= htmlspecialchars($_POST['name']);
+
+    }
 }
+
+
 if ($_SERVER['REQUEST_METHOD']== 'POST'){
-    if($_POST['country']=='0')){
-        $country_error='Country is required.';
+    if($_POST['country']=='0'){
+        $country_error='You must select a country.';
         echo $country_error;
     }   
+    else{
+        $country= htmlspecialchars($_POST['country']);
+    }
 }
+
+
 if ($_SERVER['REQUEST_METHOD']== 'POST'){
     if(empty($_POST['vat'])){
         $vat_error='Vat number is required.';
         echo $vat_error;
     }
-}
-if ($_SERVER['REQUEST_METHOD']=='POST'){
-    if(empty($_POST['role'])){
-        $role_error='The company role is required.';
-        echo $role_error;
+    else if {
+
     }
 }
+
+
+
+
+if ($_SERVER['REQUEST_METHOD']=='POST'){
+    if(empty($_POST['role'])){
+        $role_error='You must select the company role.';
+        echo $role_error;
+    }
+    else 
+    $role=htmlspecialchars($_POST['role']);
+}
+
+
+
+
 if ($_SERVER['REQUEST_METHOD']=='POST'){
     if(empty($_POST['telephone'])){
         $telephone_error='The company telephone number is required.';
