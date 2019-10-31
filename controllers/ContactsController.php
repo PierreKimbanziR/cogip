@@ -31,7 +31,10 @@ function showContactId($id)
 // Affichage Add Contact
 
 function createContact()
+<<<<<<< HEAD
+=======
 
+>>>>>>> 2596ed8aceb6856971c56de9761548a2ecbf6c58
 {
     // importer Modèle ContactAddModel / liaison DB
     require 'models/contact/ContactAddModel.php';
@@ -42,4 +45,9 @@ function createContact()
 
 // ----------------------------------------------------------
 // Affichage Update Contact
+<<<<<<< HEAD
 function updateContact(){}
+=======
+function updateContact(){}
+
+>>>>>>> 2596ed8aceb6856971c56de9761548a2ecbf6c58
