@@ -100,36 +100,42 @@ else
 
     function validate_phone_number($telephone)
     {
-        if (empty(trim($_POST["firstname"]))) 
+        if (empty(trim($_POST["telephone"]))) 
         {
             // si vide 
-            $telephone = "Please enter a telephone number.";
+            $telephone_Error = "Please enter a telephone number.";
         } 
 
         else
 
         {
-                // On peut utiliser +, - et . dans le numéro
+                
+                 
+            // On peut utiliser +, - et . dans le numéro
                 $filtered_phone_number = filter_var($telephone, FILTER_SANITIZE_NUMBER_INT);       
                 // Retirer "-" du numéro
-                $phone_to_check = str_replace("-", "", $filtered_phone_number);    
+                $phone_to_check = str_replace($filtered_phone_number, "-", "" );    
                 // Check la longueur du numéro (Belgique)
                 if (strlen($phone_to_check) < 10 || strlen($phone_to_check) > 14) 
                 
                     {
+                        $telephone_Error = "Number phone invalid";
                         return false;			
                     }
                 
                 else 
                 
                     {
-                            return true;
+                        return true;
                     }	
         }
     }
 
 // Appel fonction validate_phone_number
 $telephone = htmlspecialchars($_POST['telephone']);
+validate_phone_number($telephone);
+
+// Si TEL OK
 if (validate_phone_number($telephone) == true) 
     {
         $telephoneV=$telephone;
@@ -138,9 +144,14 @@ if (validate_phone_number($telephone) == true)
 else 
 
     {
-        $telephone_Error="Invalid phone number";
+        $telephone_Error="Invalid phone number +32-0-000-00-00 ";
         //echo "Invalid phone number";
     }
+
+
+
+
+
 
 // Si envoyé et error != ""
 if (empty($telephone_Error) && empty($firstname_Error) && empty($email_Error) && empty($telephone_Error) && empty($company_Error))
@@ -154,7 +165,7 @@ if (empty($telephone_Error) && empty($firstname_Error) && empty($email_Error) &&
             if ($conn->query($sql)) 
                 {
                     echo '<p>Ajouté à la DB</p>';
-                    header('location: se-connecter.php');
+                    header('location: /cogip/contacts');
                 } 
 
             else 

@@ -14,6 +14,7 @@ include "components/navbar.php";
             <label for="Firstname" class="w-100 p-2">Firstname : </label>
             <input title="Firstname" type="text" name="firstname" placeholder="Firstname" size="22" maxlength="30"
                 autofocus required>
+                <?php echo $firstname_Error; ?>
         </div>
 
         <div>
@@ -21,15 +22,17 @@ include "components/navbar.php";
             <label for="Lastname" class="w-100 p-2">Lastname : </label>
             <input title="Firstname" type="text" name="lastname" placeholder="Lastname" size="22" maxlength="30"
                 required>
+                <?php echo $lastname_Error; ?>
         </div>
 
         <div>
             <hr>
             <label for="Email" class="w-100 p-2">Email : </label>
-            <input title="Email" type="email" name="email" placeholder="Email" size="22" maxlength="30" required>
+            <input title="Email" type="email" name="email" placeholder="Email" size="22" maxlength="30" required><?php echo $email_Error; ?>
         </div>
         <div>
 
+    <?php echo $company_Error; ?>
     <select name="company" class="form-control">
     <option value="0" selected>Please select a company</option>
     <option value="1">Company 1</option>
@@ -41,7 +44,7 @@ include "components/navbar.php";
             <hr>
             <label for="Telephone" class="w-100 p-2">Telephone : ex: +32-0-000-00-00 </label>
             <input title="Telephone" type="text" name="telephone" placeholder="+32-0-000-00-00" size="22" maxlength="30"
-                required>
+                required><?php echo $telephone_Error; ?>
         </div>
 
         <!-- input antiRobot -->
