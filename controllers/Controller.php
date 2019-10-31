@@ -11,5 +11,7 @@ function homePage()
 
 function showDashboard()
 {
+    require 'controllers/contactsController.php';
+    $lastContacts = getLastContacts();
     require 'views/AdminDashboardView.php';
 }

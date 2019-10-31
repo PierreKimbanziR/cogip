@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Abel&display=swap');
+
+body {
+  font-family: 'Abel', sans-serif;
+  font-size: 1.1em;
+}
+
 .dataTables_filter {
   float: right;
 }
@@ -19,6 +26,7 @@ header {
   background-size: 100% 100%;
 }
 
-.click {
+.click,
+.pointer {
   cursor: pointer;
 }

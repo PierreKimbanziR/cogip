@@ -6,10 +6,10 @@ function getInvoices()
     $sqlcomp = $conn->prepare("SELECT invoices.*, companies.name FROM invoices INNER JOIN companies ON companyId = companies.id ORDER BY invoices.createdAt ASC");
     $sqlcomp->execute();
     $getInvoicescomp = $sqlcomp->fetchAll();
-    $sqlcont = $conn->prepare("SELECT invoices.*, contacts.firstname, contacts.lastname FROM invoices INNER JOIN contacts ON contactId = contacts.id ORDER BY invoices.createdAt ASC");
+    $sqlcont         = $conn->prepare("SELECT invoices.*, contacts.firstname, contacts.lastname FROM invoices INNER JOIN contacts ON contactId = contacts.id ORDER BY invoices.createdAt ASC");
     $sqlcont->execute();
     $getInvoicescont = $sqlcont->fetchAll();
-    $getInvoices = array($getInvoicescomp, $getInvoicescont);
+    $getInvoices     = array($getInvoicescomp, $getInvoicescont);
     return $getInvoices;
 }
 
@@ -32,8 +32,8 @@ function deleteInvoice($invoiceID)
 
 //Add an invoice to the database
 function addInvoice($invoiceNumber, $clientID, $clientType, $description, $amount, $type)
-{ }
+{}
 
 //Modify an invoice in the database
 function modifyInvoice($invoiceNumber)
-{ }
+{}
