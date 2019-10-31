@@ -21,7 +21,7 @@ include "components/navbar.php";
         <thead>
             <tr>
                 <th class="th-sm">
-                    <div>Name</div>
+                    Name
                 </th>
                 <th class="th-sm">Position
                 </th>

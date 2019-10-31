@@ -2,12 +2,12 @@
   float: right;
 }
 
-.st-sort-ascent:before {
-  content: 'UP';
+.sorting_asc:after {
+  content: '\25B2';
 }
 
-.st-sort-descent:before {
-  content: 'DOWN';
+.sorting_desc:after {
+  content: '\25BC';
 }
 
 .container {

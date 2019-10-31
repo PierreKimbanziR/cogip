@@ -24,6 +24,7 @@ require "components/navbar.php";
 
 
 
+
             <?php
             $invoicescomp = $invoices['0'];
             $invoicescont = $invoices['1'];
@@ -38,6 +39,8 @@ require "components/navbar.php";
                     <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
                     <td><?= ($invoice['type'] == 0) ? "OUT" : "IN" ?></td>
                 </tr>
+
+
 
             <?php endforeach;
 
