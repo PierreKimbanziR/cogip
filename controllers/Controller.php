@@ -6,11 +6,11 @@ function homePage()
 {
     $firstname  = getHome();
     $page_title = 'Home';
-    require 'views/HomePage.php';
+    require 'views/HomePageView.php';
 }
 
 function showDashboard()
 {
 
-    require 'adminDashboard.php';
+    require 'views/AdminDashboardView.php';
 }
