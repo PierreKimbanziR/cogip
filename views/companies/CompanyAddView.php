@@ -17,7 +17,7 @@ include "components/navbar.php";
     <div><hr>
     <label for="Ccountry" class="w-100 p-2">Company country: </label>
 	<select class="w-100 p-2" id="country" name="country" placeholder="Company country"  maxlength ="30" required >
-    <option value='0'></option>
+    <option value='0'>--</option>
 	<option value="AF">Afghanistan</option>
 	<option value="AX">Åland Islands</option>
 	<option value="AL">Albania</option>
@@ -278,7 +278,10 @@ include "components/navbar.php";
 
     <div><hr>
     <label for="Crole" class="w-100 p-2">Company role : </label>
-    <input title="Crole" type="text" name="role" placeholder="Company role" size="22" maxlength="30" required>
+    <select class="w-100 p-2" id="role" name="role" placeholder="Company role"  maxlength ="30" title ="role" required >
+    <option value ='0'>--</option>
+    <option value ="provider">Provider</option>
+    <option value ='client'>Client</option>
     </div>
 
     <div><hr>
