@@ -28,17 +28,19 @@ include "components/navbar.php";
             <label for="Email" class="w-100 p-2">Email : </label>
             <input title="Email" type="email" name="email" placeholder="Email" size="22" maxlength="30" required>
         </div>
+        <div>
+
+        <select name="company" class="form-control">
+    <option value="0" selected>Please select a company</option>
+    <option value="Company 1">Company 1</option>
+    <option value="Company 2">Company 2</option>
+    </select>
+    </div>
 
         <div>
             <hr>
-            <label for="Company" class="w-100 p-2">Company : </label>
-            <input title="Company" type="text" name="company" placeholder="Company" size="22" maxlength="30" required>
-        </div>
-
-        <div>
-            <hr>
-            <label for="Telephone" class="w-100 p-2">Telephone : </label>
-            <input title="Telephone" type="text" name="telephone" placeholder="Telephone" size="22" maxlength="30"
+            <label for="Telephone" class="w-100 p-2">Telephone : ex: +32-0-000-00-00 </label>
+            <input title="Telephone" type="text" name="telephone" placeholder="+32-0-000-00-00" size="22" maxlength="30"
                 required>
         </div>
 

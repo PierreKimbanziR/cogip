@@ -1,7 +1,7 @@
 <?php
 // http://localhost/cogip/contacts/create
 // Initialiser variables
-$firstname=$lastname=$company=$email=$telephone="";
+$firstname=$lastname=$company=$email=$telephone="xxxx";
 
 // Initialiser variables erreurs
 $firstname_Error=$lastname_Error=$company_Error=$email_Error=$telephone_Error="";
@@ -13,7 +13,6 @@ $firstname_Error=$lastname_Error=$company_Error=$email_Error=$telephone_Error=""
 // Checker si envoi a été par _POST (et non _GET = spam)
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-
 
     // -----------------------------------------------------------------------------
     //Honeypot --- Checker si champs hidden = une valeur rentrée par robot
@@ -28,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     //  Validater le select company si valeur 0 (pas de sélection)
     if ($_POST["company"] == "0") 
         {
-            $company_ERROR = "You must select a company";
+            $company_Error = "You must select a company";
         } 
 
     else // si ok on applique un htmlspecialchars
@@ -38,10 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     // -----------------------------------------------------------------------------
     // Valider firstname
-    // Si vide (la fonction trim retire les espaces avant et après !!! )
-    // Pour éviter que l'on envoie des espaces 
-
-
     if (empty(trim($_POST["firstname"]))) 
         {
             // si vide 
@@ -63,6 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         }
 
 
+    // -----------------------------------------------------------------------------
+    // Vérifier LastName
 
         if (empty(trim($_POST["lastname"]))) 
         {
@@ -76,13 +73,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             $lastname = htmlspecialchars($_POST["lastname"]);
             
             // si caractères spéciaux
-            if (!preg_match("/^[a-zA-Z ]*$/", $lastname)) 
-
-                
+            if (!preg_match("/^[a-zA-Z ]*$/", $lastname))          
                 {   // Message d'erreurs
                     $lastname_Error = "Only letters and white space allowed";   
                 }
         }
+
+// -----------------------------------------------------------------------------
+// Vérifier email
+
+if (empty(trim($_POST["email"]))) 
+    {
+        $email_Error = "Please enter a email.";
+    } 
+
+else 
+
+    {
+        $email = htmlspecialchars($_POST["email"]);
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+            {
+                $email_Error = "Invalid email format";
+            }
+    }
+
+// -----------------------------------------------------------------------------
+// Vérifier Phone
+
+function validate_phone_number($phone)
+{
+     // On peut utiliser +, - et . dans le numéro
+     $filtered_phone_number = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);       
+    // Retirer "-" du numéro
+     $phone_to_check = str_replace("-", "", $filtered_phone_number);    
+    // Check la longueur du numéro (Belgique)
+    if (strlen($phone_to_check) < 10 || strlen($phone_to_check) > 14) 
+    
+        {
+            return false;			
+        }
+    
+    else 
+    
+        {
+               return true;
+         }	
+}
+
+// Appel fonction validate_phone_number
+$telephone = htmlspecialchars($_POST['telephone']);
+if (validate_phone_number($telephone) == true) 
+    {
+    // echo "Phone number is valid";
+    } 
+
+else 
+
+    {
+        $telephone_Error="Invalid phone number";
+        echo "Invalid phone number";
+    }
 
 
 
@@ -108,15 +159,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 // test variable
-$firstname=$_POST['firstname'];
-$lastname=$_POST['lastname'];
-$company=$_POST['company'];
+// $firstname=$_POST['firstname'];
+// $lastname=$_POST['lastname'];
+// $company=$_POST['company'];
 
-$email=$_POST['email'];
-$telephone=$_POST['telephone'];
-echo $firstname.' / ';
-echo $lastname.' / ';
-echo $email.' / ';
-echo $company.' / ';
-echo $telephone.' / ';
+// $email=$_POST['email'];
+// $telephone=$_POST['telephone'];
+echo $firstname_Error.' / ';
+echo $lastname_Error.' / ';
+echo $email_Error.' / ';
+echo $company_Error.' / ';
+echo $telephone_Error.' / ';
 echo $firstname_Error;
