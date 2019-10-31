@@ -32,7 +32,7 @@ require "components/navbar.php";
             foreach ($invoicescomp as $invoice) :
                 $date = explode(" ", $invoice['createdAt']);
                 ?>
-                <tr id="<?= $invoice['id'] ?>" class="click overable">
+                <tr id="<?= $invoice['id'] ?>" class="click hoverable">
                     <td><?= htmlspecialchars($date[0]) ?></td>
                     <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
                     <td><?= htmlspecialchars($invoice['name']) ?></td>
@@ -47,7 +47,7 @@ require "components/navbar.php";
             foreach ($invoicescont as $invoice) :
                 $date = explode(" ", $invoice['createdAt']);
                 ?>
-                <tr id="<?= $invoice['id'] ?>" class="click overable">
+                <tr id="<?= $invoice['id'] ?>" class="click hoverable">
                     <td><?= htmlspecialchars($date[0]) ?></td>
                     <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
                     <td><?= htmlspecialchars($invoice['lastname']) ?><?= " " ?><?= htmlspecialchars($invoice['firstname']) ?></td>
