@@ -17,9 +17,9 @@ function getInvoices()
 function getInvoice($invoiceID)
 {
     global $conn;
-    $sql = $conn->prepare("SELECT * FROM invoices LEFT JOIN companies ON invoices.clientType = 0 AND invoices.companyId = companies.id LEFT JOIN contacts ON invoices.clientType = 1 AND invoices.contactId = contacts.id WHERE invoices.id = ?");
+    $sql = $conn->prepare("SELECT invoices.invoiceNumber invoiceNumber, invoices.description description, invoices.amount amount, invoices.type type, invoices.createdAt createdAt, contacts.firstname firstname, contacts.lastname lastname, contacts.email email, contacts.telephone telephone, contacts.workingAt workingAt, companies.name name, companies.country country, companies.vat vat FROM invoices LEFT JOIN companies ON invoices.clientType = 0 AND invoices.companyId = companies.id LEFT JOIN contacts ON invoices.clientType = 1 AND invoices.contactId = contacts.id WHERE invoices.id = ?");
     $sql->execute(array($invoiceID));
-    $getInvoice = $sql->fetchAll();
+    $getInvoice = $sql->fetch();
     return $getInvoice;
 }
 
