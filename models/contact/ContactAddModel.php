@@ -64,6 +64,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 
+        if (empty(trim($_POST["lastname"]))) 
+        {
+            // si vide 
+            $lastname_Error = "Please enter a lastname.";
+        } 
+
+    else 
+        {
+            // si correct on attribue applique htmlspecialchars
+            $lastname = htmlspecialchars($_POST["lastname"]);
+            
+            // si caractères spéciaux
+            if (!preg_match("/^[a-zA-Z ]*$/", $lastname)) 
+
+                
+                {   // Message d'erreurs
+                    $lastname_Error = "Only letters and white space allowed";   
+                }
+        }
+
+
 
 // fin de if _POST   
 }
