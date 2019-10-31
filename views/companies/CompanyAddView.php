@@ -42,7 +42,7 @@ include "components/navbar.php";
 
 <!-- Script bootstrap  -->
 <?php 
-include('components/scripts.php') 
+include('components/scripts.php');
 
 // Inclure Footer ...
 include "components/footer.php";
