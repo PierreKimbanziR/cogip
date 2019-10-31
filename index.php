@@ -12,19 +12,6 @@ require 'controllers/Controller.php';
 $url         = $_GET['p'];
 $explode_url = explode('/', $url);
 
-// Debug router
-// echo "<pre>";
-// print_r($explode_url);
-// echo "</pre>";
-
-// echo "<pre>";
-// print_r($_POST);
-// echo "</pre>";
-
-// echo "<pre>";
-// print_r($_GET);
-// echo "</pre>";
-
 //----------
 //  HOME
 //----------
@@ -99,6 +86,8 @@ if ($explode_url[0] == 'home') {
         showInvoices();
     }
 
+} elseif ($explode_url[0] == 'admin') {
+    showDashboard();
 } else {
     header('Location: home');
 }

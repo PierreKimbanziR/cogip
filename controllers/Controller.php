@@ -9,11 +9,8 @@ function homePage()
     require 'views/HomePage.php';
 }
 
-function post()
+function showDashboard()
 {
 
-    $post     = getPost($_GET['id']);
-    $comments = getComments($_GET['id']);
-
-    require 'postView.php';
+    require 'adminDashboard.php';
 }
