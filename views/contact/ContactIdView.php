@@ -26,6 +26,8 @@ $email = $contact['email'];
 
 <?php
 // Inclure Footer ...
+include "components/scripts.php";
+
 include "components/footer.php";
 
 ?>
