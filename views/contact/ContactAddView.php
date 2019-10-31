@@ -30,10 +30,10 @@ include "components/navbar.php";
         </div>
         <div>
 
-        <select name="company" class="form-control">
+    <select name="company" class="form-control">
     <option value="0" selected>Please select a company</option>
-    <option value="Company 1">Company 1</option>
-    <option value="Company 2">Company 2</option>
+    <option value="1">Company 1</option>
+    <option value="2">Company 2</option>
     </select>
     </div>
 

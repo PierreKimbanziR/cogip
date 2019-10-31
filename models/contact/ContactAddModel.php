@@ -1,13 +1,10 @@
 <?php
 // http://localhost/cogip/contacts/create
 // Initialiser variables
-$firstname=$lastname=$company=$email=$telephone="xxxx";
+$firstname=$lastname=$company=$email=$telephone="";
 
 // Initialiser variables erreurs
 $firstname_Error=$lastname_Error=$company_Error=$email_Error=$telephone_Error="";
-
-//Valeur FALSE envoi formulaire
-// $formSent = false;
 
 // -----------------------------------------------------------------------------
 // Checker si envoi a été par _POST (et non _GET = spam)
@@ -33,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     else // si ok on applique un htmlspecialchars
         {
             $company = htmlspecialchars($_POST["company"]);
+            $companyV=$company;
         }
 
     // -----------------------------------------------------------------------------
@@ -53,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
                 
                 {   // Message d'erreurs
-                    $firstname_Error = "Only letters and white space allowed";   
+                    $firstname_Error = "Only letters and white space allowed (fn)";   
                 }
         }
 
@@ -75,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             // si caractères spéciaux
             if (!preg_match("/^[a-zA-Z ]*$/", $lastname))          
                 {   // Message d'erreurs
-                    $lastname_Error = "Only letters and white space allowed";   
+                    $lastname_Error = "Only letters and white space allowed (ln)";   
                 }
         }
 
@@ -88,7 +86,6 @@ if (empty(trim($_POST["email"])))
     } 
 
 else 
-
     {
         $email = htmlspecialchars($_POST["email"]);
 
@@ -101,73 +98,79 @@ else
 // -----------------------------------------------------------------------------
 // Vérifier Phone
 
-function validate_phone_number($phone)
-{
-     // On peut utiliser +, - et . dans le numéro
-     $filtered_phone_number = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);       
-    // Retirer "-" du numéro
-     $phone_to_check = str_replace("-", "", $filtered_phone_number);    
-    // Check la longueur du numéro (Belgique)
-    if (strlen($phone_to_check) < 10 || strlen($phone_to_check) > 14) 
-    
+    function validate_phone_number($telephone)
+    {
+        if (empty(trim($_POST["firstname"]))) 
         {
-            return false;			
+            // si vide 
+            $telephone = "Please enter a telephone number.";
+        } 
+
+        else
+
+        {
+                // On peut utiliser +, - et . dans le numéro
+                $filtered_phone_number = filter_var($telephone, FILTER_SANITIZE_NUMBER_INT);       
+                // Retirer "-" du numéro
+                $phone_to_check = str_replace("-", "", $filtered_phone_number);    
+                // Check la longueur du numéro (Belgique)
+                if (strlen($phone_to_check) < 10 || strlen($phone_to_check) > 14) 
+                
+                    {
+                        return false;			
+                    }
+                
+                else 
+                
+                    {
+                            return true;
+                    }	
         }
-    
-    else 
-    
-        {
-               return true;
-         }	
-}
+    }
 
 // Appel fonction validate_phone_number
 $telephone = htmlspecialchars($_POST['telephone']);
 if (validate_phone_number($telephone) == true) 
     {
-    // echo "Phone number is valid";
+        $telephoneV=$telephone;
     } 
 
 else 
 
     {
         $telephone_Error="Invalid phone number";
-        echo "Invalid phone number";
+        //echo "Invalid phone number";
     }
 
+// Si envoyé et error != ""
+if (empty($telephone_Error) && empty($firstname_Error) && empty($email_Error) && empty($telephone_Error) && empty($company_Error))
 
+        {
+        // connexion DB
+        global $conn;
+        
+        $sql = "INSERT INTO contacts (firstname,lastname,email,telephone,workingAt) VALUES('$firstname','$lastname','$email','$telephoneV','$company');";
 
-// fin de if _POST   
+            if ($conn->query($sql)) 
+                {
+                    echo '<p>Ajouté à la DB</p>';
+                    header('location: se-connecter.php');
+                } 
+
+            else 
+                {
+                    echo '<p>Problème de DB</p>';
+                }
+        }
+
+// fin de if _POST  
 }
 
 
-
-
-// function addContact($id)
-// {
-    
-//     // Connexion à la DB Mdp, Host ...
-//     include "config/db.php";
-
-//     $stmt = $conn->prepare("SELECT contacts.*, companies.name as companyName FROM contacts LEFT JOIN companies ON contacts.workingAt=companies.id WHERE contacts.id = '$id'");
-
-//     $stmt->execute();
-
-//     $row = $stmt->fetch();
-//     return $row;
-// }
-
-
-// test variable
-// $firstname=$_POST['firstname'];
-// $lastname=$_POST['lastname'];
-// $company=$_POST['company'];
-
-// $email=$_POST['email'];
-// $telephone=$_POST['telephone'];
-echo $firstname_Error.' / ';
-echo $lastname_Error.' / ';
-echo $email_Error.' / ';
-echo $company_Error.' / ';
-echo $telephone_Error.' / ';
-echo $firstname_Error;
+// test Error
+// echo $firstname_Error.' / ';
+// echo $lastname_Error.' / ';
+// echo $email_Error.' / ';
+// echo $company_Error.' / ';
+// echo $telephone_Error.' / ';
+// echo $firstname_Error;
