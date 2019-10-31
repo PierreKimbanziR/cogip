@@ -23,6 +23,6 @@ function createCompany()
 {
     require 'models/companies/CompanyAddModel.php';
     $page_title='Add Company';
-    include 'views/company/CompanyAddView.php';
+    include 'views/companies/CompanyAddView.php';
 }
 

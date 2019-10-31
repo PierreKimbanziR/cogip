@@ -16,17 +16,17 @@ include "components/navbar.php";
 
     <div><hr>
     <label for="Ccountry" class="w-100 p-2">Company country : </label>
-    <input title="Ccountry" type="text" name="Ccountry" placeholder="Ccountry" size="22" maxlength="30" required>
+    <input title="Ccountry" type="text" name="Ccountry" placeholder="Company country" size="22" maxlength="30" required>
     </div>
     
     <div><hr>
     <label for="Vat" class="w-100 p-2"> Company Vat : </label>
-    <input title="Vat" type="number" name="Vat" placeholder="Vat" size="22" maxlength="30" required>
+    <input title="Vat" type="number" name="Vat" placeholder="Company Vat" size="22" maxlength="30" required>
     </div>
 
     <div><hr>
     <label for="Crole" class="w-100 p-2">Company role : </label>
-    <input title="Crole" type="text" name="Crole" placeholder="Crole" size="22" maxlength="30" required>
+    <input title="Crole" type="text" name="Crole" placeholder="Company role" size="22" maxlength="30" required>
     </div>
 
     <div><hr>
@@ -42,7 +42,7 @@ include "components/navbar.php";
 
 <!-- Script bootstrap  -->
 <?php 
-include('components/scripts.php') 
+include('components/scripts.php');
 
 // Inclure Footer ...
 include "components/footer.php";
