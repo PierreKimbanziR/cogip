@@ -19,11 +19,12 @@ function getContacts()
 // Retourner le résultat dans $row
 //getContacts();
 
-//----------------------------
+//---------------------------- Afficher les 5 derniers contacts
 
 function getLastContacts()
 {
     // Connexion à la DB Mdp, Host ...
+    // Variable Global équivalent à include "config/db.php";
     global $conn;
 
     // Prepare la conn, Selection de tous de la table contacts
