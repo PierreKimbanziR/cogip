@@ -3,7 +3,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="/cogip/"> COGIP.COM</a>
+        <a href="/cogip/"> COGIP.COM</a> - La COGIP c'est super !
     </div>
     <!-- Copyright -->
 
