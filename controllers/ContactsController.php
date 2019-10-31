@@ -31,7 +31,6 @@ function showContactId($id)
 // Affichage Add Contact
 
 function createContact()
-
 {
     // importer Modèle ContactAddModel / liaison DB
     require 'models/contact/ContactAddModel.php';
