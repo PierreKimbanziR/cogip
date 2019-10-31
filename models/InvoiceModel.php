@@ -17,9 +17,9 @@ function getInvoices()
 function getInvoice($invoiceID)
 {
     global $conn;
-    $sql = $conn->prepare("SELECT * FROM invoices WHERE id = ?");
+    $sql = $conn->prepare("SELECT * FROM invoices LEFT JOIN companies ON invoices.clientType = 0 AND invoices.companyId = companies.id LEFT JOIN contacts ON invoices.clientType = 1 AND invoices.contactId = contacts.id WHERE invoices.id = ?");
     $sql->execute(array($invoiceID));
-    $getInvoice = $sql->fetch();
+    $getInvoice = $sql->fetchAll();
     return $getInvoice;
 }
 
@@ -37,3 +37,11 @@ function addInvoice($invoiceNumber, $clientID, $clientType, $description, $amoun
 //Modify an invoice in the database
 function modifyInvoice($invoiceNumber)
 {}
+
+function showLatestsInvoices()
+{
+    global $conn;
+    $sql = $conn->prepare("SELECT invoices.*, companies.name companyName, contacts.firstname contactFirst, contacts.lastname contactLast FROM invoices LEFT JOIN companies ON invoices.clientType = 0 AND invoices.companyId = companies.id LEFT JOIN contacts ON invoices.clientType = 1 AND invoices.contactId = contacts.id ORDER BY invoices.createdAt LIMIT 5");
+    $sql->execute();
+    $showLatestsInvoices = $sql->fetchAll();
+}

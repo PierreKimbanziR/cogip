@@ -17,7 +17,15 @@ $date = explode(" ", $invoice['createdAt']);
     </div>
     <div class="row pt-5">
         <div class="col-md-3">
-            Je remplirais les infos du client plus tard
+            <?php
+            print_r($invoice);
+            echo $invoice['clientType'];
+            if ($invoice['clientType'] == 0) {
+                echo "compagny";
+            } else {
+                echo 'personne';
+            }
+            ?>
         </div>
         <div class="col-md-3 offset-6">
             <?= $date[0] ?><br>
