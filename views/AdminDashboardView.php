@@ -14,200 +14,104 @@ include "components/navbar.php";
         <button type="button" onclick="window.location.href = 'companies/create'"
             class="btn btn-outline-danger waves-effect"><i class="fas fa-plus"></i> Add Company</button>
     </div>
-    <div class="row mt-5 d-flex justify-content-center">
+    <div class="row mt-5 mb-5 d-flex justify-content-center">
         <div class="col-8 border shadow" style="min-height:250px;">
             <canvas id="lineChart"></canvas>
         </div>
     </div>
     <div class="row mt-4">
-        <h3>Latest Invoices</h3>
+        <h4>Latest Invoices</h4>
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th class="th-sm">
-                        Name
+                        Invoice #
                     </th>
-                    <th class="th-sm">Position
+                    <th class="th-sm">Date
                     </th>
-                    <th class="th-sm">Office
+                    <th class="th-sm">Client
                     </th>
-                    <th class="th-sm">Age
-                    </th>
-                    <th class="th-sm">Start date
+                    <th class="th-sm">Amount
                     </th>
                     <th class="th-sm">
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td  class="text-center pointer"><i class="fas fa-trash-alt"></i></td>
+                <?php foreach ($lastInvoices as $invoice): ?>
+                <tr id="<?=$invoice['id']?>">
+                    <td><?=$invoice['invoiceNumber']?></td>
+                    <td><?=explode(' ', $invoice['createdAt'])[0]?></td>
+                    <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
+                    </td>
+                    <td class="text-right"><?=$invoice['amount']?> €</td>
+                    <td class="text-center"><i class="fas fa-trash-alt pointer"></i></td>
                 </tr>
-                <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td class="text-center pointer"><i class="fas fa-trash-alt"></i></td>
-                </tr>
-                <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009/01/12</td>
-                    <td class="text-center pointer"><i class="fas fa-trash-alt"></i></td>
-                </tr>
-                <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012/03/29</td>
-                    <td class="text-center pointer"><i class="fas fa-trash-alt"></i></td>
-                </tr>
-                <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>33</td>
-                    <td>2008/11/28</td>
-                    <td class="text-center pointer"><i class="fas fa-trash-alt"></i></td>
-                </tr>
+                <?php endforeach?>
             </tbody>
         </table>
     </div>
     <div class="row mt-4">
-        <h3>Last contacts</h3>
+        <h4>Last contacts</h4>
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th class="th-sm">
-                        Name
+                    <th class="th-sm">Firstname
                     </th>
-                    <th class="th-sm">Position
+                    <th class="th-sm">Lastname
                     </th>
-                    <th class="th-sm">Office
+                    <th class="th-sm">Email
                     </th>
-                    <th class="th-sm">Age
+                    <th class="th-sm">Telephone
                     </th>
-                    <th class="th-sm">Start date
+                    <th class="th-sm">Company
                     </th>
-                    <th class="th-sm">Salary
+                    <th class="th-sm">aaa
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
+                <?php foreach ($lastContacts as $contact): ?>
+                <tr id="<?=$contact['id']?>">
+                    <td><?=$contact['firstname']?></td>
+                    <td><?=$contact['lastname']?></td>
+                    <td><?=$contact['email']?></td>
+                    <td><?=$contact['telephone']?></td>
+                    <td><?=$contact['companyName']?></td>
+                    <td class="text-center"><i class="fas fa-trash-alt pointer"></i></td>
                 </tr>
-                <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                </tr>
-                <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009/01/12</td>
-                    <td>$86,000</td>
-                </tr>
-                <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012/03/29</td>
-                    <td>$433,060</td>
-                </tr>
-                <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>33</td>
-                    <td>2008/11/28</td>
-                    <td>$162,700</td>
-                </tr>
+                <?php endforeach?>
             </tbody>
         </table>
     </div>
     <div class="row mt-4">
-        <h3>Last Companies</h3>
+        <h4>Last Companies</h4>
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th class="th-sm">
                         Name
                     </th>
-                    <th class="th-sm">Position
+                    <th class="th-sm">Country
                     </th>
-                    <th class="th-sm">Office
+                    <th class="th-sm">VAT
                     </th>
-                    <th class="th-sm">Age
+                    <th class="th-sm">Role
                     </th>
-                    <th class="th-sm">Start date
-                    </th>
-                    <th class="th-sm">Salary
+                    <th class="th-sm">
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
+                <?php foreach ($lastCompanies as $company): ?>
+                <tr id="<?=$company['id']?>">
+                    <td><?=$company['name']?></td>
+                    <td><?=$company['country']?></td>
+                    <td><?=$company['vat']?></td>
+                    <td><?=($company['role'] == 0) ? 'Client' : 'Fournisseur'?></td>
+                    <td class="text-center"><i class="fas fa-trash-alt pointer"></i></td>
                 </tr>
-                <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                </tr>
-                <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009/01/12</td>
-                    <td>$86,000</td>
-                </tr>
-                <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012/03/29</td>
-                    <td>$433,060</td>
-                </tr>
-                <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>33</td>
-                    <td>2008/11/28</td>
-                    <td>$162,700</td>
-                </tr>
+                <?php endforeach?>
             </tbody>
         </table>
     </div>
@@ -236,7 +140,9 @@ include "components/navbar.php";
 new Chart(document.getElementById("lineChart"), {
     type: 'line',
     data: {
-        labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre'],
+        labels: ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre',
+            'Octobre'
+        ],
         datasets: [{
             data: [1340, 2590, 3400, 543, 2331, 2892, 153, 2700, 783, 2478],
             label: "Jean-Christian",

@@ -41,7 +41,8 @@ function modifyInvoice($invoiceNumber)
 function showLatestsInvoices()
 {
     global $conn;
-    $sql = $conn->prepare("SELECT invoices.*, companies.name companyName, contacts.firstname contactFirst, contacts.lastname contactLast FROM invoices LEFT JOIN companies ON invoices.clientType = 0 AND invoices.companyId = companies.id LEFT JOIN contacts ON invoices.clientType = 1 AND invoices.contactId = contacts.id ORDER BY invoices.createdAt LIMIT 5");
+    $sql = $conn->prepare("SELECT invoices.*, companies.name companyName, contacts.firstname contactFirst, contacts.lastname contactLast FROM invoices LEFT JOIN companies ON invoices.clientType = 0 AND invoices.companyId = companies.id LEFT JOIN contacts ON invoices.clientType = 1 AND invoices.contactId = contacts.id ORDER BY invoices.createdAt DESC LIMIT 5");
     $sql->execute();
     $showLatestsInvoices = $sql->fetchAll();
+    return $showLatestsInvoices;
 }

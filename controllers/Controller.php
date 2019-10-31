@@ -11,7 +11,12 @@ function homePage()
 
 function showDashboard()
 {
-    require 'controllers/contactsController.php';
-    $lastContacts = getLastContacts();
+    require 'models/contact/contactsModel.php';
+    require 'models/InvoiceModel.php';
+    require 'models/companies/CompanyModel.php';
+
+    $lastInvoices  = showLatestsInvoices();
+    $lastContacts  = getLastContacts();
+    $lastCompanies = getLastCompanies();
     require 'views/AdminDashboardView.php';
 }

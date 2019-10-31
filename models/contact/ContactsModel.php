@@ -11,7 +11,6 @@ function getContacts()
     $stmt = $conn->prepare("SELECT contacts.*, companies.name FROM contacts LEFT JOIN companies ON contacts.workingAt=companies.id");
     $stmt->execute();
 
-
     // FetchAll ramène tout de ma DB et mettre le résultat dans $row
     $row = $stmt->fetchAll();
     return $row;
@@ -30,14 +29,10 @@ function getLastContacts()
     // Prepare la conn, Selection de tous de la table contacts
     // $stmt = $conn->prepare("SELECT * FROM contacts");
 
-    $stmt = $conn->prepare("SELECT contacts.*, companies.name FROM contacts LEFT JOIN companies ON contacts.workingAt=companies.id" SORT BY createdAt LIMIT 5);
+    $stmt = $conn->prepare("SELECT contacts.*, companies.name companyName FROM contacts LEFT JOIN companies ON contacts.workingAt=companies.id ORDER BY createdAt DESC LIMIT 5");
     $stmt->execute();
-
 
     // FetchAll ramène tout de ma DB et mettre le résultat dans $row
     $row = $stmt->fetchAll();
     return $row;
 }
-
-
-
