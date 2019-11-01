@@ -10,11 +10,11 @@ This project had been done in october 2019 with
 It is a full Administration Tool written in PHP.
 It can manage contacts, clients, providers, invoices and users.
 
-###Flow Chart
+### Flow Chart
 
 ![Application flowChart](https://github.com/philesgilles/cogip/blob/master/infos/cogip%20flowchart.png "Application FlowChart")
 
-###Database Structure
+### Database Structure
 
 ![Application Database](https://github.com/philesgilles/cogip/blob/master/infos/db-chart.png "Database")
 
