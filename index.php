@@ -17,7 +17,7 @@ $explode_url = explode('/', $url);
 //----------
 
 if ($explode_url[0] == 'home') {
-    homePage();
+    showHome();
 
 //----------
     //  CONTACTS

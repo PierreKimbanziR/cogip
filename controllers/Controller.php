@@ -2,14 +2,14 @@
 
 require 'models/Model.php';
 
-function homePage()
+function showHome()
 {
     $firstname  = getHome();
     $page_title = 'Home';
     require 'views/HomePageView.php';
 }
 
-function showDashboard()
+function dashboardPage()
 {
     require 'models/contact/contactsModel.php';
     require 'models/InvoiceModel.php';
