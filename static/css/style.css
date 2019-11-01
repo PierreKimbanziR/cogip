@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Abel', sans-serif;
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 
 .dataTables_filter {
@@ -52,4 +52,9 @@ footer.page-footer {
 .click,
 .pointer {
   cursor: pointer;
+}
+
+.hoverable,
+.hoverable:hover {
+  transition: all 0.25s ease-in-out;
 }

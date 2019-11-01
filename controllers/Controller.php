@@ -9,7 +9,7 @@ function showHome()
     require 'views/HomePageView.php';
 }
 
-function dashboardPage()
+function showDashboard()
 {
     require 'models/contact/contactsModel.php';
     require 'models/InvoiceModel.php';

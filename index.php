@@ -30,6 +30,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 //----------
 
 if ($explode_url[0] == 'home') {
+    if ($explode_url[1]) {
+        header("location: /cogip/home");
+        exit;
+    }
     showHome();
 
 //----------

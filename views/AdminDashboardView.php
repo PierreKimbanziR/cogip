@@ -22,7 +22,7 @@ include "components/navbar.php";
     <div class="row mt-4">
         <h4>Latest Invoices</h4>
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-            <thead>
+            <thead class="grey darken-3 white-text">
                 <tr>
                     <th class="th-sm">
                         Invoice #
@@ -54,7 +54,7 @@ include "components/navbar.php";
     <div class="row mt-4">
         <h4>Last contacts</h4>
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-            <thead>
+            <thead class="grey darken-3 white-text">
                 <tr>
                     <th class="th-sm">Firstname
                     </th>
@@ -87,7 +87,7 @@ include "components/navbar.php";
     <div class="row mt-4">
         <h4>Last Companies</h4>
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-            <thead>
+            <thead class="grey darken-3 white-text">
                 <tr>
                     <th class="th-sm">
                         Name

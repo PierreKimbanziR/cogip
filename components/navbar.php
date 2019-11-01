@@ -41,11 +41,11 @@
                     aria-haspopup="true" aria-expanded="false">Admin
                 </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" href="/cogip/admin">Dashboard</a>
-                    <a class="dropdown-item" href="/cogip/contacts/create">New Contact</a>
-                    <a class="dropdown-item" href="/cogip/invoices/create">New Invoice</a>
-                    <a class="dropdown-item" href="/cogip/companies/create">New Company</a>
-                    <a class="dropdown-item" href="/cogip/admin/createUser">New User</a>
+                    <a class="dropdown-item" href="/cogip/admin"><i class="fas fa-le fa-chart-line"></i> Dashboard</a>
+                    <a class="dropdown-item" href="/cogip/contacts/create"><i class="fas fa-lg fa-user-circle"></i> New Contact</a>
+                    <a class="dropdown-item" href="/cogip/invoices/create"><i class="fas fa-lg fa-file-invoice-dollar"></i> New Invoice</a>
+                    <a class="dropdown-item" href="/cogip/companies/create"><i class="far fa-lg fa-building"></i> New Company</a>
+                    <a class="dropdown-item" href="/cogip/admin/createUser"><i class="fas fa-lg fa-user-plus"></i> New User</a>
                 </div>
             </li>
             <?php endif?>
@@ -56,8 +56,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-default"
                     aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" href="#">My Account</a>
-                    <a class="dropdown-item" href="/cogip/auth/logout">Log Out</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-lg fa-user-tie"></i> My Account</a>
+                    <a class="dropdown-item" href="/cogip/auth/logout"><i class="fas fa-lg fa-sign-in-alt"></i> Log Out</a>
                 </div>
             </li>
         </ul>

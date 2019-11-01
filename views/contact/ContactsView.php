@@ -26,9 +26,9 @@ include "components/navbar.php";
             <tr id="<?php echo $contact['id']; ?>" class="example hoverable click">
                 <td><?php echo $contact['firstname'] ?></td>
                 <td><?php echo $contact['lastname'] ?></td>
-                <td>@<?php echo $contact['email'] ?></td>
+                <td><?php echo $contact['email'] ?></td>
                 <td><?php echo $contact['telephone'] ?></td>
-                <td><?php echo $contact['name']// name Table companies      ?></td>
+                <td><?php echo $contact['name']// name Table companies       ?></td>
                 <td><?php echo $contact['createdAt'] ?></td>
 
             </tr>
