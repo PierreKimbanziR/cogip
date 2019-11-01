@@ -1,3 +1,7 @@
+<style>
+body {background:rgb(204, 211, 223) !important;;
+}
+</style>
 <?php include 'components/header.php';
 
 global $username_err;
@@ -7,10 +11,11 @@ global $password;
 
 ?>
 
-
-<body>
-    <div class="container">
-        <div class="row d-flex justify-content-center mt-5">
+    <div class="loginPage">
+        <div class="row d-flex justify-content-center mt-3">
+            <img src="/cogip/static/img/cogip-logo2.png" height="150px" alt="">
+        </div>
+        <div class="row d-flex justify-content-center mt-3">
             <div class="col-12 col-md-5 shadow-lg p-3 mb-5 bg-white rounded">
                 <h2>Login</h2>
                 <p>Please fill in your credentials to login.</p>
@@ -33,6 +38,4 @@ global $password;
             </div>
         </div>
     </div>
-
-
     <?php include 'components/footer.php'?>
