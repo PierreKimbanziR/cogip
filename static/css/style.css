@@ -3,23 +3,38 @@
 body {
   font-family: 'Abel', sans-serif;
   font-size: 1.3em;
-  min-height: 100vh !important;
 }
 
 .dataTables_filter {
   float: right;
 }
 
-.sorting_asc:after {
-  content: '\25B2';
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  cursor: pointer;
+  *cursor: hand;
+  background-repeat: no-repeat;
+  background-position: center right;
 }
 
-.sorting_desc:after {
-  content: '\25BC';
+table.dataTable thead .sorting {
+  background-image: url('../img/sort_both.png');
+}
+
+table.dataTable thead .sorting_asc {
+  background-image: url('../img/sort_asc.png');
+}
+
+table.dataTable thead .sorting_desc {
+  background-image: url('../img/sort_desc.png');
 }
 
 .container {
   margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 header {
@@ -27,9 +42,11 @@ header {
   background-size: 100% 100%;
 }
 
-.page-footer {
-  position: relative;
-  bottom: -32px !important;
+footer.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
 }
 
 .click,

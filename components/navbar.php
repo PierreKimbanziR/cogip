@@ -12,13 +12,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link active" href="/cogip/home">Home </a>
+            <li class="nav-item <?php echo ($page_title == 'Home') ? 'active' : '' ?>">
+                <a class="nav-link" href="/cogip/home">Home </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?php echo ($page_title == 'Invoices') ? 'active' : '' ?>
+">
                 <a class="nav-link" href="/cogip/invoices">Invoices</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown <?php echo ($page_title == 'Companies') ? 'active' : '' ?>
+">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Companies
                 </a>
@@ -28,7 +30,7 @@
                     <a class="dropdown-item" href="/cogip/companies">Providers</a>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?php echo ($page_title == 'Contacts') ? 'active' : '' ?>">
                 <a class="nav-link" href="/cogip/contacts">Contacts</a>
             </li>
         </ul>
@@ -43,6 +45,7 @@
                     <a class="dropdown-item" href="/cogip/contacts/create">New Contact</a>
                     <a class="dropdown-item" href="/cogip/invoices/create">New Invoice</a>
                     <a class="dropdown-item" href="/cogip/companies/create">New Company</a>
+                    <a class="dropdown-item" href="/cogip/admin/createUser">New User</a>
                 </div>
             </li>
             <?php endif?>

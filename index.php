@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: auth/login");
-    exit;
-}
 
 include "config/db.php";
 
@@ -11,6 +7,23 @@ require 'controllers/Controller.php';
 
 $url         = $_GET['p'];
 $explode_url = explode('/', $url);
+
+if ($explode_url[0] == 'auth') {
+    require 'controllers/authController.php';
+    if ($explode_url[1] == 'logout') {
+        logout();
+        return;
+    } else {
+        login();
+        return;
+    }
+}
+
+//IF NOT LOGGED IN
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: auth/login");
+    exit;
+}
 
 //----------
 //  HOME

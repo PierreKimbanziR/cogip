@@ -5,7 +5,8 @@ function showContacts()
     // importer Modèle contactS / liaison DB
     require 'models/contact/ContactsModel.php';
     $contacts   = getContacts();
-    $page_title = 'View Contacts';
+    $page_title = 'Contacts';
+
     //print_r($contacts);
     // importer View contactS
     include 'views/contact/ContactsView.php';
@@ -19,7 +20,7 @@ function showContactId($id)
     // importer Modèle contactId /  / liaison DB
     require 'models/contact/ContactIdModel.php';
     $contact    = getContact($id);
-    $page_title = 'View Contact';
+    $page_title = 'Contacts';
     $email      = $contact['email'];
     //print_r($contact);
     // importer View contactS
