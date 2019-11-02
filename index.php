@@ -8,6 +8,8 @@ require 'controllers/Controller.php';
 $url         = $_GET['p'];
 $explode_url = explode('/', $url);
 
+//First check if need to login or logout
+
 if ($explode_url[0] == 'auth') {
     require 'controllers/authController.php';
     if ($explode_url[1] == 'logout') {
@@ -19,7 +21,8 @@ if ($explode_url[0] == 'auth') {
     }
 }
 
-//IF NOT LOGGED IN
+//IF NOT LOGGED IN => login
+
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: auth/login");
     exit;
