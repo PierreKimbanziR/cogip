@@ -1,5 +1,7 @@
 <?php
 
+require 'models/adminModel.php';
+
 function showDashboard()
 {
     require 'models/contact/contactsModel.php';
@@ -14,25 +16,35 @@ function showDashboard()
 
 function showUsers()
 {
-    //
+    $users = getUsers();
 }
 
 function showUserId($id)
 {
-    //
+    $user = getUser($id);
 }
 
 function createUser()
 {
-    //
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        addUser();
+    } else {
+        createUserView();
+    }
 }
 
 function updateUser($id)
 {
-    //
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        patchUser();
+    } else {
+        getUser($id);
+        createUserView();
+    }
+
 }
 
 function deleteUser($id)
 {
-
+    removeUser($id)();
 }
