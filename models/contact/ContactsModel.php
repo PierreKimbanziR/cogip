@@ -3,7 +3,7 @@
 function getContacts()
 {
     // Connexion à la DB Mdp, Host ...
-    include "config/db.php";
+    global $conn;
 
     // Prepare la conn, Selection de tous de la table contacts
     // $stmt = $conn->prepare("SELECT * FROM contacts");

@@ -12,5 +12,3 @@ function getCompanies()
     return $row;
 
 }
-
-getCompanies();
