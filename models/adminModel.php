@@ -19,17 +19,17 @@ function getUser($id)
     return $row;
 }
 
-function createUser()
+function addUser()
 {
     //
 }
 
-function updateUser($id)
+function patchUser($id)
 {
     //
 }
 
-function deleteUser($id)
+function dropUser($id)
 {
     //
 }

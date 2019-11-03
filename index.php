@@ -107,6 +107,7 @@ if ($explode_url[0] == 'home') {
     }
 
 } elseif ($explode_url[0] == 'admin') {
+    require "controllers/adminController.php";
     showDashboard();
 } else {
     header('Location: home');
