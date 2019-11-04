@@ -10,13 +10,13 @@ include "components/navbar.php";
     <form method="POST" action="">
 
     <div>   
-    <label for="Cname" class="w-100 p-2">Company Name: </label>
-    <input title="Cname" type="text" name="name" placeholder="Company name" size="22" maxlength="30" autofocus required>
+    <label for="name" class="w-100 p-2">Company Name: </label>
+    <input title="name" type="text" name="name" placeholder="Company name" size="22" maxlength="30" autofocus required>
     </div>
 
     <div><hr>
-    <label for="Ccountry" class="w-100 p-2">Company country: </label>
-	<select class="w-100 p-2" id="country" name="country" placeholder="Company country"  maxlength ="30" required >
+    <label for="country" class="w-100 p-2">Company country: </label>
+	<select class="w-100 p-2" id="country" name="country" placeholder="Company country"  maxlength ="30" title='role' required >
     <option value='0'>--</option>
 	<option value="AF">Afghanistan</option>
 	<option value="AX">Åland Islands</option>
@@ -277,7 +277,7 @@ include "components/navbar.php";
     </div>
 
     <div><hr>
-    <label for="Crole" class="w-100 p-2">Company role : </label>
+    <label for="role" class="w-100 p-2">Company role : </label>
     <select class="w-100 p-2" id="role" name="role" placeholder="Company role"  maxlength ="30" title ="role" required >
     <option value ='0'>--</option>
     <option value ="provider">Provider</option>
@@ -286,7 +286,7 @@ include "components/navbar.php";
 
     <div><hr>
     <label for="Telephone" class="w-100 p-2">Telephone : </label>
-    <input title="Telephone" type="text" name="telephone" placeholder="Telephone" size="22" maxlength="30" required>
+    <input title="Telephone" type="text" name="telephone" placeholder="Telephone" size="22" maxlength="30" >
     </div>
 
     <div>
