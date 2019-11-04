@@ -58,3 +58,11 @@ footer.page-footer {
 .hoverable:hover {
   transition: all 0.25s ease-in-out;
 }
+
+.help-block {
+  color: red;
+}
+
+.has-error > input {
+  border-color: red;
+}

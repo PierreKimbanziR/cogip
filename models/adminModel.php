@@ -184,7 +184,8 @@ function patchUser($id)
 
 function dropUser($id)
 {
-    echo $id;
-    $stmt = $conn->exec("DELETE FROM users WHERE id = ?");
-    //header('location: /cogip/admin/users');
+    global $conn;
+    $stmt = $conn->prepare("DELETE FROM users WHERE id = '$id'");
+    $stmt->execute();
+    header('location: /cogip/admin/users');
 }
