@@ -37,9 +37,12 @@ include "components/navbar.php";
                 <td><?=($user['userLevel'] == 3) ? 'SuperAdmin' : 'COGIP Employee' // name Table companies              ?>
                 </td>
                 <td><?=$user['createdAt']?></td>
-                <td class="d-flex justify-content-between"><a href="/cogip/admin/users/<?=$user['id']?>"><i class="far fa-lg fa-eye"></i></a> <a href="/cogip/admin/users/update/<?=$user['id']?>"><i class="fas fa-lg fa-user-edit"></i></a> <a
-                        href="/cogip/admin/users/delete/<?=$user['id']?>"><i
-                            class="fas fa-lg fa-trash-alt pointer"></i></a></td>
+                <td class="d-flex justify-content-between"><a href="/cogip/admin/users/<?=$user['id']?>"><i
+                            class="far fa-lg fa-eye"></i></a> <a href="/cogip/admin/users/update/<?=$user['id']?>"><i
+                            class="fas fa-lg fa-user-edit"></i></a>
+                    <i class="fas fa-lg fa-trash-alt pointer" itemid="<?=$user['id']?>"
+                        itemname="<?=$user['username']?>" onClick="showModal()" data-toggle="modal"
+                        data-target="#deleteModal"></i></td>
             </tr>
             <!-- Fin de endforeach  -->
             <?php endforeach?>
@@ -47,7 +50,35 @@ include "components/navbar.php";
         </tbody>
     </table>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php
-include "components/scripts.php";
+include "components/scripts.php";?>
+<script>
+    function showModal() {
+
+console.log("haaaaa");
+    }
+</script>
+<?php
 include "components/footer.php";
