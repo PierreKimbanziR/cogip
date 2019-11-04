@@ -8,6 +8,8 @@ $firstname_Error=$lastname_Error=$company_Error=$email_Error=$telephone_Error=""
 
 // -----------------------------------------------------------------------------
 // Checker si envoi a été par _POST (et non _GET = spam)
+function addContact(){
+    echo "adding....";
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
 
@@ -154,6 +156,9 @@ else
 if (empty($telephone_Error) && empty($firstname_Error) && empty($email_Error) && empty($telephone_Error) && empty($company_Error))
 
         {
+            echo "no errors";
+
+
         // connexion DB
         global $conn;
         $sql = "INSERT INTO contacts (firstname,lastname,email,telephone,workingAt) VALUES('$firstname','$lastname','$email','$telephoneV','$company');";
@@ -172,4 +177,21 @@ if (empty($telephone_Error) && empty($firstname_Error) && empty($email_Error) &&
 
 // fin de if _POST  
 }
+}
+// test variable
+// $firstname=$_POST['firstname'];
+// $lastname=$_POST['lastname'];
+// $company=$_POST['company'];
 
+// $email=$_POST['email'];
+// $telephone=$_POST['telephone'];
+// echo $firstname.' / ';
+// echo $lastname.' / ';
+// echo $email.' / ';
+// echo $company.' / ';
+// echo $telephone.' / ';
+echo $firstname_Error;
+echo $lastname_Error;
+echo $company_Error;
+echo $email_Error;
+echo $telephone_Error;
