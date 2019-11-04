@@ -1,24 +1,31 @@
 <?php
 
 
-function createCompany() {
+
+
+
+
+$name=$country=$vat=$role='';
+$name_error=$country_error=$vat_error=$role_error='';
+
+
+
+//function createCompany() {
     
 
 
-$name=$country=$vat=$role=$telephone='';
-$name_error=$country_error=$vat_error=$role_error='';
 
 
 
 
 if ($_SERVER['REQUEST_METHOD']=='POST'){
 
-    if (empty(trim($_POST['name']))){
+    if (empty(trim($_POST['companyname']))){
         $name_error ="Name of the company is required.";
     }
 
     else  {
-        $name=htmlspecialchars($_POST['name']);
+        $name=htmlspecialchars($_POST['companyname']);
  
          if (!preg_match('/^[a-z][a-z\s]*$/',$name))
          {
@@ -55,12 +62,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
 
 
 
-    if(empty(trim($_POST['role']))){
+    if(empty(trim($_POST['companyrole']))){
         $role_error='You must select the company role.';
         echo $role_error;
     }
     else {
-    $role=htmlspecialchars($_POST['role']);
+    $role=htmlspecialchars($_POST['companyrole']);
 }
 
 
@@ -73,17 +80,16 @@ if (empty($name_error) && empty($country_error) && empty($vat_error) && empty($r
     {
         global $conn; 
         
-        $sql = "INSERT INTO companies (name, country, vat, role) VALUES($name, $country, $vat, $role,);";
+        $sql = "INSERT INTO companies (name, country, vat, role) 
+        VALUES('$name', '$country', '$vat', '$role');";
 
-        if($conn->query($sql))
-        {
-            echo '<p> Ajouté à la DB </p>';
-            header('location: /cogip:companies');
-        }
-        else 
-        {
-            echo '<p>  Problèe de Db';
-        }
+       if ($conn->query($sql)){
+          // echo "gg bro";
+           //header('location: /cogip/companies');
+       }
+       else {
+           //echo "va dormir bro";
+       }
+        
     }
-}
 }

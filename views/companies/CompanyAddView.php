@@ -11,12 +11,12 @@ include "components/navbar.php";
 
     <div>   
     <label for="name" class="w-100 p-2">Company Name: </label>
-    <input title="name" type="text" name="name" placeholder="Company name" size="22" maxlength="30" autofocus required>
+    <input title="companyname" type="text" name="companyname" placeholder="Company name" size="22" maxlength="30" autofocus required id ='companyname'>
     </div>
 
     <div><hr>
     <label for="country" class="w-100 p-2">Company country: </label>
-	<select class="w-100 p-2" id="country" name="country" placeholder="Company country"  maxlength ="30" title='role' required >
+	<select class="w-100 p-2" id="country" name="country" placeholder="Company country"  maxlength ="30" title='country' required >
     <option value='0'>--</option>
 	<option value="AF">Afghanistan</option>
 	<option value="AX">Åland Islands</option>
@@ -278,10 +278,10 @@ include "components/navbar.php";
 
     <div><hr>
     <label for="role" class="w-100 p-2">Company role : </label>
-    <select class="w-100 p-2" id="role" name="role" placeholder="Company role"  maxlength ="30" title ="role" required >
-    <option value ='0'>--</option>
-    <option value ="provider">Provider</option>
-    <option value ='client'>Client</option>
+    <select class="w-100 p-2" id="companyrole" name="companyrole" placeholder="Company role"  maxlength ="30" title ="companyrole" required >
+    
+    <option value ="1">Provider</option>
+    <option value ='0'>Client</option>
     </div>
 
     <div><hr>
