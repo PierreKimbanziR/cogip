@@ -10,7 +10,7 @@ function getContact($id)
     // $stmt = $conn->prepare("SELECT contacts.id, firstname, lastname, telephone, email, workingAt, contacts.createdAt, companies.name FROM contacts INNER JOIN companies ON contacts.id = companies.id WHERE contacts.id='$id'");
     // Mettre 'name' 
 
-    // Sélection tous * de contact que l'on met dans AS companyName
+    // Sélection tous * de contact + companies.name que l'on met dans AS companyName
       $stmt = $conn->prepare("SELECT contacts.*, companies.name as companyName FROM contacts LEFT JOIN companies ON contacts.workingAt=companies.id WHERE contacts.id = '$id'");
 
     $stmt->execute();

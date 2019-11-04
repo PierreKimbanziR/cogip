@@ -34,6 +34,11 @@ function createContact()
 {
     // importer Modèle ContactAddModel / liaison DB
     require 'models/contact/ContactAddModel.php';
+
+    // Reprendre requète existante CompaniesModel.php
+    require 'models/companies/CompaniesModel.php';
+    $compagnies=getCompanies();
+    
     $page_title = 'Add Contact';
     // importer View Add - Va servir également pour Update
     include 'views/contact/ContactAddView.php';
@@ -41,3 +46,14 @@ function createContact()
 
 // ----------------------------------------------------------
 // Affichage Update Contact
+
+
+function updateContact($id)
+{
+    // importer Modèle ContactAddModel / liaison DB
+    require 'models/contact/ContactPatchModel.php';
+    echo $id;
+    $page_title = 'Modify Contact';
+    // importer View Add - Va servir également pour Update
+    include 'views/contact/ContactAddView.php';
+}
