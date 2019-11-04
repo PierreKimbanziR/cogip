@@ -33,27 +33,26 @@ function createUser()
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         addUser();
-    } else {
-        $postPath = "create";
-        include "views/admin/createUserView.php";
     }
+    $postPath   = "create";
+    $page_title = 'Admin - Create new User';
+    include "views/admin/createUserView.php";
 }
 
 function updateUser($id)
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        patchUser();
-    } else {
-        getUser($id);
-        $postPath = "update/$id";
-
-        include "views/admin/createUserView.php";
-
+        patchUser($id);
     }
+    $user       = getUser($id);
+    $postPath   = "update/$id";
+    $page_title = 'Admin - Update User';
+    include "views/admin/createUserView.php";
 
 }
 
 function deleteUser($id)
 {
-    dropUser($id)();
+    echo $id;
+    dropUser($id);
 }

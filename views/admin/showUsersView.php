@@ -5,6 +5,12 @@ include "components/navbar.php";
 <div class="container">
 
     <h1 class="text-center">List of users</h1>
+    <div class="py-4 row d-flex justify-content-center">
+
+        <button type="button" onclick="window.location.href = '/cogip/admin/users/create'"
+            class="btn btn-outline-danger waves-effect"><i class="fas fa-plus"></i> Add New User</button>
+
+    </div>
     <table id="searchShow" class="table table-striped table-bordered table-sm">
         <thead class="grey darken-3 white-text">
             <tr>
@@ -28,10 +34,10 @@ include "components/navbar.php";
                 <td><?=$user['firstname']?></td>
                 <td><?=$user['lastname']?></td>
                 <td><?=$user['email']?></td>
-                <td><?=($user['level'] == 3) ? 'SuperAdmin' : 'COGIP Employee' // name Table companies              ?>
+                <td><?=($user['userLevel'] == 3) ? 'SuperAdmin' : 'COGIP Employee' // name Table companies              ?>
                 </td>
                 <td><?=$user['createdAt']?></td>
-                <td class="d-flex justify-content-between"><a href="/cogip/admin/users/<?=$user['id']?>"><i class="far fa-lg fa-eye"></i></a> <a href="/cogip/admin/users/edit/<?=$user['id']?>"><i class="fas fa-lg fa-user-edit"></i></a> <a
+                <td class="d-flex justify-content-between"><a href="/cogip/admin/users/<?=$user['id']?>"><i class="far fa-lg fa-eye"></i></a> <a href="/cogip/admin/users/update/<?=$user['id']?>"><i class="fas fa-lg fa-user-edit"></i></a> <a
                         href="/cogip/admin/users/delete/<?=$user['id']?>"><i
                             class="fas fa-lg fa-trash-alt pointer"></i></a></td>
             </tr>
