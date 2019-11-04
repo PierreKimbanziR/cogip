@@ -42,10 +42,10 @@
                 </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                     <a class="dropdown-item" href="/cogip/admin"><i class="fas fa-le fa-chart-line"></i> Dashboard</a>
-                    <a class="dropdown-item" href="/cogip/contacts/create"><i class="fas fa-lg fa-user-circle"></i> New Contact</a>
-                    <a class="dropdown-item" href="/cogip/invoices/create"><i class="fas fa-lg fa-file-invoice-dollar"></i> New Invoice</a>
+                    <a class="dropdown-item" href="/cogip/admin/users"><i class="fas fa-lg fa-user"></i> Users</a>
                     <a class="dropdown-item" href="/cogip/companies/create"><i class="far fa-lg fa-building"></i> New Company</a>
-                    <a class="dropdown-item" href="/cogip/admin/createUser"><i class="fas fa-lg fa-user-plus"></i> New User</a>
+                    <a class="dropdown-item" href="/cogip/invoices/create"><i class="fas fa-lg fa-file-invoice-dollar"></i> New Invoice</a>
+                    <a class="dropdown-item" href="/cogip/contacts/create"><i class="fas fa-lg fa-user-circle"></i> New Contact</a>
                 </div>
             </li>
             <?php endif?>
