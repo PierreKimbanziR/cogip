@@ -21,7 +21,11 @@ function getUser($id)
 
 function addUser()
 {
-    //
+    $stmt = $conn->prepare("INSERT INTO users (firstname,lastname,username,password,'$id'");
+    $stmt->execute();
+    $row = $stmt->fetch();
+    return $row;
+
 }
 
 function patchUser($id)

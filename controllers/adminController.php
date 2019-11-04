@@ -11,17 +11,22 @@ function showDashboard()
     $lastInvoices  = showLatestsInvoices();
     $lastContacts  = getLastContacts();
     $lastCompanies = getLastCompanies();
-    require 'views/AdminDashboardView.php';
+    require 'views/admin/AdminDashboardView.php';
 }
 
 function showUsers()
 {
-    $users = getUsers();
+    $users      = getUsers();
+    $page_title = 'Admin - Users';
+    include "views/admin/showUsersView.php";
 }
 
 function showUserId($id)
 {
-    $user = getUser($id);
+    $user       = getUser($id);
+    $page_title = 'Admin - View User';
+    include "views/admin/showUserView.php";
+
 }
 
 function createUser()
@@ -29,7 +34,8 @@ function createUser()
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         addUser();
     } else {
-        createUserView();
+        $postPath = "create";
+        include "views/admin/createUserView.php";
     }
 }
 
@@ -39,7 +45,10 @@ function updateUser($id)
         patchUser();
     } else {
         getUser($id);
-        createUserView();
+        $postPath = "update/$id";
+
+        include "views/admin/createUserView.php";
+
     }
 
 }
