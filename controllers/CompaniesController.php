@@ -21,6 +21,7 @@ function showCompanyId($id)
 function createCompany()
 {
     require 'models/companies/CompanyAddModel.php';
-    $page_title = 'Companies';
+    $page_title = ' Add Companies';
     include 'views/companies/CompanyAddView.php';
+    
 }
