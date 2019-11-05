@@ -11,12 +11,13 @@ include "components/navbar.php";
 
     <div>   
     <label for="name" class="w-100 p-2">Company Name: </label>
-    <input title="companyname" type="text" name="companyname" placeholder="Company name" size="22" maxlength="30" autofocus required id ='companyname'>
+    <input title="companyname" type="text" name="companyname" placeholder="Company name" size="22" maxlength="30" autofocus  id ='companyname' required value="<?php echo $name; ?>">
+	<?php echo $name_error; ?>
     </div>
 
     <div><hr>
     <label for="country" class="w-100 p-2">Company country: </label>
-	<select class="w-100 p-2" id="country" name="country" placeholder="Company country"  maxlength ="30" title='country' required >
+	<select class="w-100 p-2" id="country" name="country" placeholder="Company country"  maxlength ="30" title='country' required value ="<?php echo $country; ?>">
     <option value='0'>--</option>
 	<option value="AF">Afghanistan</option>
 	<option value="AX">Åland Islands</option>
@@ -268,20 +269,21 @@ include "components/navbar.php";
 	<option value="ZM">Zambia</option>
 	<option value="ZW">Zimbabwe</option>
 	</select>
-	<span class ="text-danger"><?php $name_error ?></span>
+	<span class ="text-danger"><?php echo $country_error ?></span>
   </div>
     
     <div><hr>
     <label for="Vat" class="w-100 p-2"> Company Vat : </label>
-    <input title="Vat" type="number" name="vat" placeholder="Company Vat" size="22" maxlength="30" required>
+    <input title="Vat" type="number" name="vat" placeholder="Company Vat" size="22" maxlength="30" required value ="<?php echo $vat_error ?>">
+	<?php echo $vat ?>
     </div>
 
     <div><hr>
     <label for="role" class="w-100 p-2">Company role : </label>
-    <select class="w-100 p-2" id="companyrole" name="companyrole" placeholder="Company role"  maxlength ="30" title ="companyrole" required >
-    
+    <select class="w-100 p-2" id="companyrole" name="companyrole" placeholder="Company role"  maxlength ="30" title ="companyrole" required value ="<?php echo $role ?>">
     <option value ="1">Provider</option>
     <option value ='0'>Client</option>
+	<?php echo $role_error ?>
     </div>
 
     <div><hr>
