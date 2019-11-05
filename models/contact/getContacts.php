@@ -37,3 +37,5 @@ function getLastContacts()
     $row = $stmt->fetchAll();
     return $row;
 }
+
+

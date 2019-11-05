@@ -4,6 +4,7 @@
 include "components/header.php";
 include "components/navbar.php";
 
+// Page Create et update est le même page
 ?>
 
 <div class="container">
@@ -13,7 +14,7 @@ include "components/navbar.php";
         <div>
             <label for="Firstname" class="w-100 p-2">Firstname : </label>
             <input title="Firstname" type="text" name="firstname" placeholder="Firstname" size="22" maxlength="30"
-                autofocus required>
+                autofocus required value="<?php echo $firstname; ?>">
                 <?php echo $firstname_Error; ?>
         </div>
 
@@ -21,22 +22,29 @@ include "components/navbar.php";
             <hr>
             <label for="Lastname" class="w-100 p-2">Lastname : </label>
             <input title="Firstname" type="text" name="lastname" placeholder="Lastname" size="22" maxlength="30"
-                required>
+                required value="<?php echo $lastname; ?>">
                 <?php echo $lastname_Error; ?>
         </div>
 
         <div>
             <hr>
             <label for="Email" class="w-100 p-2">Email : </label>
-            <input title="Email" type="email" name="email" placeholder="Email" size="22" maxlength="30" required><?php echo $email_Error; ?>
+            <input title="Email" type="email" name="email" placeholder="Email" size="22" maxlength="30" required value="<?php echo $email; ?>"><?php echo $email_Error; ?>
         </div>
         <div>
 
     <?php echo $company_Error; ?>
     <select name="company" class="form-control">
     <option value="0" selected>Please select a company</option>
-    <option value="1">Company 1</option>
-    <option value="2">Company 2</option>
+    
+<!-- Importer Companies de la DB du model Companies -->
+    <?php foreach ($compagnies as $company)
+        {
+            echo '<option value="'.$company['id'].'">'.$company['name'].'</option>';
+        }; ?>
+
+<!-- Fin import -->
+
     </select>
     </div>
 
@@ -44,7 +52,7 @@ include "components/navbar.php";
             <hr>
             <label for="Telephone" class="w-100 p-2">Telephone : ex: +32-0-000-00-00 </label>
             <input title="Telephone" type="text" name="telephone" placeholder="+32-0-000-00-00" size="22" maxlength="30"
-                required><?php echo $telephone_Error; ?>
+                required value="<?php echo $telephone; ?>"><?php echo $telephone_Error; ?>
         </div>
 
         <!-- input antiRobot -->
@@ -64,5 +72,4 @@ include "components/navbar.php";
 //include('components/scripts.php')
 
 // Inclure Footer ...
-//include "components/footer.php";
-?>
+include "components/footer.php";
