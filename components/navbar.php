@@ -35,17 +35,22 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
-            <?php if ($_SESSION['level'] == 3): ?>
+            <?php if ($_SESSION['level'] >= 2): ?>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Admin
                 </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                     <a class="dropdown-item" href="/cogip/admin"><i class="fas fa-le fa-chart-line"></i> Dashboard</a>
+                    <?php if ($_SESSION['level'] > 2): ?>
                     <a class="dropdown-item" href="/cogip/admin/users"><i class="fas fa-lg fa-user"></i> Users</a>
-                    <a class="dropdown-item" href="/cogip/companies/create"><i class="far fa-lg fa-building"></i> New Company</a>
-                    <a class="dropdown-item" href="/cogip/invoices/create"><i class="fas fa-lg fa-file-invoice-dollar"></i> New Invoice</a>
-                    <a class="dropdown-item" href="/cogip/contacts/create"><i class="fas fa-lg fa-user-circle"></i> New Contact</a>
+                    <?php endif?>
+                    <a class="dropdown-item" href="/cogip/companies/create"><i class="far fa-lg fa-building"></i> New
+                        Company</a>
+                    <a class="dropdown-item" href="/cogip/invoices/create"><i
+                            class="fas fa-lg fa-file-invoice-dollar"></i> New Invoice</a>
+                    <a class="dropdown-item" href="/cogip/contacts/create"><i class="fas fa-lg fa-user-circle"></i> New
+                        Contact</a>
                 </div>
             </li>
             <?php endif?>
@@ -57,7 +62,8 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-default"
                     aria-labelledby="navbarDropdownMenuLink-333">
                     <a class="dropdown-item" href="#"><i class="fas fa-lg fa-user-tie"></i> My Account</a>
-                    <a class="dropdown-item" href="/cogip/auth/logout"><i class="fas fa-lg fa-sign-in-alt"></i> Log Out</a>
+                    <a class="dropdown-item" href="/cogip/auth/logout"><i class="fas fa-lg fa-sign-in-alt"></i> Log
+                        Out</a>
                 </div>
             </li>
         </ul>

@@ -45,7 +45,14 @@ include "components/navbar.php";
                     <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
                     </td>
                     <td class="text-right"><?=$invoice['amount']?> €</td>
-                    <td class="text-center"><i class="fas fa-trash-alt pointer"></i></td>
+                    <td
+                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center'?>">
+                        <a href="/cogip/invoices/<?=$invoice['id']?>"><i class="far fa-lg fa-eye"></i></a>
+                        <?php if ($_SESSION['level'] > 2): ?>
+                        <a href="/cogip/invoices/update/<?=$company['id']?>"><i class="fas fa-lg fa-edit"></i></a>
+                        <i class="fas fa-lg fa-trash-alt pointer"></i>
+                        <?php endif?>
+                    </td>
                 </tr>
                 <?php endforeach?>
             </tbody>
@@ -66,7 +73,7 @@ include "components/navbar.php";
                     </th>
                     <th class="th-sm">Company
                     </th>
-                    <th class="th-sm">aaa
+                    <th class="th-sm">
                     </th>
                 </tr>
             </thead>
@@ -78,7 +85,14 @@ include "components/navbar.php";
                     <td><?=$contact['email']?></td>
                     <td><?=$contact['telephone']?></td>
                     <td><?=$contact['companyName']?></td>
-                    <td class="text-center"><i class="fas fa-trash-alt pointer"></i></td>
+                    <td
+                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center'?>">
+                        <a href="/cogip/contacts/<?=$contact['id']?>"><i class="far fa-lg fa-eye"></i></a>
+                        <?php if ($_SESSION['level'] > 2): ?>
+                        <a href="/cogip/contacts/update/<?=$company['id']?>"><i class="fas fa-lg fa-edit"></i></a>
+                        <i class="fas fa-lg fa-trash-alt pointer"></i>
+                        <?php endif?>
+                    </td>
                 </tr>
                 <?php endforeach?>
             </tbody>
@@ -109,7 +123,14 @@ include "components/navbar.php";
                     <td><?=$company['country']?></td>
                     <td><?=$company['vat']?></td>
                     <td><?=($company['role'] == 0) ? 'Client' : 'Fournisseur'?></td>
-                    <td class="text-center"><i class="fas fa-trash-alt pointer"></i></td>
+                    <td
+                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center'?>">
+                        <a href="/cogip/companies/<?=$company['id']?>"><i class="far fa-lg fa-eye"></i></a>
+                        <?php if ($_SESSION['level'] > 2): ?>
+                        <a href="/cogip/companies/update/<?=$company['id']?>"><i class="fas fa-lg fa-edit"></i></a>
+                        <i class="fas fa-lg fa-trash-alt pointer"></i>
+                        <?php endif?>
+                    </td>
                 </tr>
                 <?php endforeach?>
             </tbody>
