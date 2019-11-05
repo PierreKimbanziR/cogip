@@ -4,11 +4,46 @@
 include "components/header.php";
 include "components/navbar.php";
 
-// Page Create et update est le même page
+// Rappel des valeurs des variables
+global $firstname_Error;
+global $lastname_Error;
+global $email_Error;
+global $workingAt_Error;
+global $telephone_Error;
+global $workingAt_Error;
+global $company_Error;
+
+global $firstname;
+global $lastname;
+global $email;
+global $workingAt;
+global $telephone;
+global $company;
+
+//Force contact working at to not have error on option company
+// Voir modele update= TRUE pour updateContact($id) FALSE  pour createContact()
+// Valeur 0 (company si ADD )
+if ($update == false) {
+$contact['workingAt'] = 0;
+}
+
+// SI ON UPDATE LE CONTACT, ON REPREND LES DATA DE LA DB
+// TRUE pour updateContact($id) alors on cherche les valeurs existantes de la DB
+// De la fonction getContact($id) -> $contact = getContact($id);
+if ($update == true) {
+    $firstname=$contact["firstname"];
+    $lastname=$contact["lastname"];
+    $email=$contact["email"];
+    $workingAt=$contact["workingAt"];
+    $telephone=$contact["telephone"];
+    $createdAt=$contact["createdAt"];
+}
+
+// Page Create et update
 ?>
 
 <div class="container">
-    <h1 class="text-center">Add an contact</h1>
+    <h1 class="text-center"><?= ($update) ? 'Update ' : 'Add new ' ?> contact</h1>
     <form method="post" action="">
 
         <div>
@@ -34,14 +69,16 @@ include "components/navbar.php";
         <div>
 
     <?php echo $company_Error; ?>
-    <select name="company" class="form-control">
+    <select name="workingAt" class="form-control">
     <option value="0" selected>Please select a company</option>
     
-<!-- Importer Companies de la DB du model Companies -->
-    <?php foreach ($compagnies as $company)
-        {
-            echo '<option value="'.$company['id'].'">'.$company['name'].'</option>';
-        }; ?>
+<!-- Importer Companies de la DB du model Companies dans ADD
+Afficher dans le SELECT sur selected le Nom de la compagnie 
+Si Page ADD valeur 0 -> Please select a company -->
+
+    <?php foreach ($compagnies as $company) : ?>
+        <option value="<?= $company['id'] ?>" <?= ($company['id'] == $contact['workingAt']) ? 'selected' : '' ?> > <?= $company['name'] ?></option>
+     <?php endforeach  ?>
 
 <!-- Fin import -->
 
@@ -62,7 +99,8 @@ include "components/navbar.php";
         <!-- Fin input antiRobot -->
 
         <div>
-            <button name="submit" value="submit" title="Add a new contact !" type="submit">Add a new contact !</button>
+        <!-- Nommer le bouton soit Add ou Update Contact Si True valeur = Update si False Add new -->
+            <button name="submit" value="submit" type="submit"><?= ($update) ? 'Update ' : 'Add new ' ?>contact !</button>
         </div>
     </form>
 </div>

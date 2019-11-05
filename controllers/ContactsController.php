@@ -21,20 +21,27 @@ function showContactId($id)
 
 function createContact()
 {
-    // if ($_SERVER['REQUEST_METHOD'] === 'POST')   
-    // {  
-        //echo"Ceci est un _post";
         require 'models/contact/addContact.php';
+        // Amener les noms des sociétes
         require 'models/companies/CompaniesModel.php';
         $compagnies=getCompanies();       
         $page_title = 'Add Contact';
+        $update = false;
         include 'views/contact/ContactAddView.php';
-    // }
 }
 
 function updateContact($id)
 {
-    require 'models/contact/patchContact.php';
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        require 'models/contact/patchContact.php';
+        patchContact($id);
+    }
+    require 'models/contact/getContact.php';
+    $contact    = getContact($id);
+    $update = true;
+    // Amener les noms des sociétes
+    require 'models/companies/CompaniesModel.php';
+    $compagnies=getCompanies();
     $page_title = 'Modify Contact';
     include 'views/contact/ContactAddView.php';
 }

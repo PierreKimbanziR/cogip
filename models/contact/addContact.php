@@ -29,8 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     else // si ok on applique un htmlspecialchars
         {
-            $company = htmlspecialchars($_POST["company"]);
-            $companyV=$company;
+            $company = htmlspecialchars($_POST["workingAt"]);
         }
 
     // -----------------------------------------------------------------------------
@@ -136,9 +135,4 @@ if (empty($telephone_Error) && empty($firstname_Error) && empty($email_Error) &&
 }
 
 
-// test Error
-// echo $firstname_Error.' / ';
-// echo $lastname_Error.' / ';
-// echo $email_Error.' / ';
-// echo $company_Error.' / ';
-// echo $telephone_Error.' / ';
+
