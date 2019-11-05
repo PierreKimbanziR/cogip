@@ -24,4 +24,4 @@
     var number = button.data('invoiceNumber')
     var modal = $(this)
     modal.find('.modal-title').text('Voulez vous vraiment supprimer la facture ' + number)
-</script>
+</script> */
