@@ -25,3 +25,19 @@ function createCompany()
     include 'views/companies/CompanyAddView.php';
     
 }
+
+function updateCompany($id)
+{
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        require 'models/companies/patchCompany.php';
+        patchCompany($id);
+    }
+    require 'models/companies/CompanyModel.php';
+    $company    = getCompany($id);
+    $update = true;
+    // Amener les noms des sociétes
+    require 'models/companies/CompaniesModel.php';
+    $compagnies=getCompanies();
+    $page_title = 'Modify company';
+    include 'views/companies/CompaniesAddView.php';
+}
