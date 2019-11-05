@@ -36,13 +36,22 @@ function addInvoice()
 {
     global $conn;
     $invoiceNumber = $_POST["invoiceNumber"];
-    $clientID = $_POST["clientId"];
     $clientType = $_POST["clientType"];
     $description = $_POST["description"];
     $amount = $_POST["amount"];
     $type = $_POST["type"];
-    $sql = $conn->prepare("INSERT INTO invoices(invoiceNumber, companyId, contactId, clientType, description, amount, type) VALUES(?, ?, ?, ?, ?, ?)");
-    $sql->execute(array($invoiceNumber, $clientID, $clientType, $description, $amount, $type));
+    if ($_POST["companie"] == "") {
+        $companie = NULL;
+    } else {
+        $companie = $_POST["companie"];
+    }
+    if ($_POST["contact"] == "") {
+        $contact = NULL;
+    } else {
+        $contact = $_POST["contact"];
+    }
+    $sql = $conn->prepare("INSERT INTO invoices(invoiceNumber, companyId, contactId, clientType, description, amount, type) VALUES(?, ?, ?, ?, ?, ?, ?)");
+    $sql->execute(array($invoiceNumber, $companie, $contact, $clientType, $description, $amount, $type));
 }
 
 //Modify an invoice in the database
@@ -56,4 +65,35 @@ function showLatestsInvoices()
     $sql->execute();
     $showLatestsInvoices = $sql->fetchAll();
     return $showLatestsInvoices;
+}
+
+//data for contact select input
+function selectContacts()
+{
+    global $conn;
+    $sql = $conn->prepare("SELECT firstname, lastname, id FROM contacts ORDER BY lastname ASC");
+    $sql->execute();
+    $contacts = $sql->fetchAll();
+    return $contacts;
+}
+
+
+//data for companie select input
+function selectCompanies()
+{
+    global $conn;
+    $sql = $conn->prepare("SELECT name, id FROM companies ORDER BY name ASC");
+    $sql->execute();
+    $companies = $sql->fetchAll();
+    return $companies;
+}
+
+//id of the last invoice
+function lastIdInvoice()
+{
+    global $conn;
+    $sql = $conn->prepare("SELECT id FROM invoices ORDER BY id DESC LIMIT 1");
+    $sql->execute();
+    $lastIdInvoice = $sql->fetch();
+    return $lastIdInvoice;
 }

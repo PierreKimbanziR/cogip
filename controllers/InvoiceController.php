@@ -38,6 +38,10 @@ function createInvoice()
             require "views/InvoiceAddView.php"
         }*/
     } else {
+        $companies = selectCompanies();
+        $contacts = selectContacts();
+        $lastId = lastIdInvoice();
+        $lastId = $lastId['id'] + 1;
         require "views/InvoiceAddView.php";
     }
 }
