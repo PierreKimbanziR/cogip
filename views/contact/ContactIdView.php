@@ -20,7 +20,7 @@ $email = $contact['email'];
 
     <p><strong>Email : </strong><?php echo "<a href='mailto:$email'>$email</a>"; ?></p>
     <p><strong>Phone : </strong><?php echo $contact['telephone']; ?></p>
-    <p><a href="../contacts">Return to contacts</a> | <a href="../contacts/update/<?php echo $id; ?>">Modify</a> | <a href="../contacts/drop/<?php echo $id; ?>">Delete</a></p>
+    <p><a href="../contacts">Return to contacts</a> | <a href="../contacts/update/<?php echo $id; ?>">Modify</a> | <a href="../contacts/delete/<?php echo $id; ?>">Delete</a></p>
 
 </div>
 
