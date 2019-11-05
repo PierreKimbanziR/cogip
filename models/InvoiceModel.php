@@ -24,19 +24,30 @@ function getInvoice($invoiceID)
 }
 
 //Delete an invoice from database
-function deleteInvoice($invoiceID)
+function dropInvoice($invoiceID)
 {
+    global $conn;
     $sql = $conn->prepare("DELETE FROM invoices WHERE id = ?");
     $sql->execute(array($invoiceID));
 }
 
 //Add an invoice to the database
-function addInvoice($invoiceNumber, $clientID, $clientType, $description, $amount, $type)
-{}
+function addInvoice()
+{
+    global $conn;
+    $invoiceNumber = $_POST["invoiceNumber"];
+    $clientID = $_POST["clientId"];
+    $clientType = $_POST["clientType"];
+    $description = $_POST["description"];
+    $amount = $_POST["amount"];
+    $type = $_POST["type"];
+    $sql = $conn->prepare("INSERT INTO invoices(invoiceNumber, companyId, contactId, clientType, description, amount, type) VALUES(?, ?, ?, ?, ?, ?)");
+    $sql->execute(array($invoiceNumber, $clientID, $clientType, $description, $amount, $type));
+}
 
 //Modify an invoice in the database
 function modifyInvoice($invoiceNumber)
-{}
+{ }
 
 function showLatestsInvoices()
 {
