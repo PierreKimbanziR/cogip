@@ -23,4 +23,6 @@ function patchContact($id)
     global $conn;
     $stmt = $conn->prepare("UPDATE contacts SET  firstname= ?, lastname= ?, email= ?, workingAt= ?, telephone= ? WHERE id = '$id' ");
     $stmt->execute([$firstname, $lastname, $email, $workingAt, $telephone]);
+
+    header('location: /cogip/contacts');
 }
