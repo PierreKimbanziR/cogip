@@ -74,6 +74,10 @@ if ($explode_url[0] == 'home') {
             updateCompany($explode_url[2]);
         } elseif ($explode_url[1] == 'delete') {
             deleteCompany($explode_url[2]);
+        } elseif ($explode_url[1] == 'providers') {
+            showProviders();
+        } elseif ($explode_url[1] == 'clients') {
+            showClients();
         } elseif (is_numeric($explode_url[1])) {
             showCompanyId($explode_url[1]);
         } else {
