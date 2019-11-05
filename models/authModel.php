@@ -25,7 +25,7 @@ function checkLogin()
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
-        $stmt = $conn->prepare("SELECT id, username, password, firstname, level FROM users WHERE username = '$username' LIMIT 1");
+        $stmt = $conn->prepare("SELECT id, username, password, firstname, userLevel FROM users WHERE username = '$username' LIMIT 1");
         $stmt->execute();
         $row = $stmt->fetch();
 
