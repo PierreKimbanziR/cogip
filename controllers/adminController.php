@@ -53,6 +53,5 @@ function updateUser($id)
 
 function deleteUser($id)
 {
-    echo $id;
     dropUser($id);
 }

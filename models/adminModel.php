@@ -136,14 +136,13 @@ function addUser()
     global $level_err;
 
     if ((empty($lastname_err)) && (empty($firstname_err)) && (empty($username_err)) && (empty($email_err)) && (empty($password_err)) && (empty($jobTitle_err)) && (empty($level_err))) {
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $level           = $_POST["userLevel"];
 
         global $lastname;
         global $firstname;
         global $username;
         global $email;
-        global $password;
         global $jobTitle;
 
         $stmt = $conn->prepare("INSERT INTO users (firstname,lastname,username,password,email,jobTitle,userLevel) VALUES('$firstname','$lastname','$username','$hashed_password','$email','$jobTitle','$level')");

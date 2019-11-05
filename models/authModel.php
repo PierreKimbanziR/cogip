@@ -38,7 +38,7 @@ function checkLogin()
             $_SESSION["id"]        = $row['id'];
             $_SESSION["username"]  = $row['username'];
             $_SESSION["firstname"] = $row['firstname'];
-            $_SESSION["level"]     = $row['level'];
+            $_SESSION["level"]     = $row['userLevel'];
 
             // Redirect user to welcome page
             header("location: /cogip/home");
