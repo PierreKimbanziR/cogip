@@ -49,5 +49,6 @@ function updateContact($id)
 
 function deleteContact($id)
 {
-    $page_title = 'Delete Contact';
+    require 'models/contact/dropContact.php';
+    dropContact($id);
 }
