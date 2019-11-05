@@ -26,10 +26,18 @@ function deleteInvoice($id)
     require "views/InvoicesView.php";
 }
 function createInvoice()
+
 {
     require "models/InvoiceModel.php";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // if($verify == true){
         addInvoice();
-        showInvoices();
+        header('Location: cogip/invoices/');
+        // }
+        /*else{
+            require "views/InvoiceAddView.php"
+        }*/
+    } else {
+        require "views/InvoiceAddView.php";
     }
 }
