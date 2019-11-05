@@ -108,7 +108,23 @@ if ($explode_url[0] == 'home') {
 
 } elseif ($explode_url[0] == 'admin') {
     require "controllers/adminController.php";
-    showDashboard();
+    //USERS
+    if ($explode_url[1] == "users" && empty($explode_url[2])) {
+        showUsers();
+        return;
+    } elseif ($explode_url[2] == 'create') {
+        createUser();
+    } elseif ($explode_url[2] == 'update') {
+        updateUser($explode_url[3]);
+    } elseif ($explode_url[2] == 'delete') {
+        deleteUser($explode_url[3]);
+    } elseif (is_numeric($explode_url[2])) {
+        showUserId($explode_url[2]);
+        return;
+    } else {
+        showDashboard();
+    }
+
 } else {
     header('Location: home');
 }
