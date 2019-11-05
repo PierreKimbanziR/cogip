@@ -12,7 +12,7 @@ include "components/navbar.php";
     <div>   
     <label for="name" class="w-100 p-2">Company Name: </label>
     <input title="companyname" type="text" name="companyname" placeholder="Company name" size="22" maxlength="30" autofocus  id ='companyname' required value="<?php echo $name; ?>">
-	<?php echo $name_error; ?>
+	<span class ="text-danger"><?php echo $name_error; ?></span>
     </div>
 
     <div><hr>
@@ -274,8 +274,8 @@ include "components/navbar.php";
     
     <div><hr>
     <label for="Vat" class="w-100 p-2"> Company Vat : </label>
-    <input title="Vat" type="number" name="vat" placeholder="Company Vat" size="22" maxlength="30" required value ="<?php echo $vat_error ?>">
-	<?php echo $vat ?>
+    <input title="Vat" type="number" name="vat" placeholder="Company Vat" size="22" maxlength="30" required value ="<?php echo $vat ?>">
+	<span class ="text-danger"><?php echo $vat_error ?></span>
     </div>
 
     <div><hr>
@@ -283,7 +283,7 @@ include "components/navbar.php";
     <select class="w-100 p-2" id="companyrole" name="companyrole" placeholder="Company role"  maxlength ="30" title ="companyrole" required value ="<?php echo $role ?>">
     <option value ="1">Provider</option>
     <option value ='0'>Client</option>
-	<?php echo $role_error ?>
+	<span class ="text-danger"><?php echo $role_error ?></span>
     </div>
 
     <div><hr>
