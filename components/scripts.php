@@ -14,7 +14,9 @@ $('.fa-trash-alt').click(e => {
     let id = $(e.currentTarget).data('itemid');
     let name = $(e.currentTarget).data('itemname');
     let item = $(e.currentTarget).data('item');
-    let link = `/cogip/admin/users/delete/${id}`;
+
+    let link = `/cogip/${item}/delete/${id}`;
+
     $('#deleteModalName').text(name);
     $('#deleteModalLabel').text("Delete " + item);
     $('#deleteModalAction').attr("action", link);

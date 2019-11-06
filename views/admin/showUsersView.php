@@ -42,7 +42,7 @@ include "components/navbar.php";
                                 class="far fa-lg fa-eye"></i></a> <a
                             href="/cogip/admin/users/update/<?=$user['id']?>"><i class="fas fa-lg fa-user-edit"></i></a>
                         <i class="fas fa-lg fa-trash-alt pointer" data-itemid="<?=$user['id']?>"
-                            data-itemname="<?=$user['username']?>" data-item="users" data-toggle="modal"
+                            data-itemname="<?=$user['username']?>" data-item="admin/users" data-toggle="modal"
                             data-target="#deleteModal"></i></td>
                 </tr>
                 <!-- Fin de endforeach  -->
