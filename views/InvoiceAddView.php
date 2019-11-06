@@ -1,25 +1,28 @@
 <?php
 require "components/header.php";
 require "components/navbar.php";
-
+print_r($invoice)
 ?>
 <div class="container">
     <form method="POST" action="">
         <div class="form-group row">
             <div class="col-sm-12 col-md-4">
                 <label for="invoiceNumber" class="grey-text font-weight-light">Invoice Number</label>
-                <input type="text" id="invoiceNumber" name="invoiceNumber" class="form-control" value="COG<?= date('Y') ?>-<?= htmlspecialchars($lastId) ?>">
+                <input type="text" id="invoiceNumber" name="invoiceNumber" class="form-control" <?php if (!isset($invoice['invoiceNumber'])) { ?> value="COG<?= date('Y') ?>-<?= htmlspecialchars($lastId) ?>" <?php } else {
+                                                                                                                                                                                                                    ?> value="<?= htmlspecialchars($invoice['invoiceNumber']) ?>" <?php   } ?>>
             </div>
             <div class="col-sm-12 col-md-4">
                 <label for="amount" class="grey-text font-weight-light">Amount</label>
-                <input type="text" id="amount" name="amount" class="form-control">
+                <input type="text" id="amount" name="amount" class="form-control" <?php if (isset($invoice['amount'])) { ?> value="<?= htmlspecialchars($invoice['amount']) ?>" <?php } ?>>
             </div>
             <div class="col-sm-12 col-md-4">
                 <label for="amount" class="grey-text font-weight-light">Type</label>
                 <select name="type" id="type" class="custom-select">
                     <option value="">Please select</option>
-                    <option value="0">IN</option>
-                    <option value="1">OUT</option>
+                    <option value="0" <?php
+                                        if (isset($invoice['type']) && $invoice['type'] == "0") { ?> selected <?php } ?>>IN</option>
+                    <option value="1" <?php
+                                        if (isset($invoice['type']) && $invoice['type'] == "1") { ?> selected <?php } ?>>OUT</option>
                 </select>
             </div>
         </div>
@@ -27,8 +30,10 @@ require "components/navbar.php";
             <label for="clientType" class="grey-text font-weight-light">Client Type</label>
             <select name="clientType" id="clientType" class="custom-select">
                 <option value="">Please select</option>
-                <option value="1">Contact</option>
-                <option value="0">Companie</option>
+                <option value="1" <?php
+                                    if (isset($invoice['clientType']) && $invoice['clientType'] == "1") { ?> selected <?php } ?>>Contact</option>
+                <option value="0" <?php
+                                    if (isset($invoice['clientType']) && $invoice['clientType'] == "0") { ?> selected <?php } ?>>Companie</option>
             </select>
         </div>
         <div class="form-group" id="companieList">
@@ -57,7 +62,9 @@ require "components/navbar.php";
         </div>
         <div class="form-group">
             <label for="description" class="grey-text font-weight-light">Description</label>
-            <textarea class="form-control" id="description" rows="7" name="description"></textarea>
+            <textarea class="form-control" id="description" rows="7" name="description"><?php if (isset($invoice['amount'])) {
+                                                                                            echo htmlspecialchars($invoice['description']);
+                                                                                        } ?></textarea>
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-outline-danger waves-effect" value="Add the invoice">
@@ -76,6 +83,12 @@ require "components/footer.php";
 
         $('#companieList').hide();
         $('#contactList').hide();
+        <?php
+        if (isset($invoice['clienType']) && $invoice['clienType'] == "1") { ?> $('#contactList').show();
+        <?php }
+
+        if (isset($invoice['clienType']) && $invoice['clienType'] == "0") { ?> $('#companieList').show();
+        <?php } ?>
 
         $('select[name="clientType"]').change(function() {
             var valeur = $(this).val();
