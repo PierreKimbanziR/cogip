@@ -11,6 +11,17 @@ $email = $contact['email'];
         <div class="row d-flex justify-content-center col-12 col-md-5 py-3 border shadow">
             <div class="">
                 <div class="contact-box text-center">
+                <a href="../contacts">Return to contacts</a>
+
+    <!-- SESSION ADMIN -->
+    <?php if ($_SESSION['level'] == 3) : ?>
+        |
+        <a href="../contacts/update/<?php echo $id; ?>">Modify <i class="fas fa-lg fa-edit"></i></a> |
+        <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal" data-itemid="<?=$id;?>"data-itemname="<?=$contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete <i class="fas fa-lg fa-trash-alt pointer"></i></span>
+        
+    <?php endif ?>
+    <!-- FIN SESSION ADMIN -->
+                    <hr>    
                     <img alt="image" class="rounded-circle" src="../design/img/avatar.png">
                     <h3 class="m-b-xs"><strong><?=$contact['firstname'] . ' ' . $contact['lastname']?></strong></h3>
 
@@ -23,15 +34,15 @@ $email = $contact['email'];
                     <hr>
                     <p>
                         <a href="../contacts">Return to contacts</a>
+
 <!-- SESSION ADMIN -->
 <?php if ($_SESSION['level'] == 3) : ?>
     |
-                        <a href="../contacts/update/<?php echo $id; ?>">Modify</a> |
-                        <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal" data-itemid="<?=$id;?>"data-itemname="<?=$contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete</span>
-
+                        <a href="../contacts/update/<?php echo $id; ?>">Modify <i class="fas fa-lg fa-edit"></i></a> |
+                        <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal" data-itemid="<?=$id;?>"data-itemname="<?=$contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete <i class="fas fa-lg fa-trash-alt pointer"></i></span>
 <?php endif ?>
-
-                
+<!-- FIN SESSION ADMIN -->
+              
                     </p>
                 </div>
             </div>
@@ -40,12 +51,8 @@ $email = $contact['email'];
 </div>
 
 
-
-
-
 <?php
 // Inclure Footer ...
 include "components/scripts.php";
 include "components/footer.php";
-
 ?>
