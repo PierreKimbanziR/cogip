@@ -16,6 +16,7 @@ $('.toggleModal').click(e => {
     let item = $(e.currentTarget).data('item');
 
     let link = `/cogip/${item}/delete/${id}`;
+    console.log(id, name, item);
 
     $('#deleteModalName').text(name);
     $('#deleteModalLabel').text("Delete " + item);

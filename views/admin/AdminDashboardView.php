@@ -6,7 +6,7 @@ include "components/navbar.php";
 
 <div class="container">
     <h1 class="text-center">Admin Dashboard</h1>
-    <div class="mt-4 row d-flex justify-content-between">
+    <div class="mt-4 row d-flex justify-content-around">
         <button type="button" onclick="window.location.href = 'invoices/create'"
             class="btn btn-outline-danger waves-effect"><i class="fas fa-plus"></i> New Invoice</button>
         <button type="button" onclick="window.location.href = 'contacts/create'"
@@ -33,7 +33,7 @@ include "components/navbar.php";
                     </th>
                     <th class="th-sm">Amount
                     </th>
-                    <th class="th-sm">
+                    <th class="th-sm">Action
                     </th>
                 </tr>
             </thead>
@@ -46,11 +46,13 @@ include "components/navbar.php";
                     </td>
                     <td class="text-right"><?=$invoice['amount']?> €</td>
                     <td
-                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center'?>">
+                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center'?>">
                         <a href="/cogip/invoices/<?=$invoice['id']?>"><i class="far fa-lg fa-eye"></i></a>
                         <?php if ($_SESSION['level'] > 2): ?>
-                        <a href="/cogip/invoices/update/<?=$company['id']?>"><i class="fas fa-lg fa-edit"></i></a>
-                        <i class="fas fa-lg fa-trash-alt pointer"></i>
+                        <a href="/cogip/invoices/update/<?=$invoice['id']?>"><i class="fas fa-lg fa-edit"></i></a>
+                        <i class="fas fa-lg fa-trash-alt pointer toggleModal" data-itemid="<?=$invoice['id']?>"
+                            data-itemname="<?=$invoice['invoiceNumber']?>" data-item="invoices" data-toggle="modal"
+                            data-target="#deleteModal"></i>
                         <?php endif?>
                     </td>
                 </tr>
@@ -73,7 +75,7 @@ include "components/navbar.php";
                     </th>
                     <th class="th-sm">Company
                     </th>
-                    <th class="th-sm">
+                    <th class="th-sm">Action
                     </th>
                 </tr>
             </thead>
@@ -86,11 +88,13 @@ include "components/navbar.php";
                     <td><?=$contact['telephone']?></td>
                     <td><?=$contact['companyName']?></td>
                     <td
-                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center'?>">
+                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center'?>">
                         <a href="/cogip/contacts/<?=$contact['id']?>"><i class="far fa-lg fa-eye"></i></a>
                         <?php if ($_SESSION['level'] > 2): ?>
-                        <a href="/cogip/contacts/update/<?=$company['id']?>"><i class="fas fa-lg fa-edit"></i></a>
-                        <i class="fas fa-lg fa-trash-alt pointer"></i>
+                        <a href="/cogip/contacts/update/<?=$contact['id']?>"><i class="fas fa-lg fa-edit"></i></a>
+                        <i class="fas fa-lg fa-trash-alt pointer toggleModal" data-itemid="<?=$contact['id']?>"
+                            data-itemname="<?=$contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts"
+                            data-toggle="modal" data-target="#deleteModal"></i>
                         <?php endif?>
                     </td>
                 </tr>
@@ -112,7 +116,7 @@ include "components/navbar.php";
                     </th>
                     <th class="th-sm">Role
                     </th>
-                    <th class="th-sm">
+                    <th class="th-sm">Action
                     </th>
                 </tr>
             </thead>
@@ -124,11 +128,13 @@ include "components/navbar.php";
                     <td><?=$company['vat']?></td>
                     <td><?=($company['role'] == 0) ? 'Client' : 'Fournisseur'?></td>
                     <td
-                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center'?>">
+                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center'?>">
                         <a href="/cogip/companies/<?=$company['id']?>"><i class="far fa-lg fa-eye"></i></a>
                         <?php if ($_SESSION['level'] > 2): ?>
                         <a href="/cogip/companies/update/<?=$company['id']?>"><i class="fas fa-lg fa-edit"></i></a>
-                        <i class="fas fa-lg fa-trash-alt pointer"></i>
+                        <i class="fas fa-lg fa-trash-alt pointer toggleModal" data-itemid="<?=$company['id']?>"
+                            data-itemname="<?=$company['name']?>" data-item="companies" data-toggle="modal"
+                            data-target="#deleteModal"></i>
                         <?php endif?>
                     </td>
                 </tr>
@@ -143,20 +149,6 @@ include "components/navbar.php";
 <!-- Script bootstrap  -->
 <?php include 'components/scripts.php'?>
 
-<!-- Script appliquer un lien et variable id sur <tr>-->
-<!-- <script>
-    var linkTo = (id) => {
-        //console.log(id);
-        document.location = `contacts/${id}`;
-    }
-
-    Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
-        console.log($btn);
-        $btn.addEventListener('click', () => (linkTo($btn.id), false));
-    });
-
-</script> -->
-<!-- Fin Script-->
 <script>
 new Chart(document.getElementById("lineChart"), {
     type: 'line',
