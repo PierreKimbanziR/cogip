@@ -10,11 +10,13 @@
 <script type="text/javascript" src="/cogip/static/js/datatables.min.js"></script>
 <script src="/cogip/static/js/select2.min.js"></script>
 <script>
-$('.fa-trash-alt').click(e => {
+$('.toggleModal').click(e => {
     let id = $(e.currentTarget).data('itemid');
     let name = $(e.currentTarget).data('itemname');
     let item = $(e.currentTarget).data('item');
-    let link = `/cogip/admin/users/delete/${id}`;
+
+    let link = `/cogip/${item}/delete/${id}`;
+
     $('#deleteModalName').text(name);
     $('#deleteModalLabel').text("Delete " + item);
     $('#deleteModalAction').attr("action", link);

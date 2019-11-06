@@ -4,7 +4,7 @@ require 'models/adminModel.php';
 
 function showDashboard()
 {
-    require 'models/contact/contactsModel.php';
+    require 'models/contact/getContacts.php';
     require 'models/InvoiceModel.php';
     require 'models/companies/CompanyModel.php';
 

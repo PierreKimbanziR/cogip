@@ -20,14 +20,17 @@ $email = $contact['email'];
 
     <p><strong>Email : </strong><?php echo "<a href='mailto:$email'>$email</a>"; ?></p>
     <p><strong>Phone : </strong><?php echo $contact['telephone']; ?></p>
-    <p><a href="../contacts">Return to contacts</a> | <a href="../contacts/update/<?php echo $id; ?>">Modify</a> | <a href="../contacts/delete/<?php echo $id; ?>">Delete</a></p>
-
+    <p>
+        <a href="../contacts">Return to contacts</a> |
+        <a href="../contacts/update/<?php echo $id; ?>">Modify</a> |
+        <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal" data-itemid="<?=$id;?>"
+            data-itemname="<?=$contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete</span>
+    </p>
 </div>
 
 <?php
 // Inclure Footer ...
 include "components/scripts.php";
-
 include "components/footer.php";
 
 ?>

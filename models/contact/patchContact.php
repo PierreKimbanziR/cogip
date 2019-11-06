@@ -1,16 +1,10 @@
 <?php
-
+// Page sans sanitize
 //Initialiser variables
 $firstname=$lastname=$company=$email=$telephone="";
 $firstname_Error=$lastname_Error=$company_Error=$email_Error=$telephone_Error="";
 
-
-
-    // echo '<pre>';
-    // echo var_dump($row);
-    // echo '</pre>';
-
-// Quand envoi de POST
+// Quand envoi via POST (getContact ID )
 function patchContact($id)
 { 
     $firstname = $_POST['firstname'];
@@ -23,4 +17,6 @@ function patchContact($id)
     global $conn;
     $stmt = $conn->prepare("UPDATE contacts SET  firstname= ?, lastname= ?, email= ?, workingAt= ?, telephone= ? WHERE id = '$id' ");
     $stmt->execute([$firstname, $lastname, $email, $workingAt, $telephone]);
+
+    header('location: /cogip/contacts');
 }

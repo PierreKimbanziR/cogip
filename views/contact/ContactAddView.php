@@ -69,7 +69,7 @@ if ($update == true) {
         <div>
 
     <?php echo $company_Error; ?>
-    <select name="workingAt" class="form-control">
+    <select name="workingAt selectSearch" class="form-control">
     <option value="0" selected>Please select a company</option>
     
 <!-- Importer Companies de la DB du model Companies dans ADD
@@ -107,7 +107,7 @@ Si Page ADD valeur 0 -> Please select a company -->
 
 <!-- Script bootstrap  -->
 <?php
-//include('components/scripts.php')
+include('components/scripts.php');
 
 // Inclure Footer ...
 include "components/footer.php";

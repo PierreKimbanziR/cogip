@@ -21,19 +21,22 @@ function showContactId($id)
 
 function createContact()
 {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require 'models/contact/addContact.php';
+        addcontact();
+    }
         // Amener les noms des sociétes
-        require 'models/companies/CompaniesModel.php';
-        $compagnies=getCompanies();       
-        $page_title = 'Add Contact';
-        $update = false;
-        include 'views/contact/ContactAddView.php';
+    require 'models/companies/CompaniesModel.php';
+    $compagnies=getCompanies();       
+    $page_title = 'Add Contact';
+    $update = false;
+    include 'views/contact/ContactAddView.php';
 }
 
 function updateContact($id)
 {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        require 'models/contact/patchContact.php';
+        require 'models/contact/addContact.php';
         patchContact($id);
     }
     require 'models/contact/getContact.php';
@@ -49,5 +52,6 @@ function updateContact($id)
 
 function deleteContact($id)
 {
-    $page_title = 'Delete Contact';
+    require 'models/contact/dropContact.php';
+    dropContact($id);
 }

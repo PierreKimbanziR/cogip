@@ -1,4 +1,5 @@
 # cogip
+
 Cogip Application at [BeCode](https://becode.org)
 
 This project had been done in october 2019 with
@@ -12,9 +13,12 @@ It can manage contacts, clients, providers, invoices and users.
 
 ### Flow Chart
 
-![Application flowChart](https://github.com/philesgilles/cogip/blob/master/infos/cogip%20flowchart.png "Application FlowChart")
+![Application flowChart](https://github.com/philesgilles/cogip/blob/master/infos/cogip%20flowchart.png 'Application FlowChart')
 
 ### Database Structure
 
-![Application Database](https://github.com/philesgilles/cogip/blob/master/infos/db-chart.png "Database")
+![Application Database](https://github.com/philesgilles/cogip/blob/master/infos/db-chart.png 'Database')
 
+### Invoice Page
+
+Barcode is generated automatically
