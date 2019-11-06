@@ -1,7 +1,4 @@
-
 <?php
-echo $id;
-
 function showInvoices()
 {
     require "models/InvoiceModel.php";
@@ -64,4 +61,3 @@ function updateInvoice($id)
         require "views/InvoiceAddView.php";
     }
 }
-

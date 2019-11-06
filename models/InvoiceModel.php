@@ -1,4 +1,3 @@
-
 <?php
 //Show all invoices
 function getInvoices()
@@ -95,4 +94,3 @@ function lastIdInvoice()
     $lastIdInvoice = $sql->fetch();
     return $lastIdInvoice;
 }
-

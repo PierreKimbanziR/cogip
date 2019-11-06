@@ -86,10 +86,10 @@ require "components/footer.php";
         $('#contactList').hide();
 
 
-        if ($('#clientType').val() == 0) {
+        if ($('#clientType').val() === 0) {
             $('#companieList').show();
         }
-        if ($('#clientType').val() == 1) {
+        if ($('#clientType').val() === 1) {
             $('#contactList').show();
         }
 

@@ -1,9 +1,7 @@
 <?php
 require "components/header.php";
 require "components/navbar.php";
-
 ?>
-
 <div class="container">
     <?php
     if (isset($_GET['valide']) && $_GET['valide'] == "0") {
