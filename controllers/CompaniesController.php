@@ -39,5 +39,10 @@ function updateCompany($id)
     require 'models/companies/CompaniesModel.php';
     $compagnies=getCompanies();
     $page_title = 'Modify company';
-    include 'views/companies/CompaniesAddView.php';
+    include 'views/companies/CompanyAddView.php';
+}
+function deleteCompany($id)
+{
+    require 'models/company/dropCompany.php';
+    dropCompany($id);
 }
