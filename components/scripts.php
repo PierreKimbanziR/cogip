@@ -24,14 +24,20 @@ $('.toggleModal').click(e => {
 
 // In your Javascript (external .js resource or <script> tag)
 $(document).ready(function() {
-    $('.selectSearch').select2();
+    $('.selectSearch').select2({
+        theme: 'bootstrap'
+    });
 });
 // In your Javascript (external .js resource or <script> tag)
 $(document).ready(function() {
-    $('.selectSearch2').select2();
+    $('.selectSearch2').select2({
+        theme: 'bootstrap'
+    });
 });
 // In your Javascript (external .js resource or <script> tag)
 $(document).ready(function() {
-    $('.selectSearch3').select2();
+    $('.selectSearch3').select2({
+        theme: "bootstrap"
+    });
 });
 </script>
