@@ -62,14 +62,14 @@ if ($update == true) {
                     <span class="help-block"><?php echo $lastname_Error; ?></span>
                 </div>
 
-                <div class="col-6  <?php echo (!empty($email)) ? 'has-error' : ''; ?>">
+                <div class="col-6  <?php echo (!empty($email_Error)) ? 'has-error' : ''; ?>">
                     <label for="email">Email : </label>
                     <input class="form-control" type="email" name="email" placeholder="Email"
                     required value="<?php echo $email; ?>">
                     <span class="help-block"><?php echo $email_Error; ?></span>
                 </div>
 
-                <div class="col-6  <?php echo (!empty($telephone)) ? 'has-error' : ''; ?>">
+                <div class="col-6  <?php echo (!empty($telephone_Error)) ? 'has-error' : ''; ?>">
                     <label for="telephone">Telephone : </label>
                     <input class="form-control" type="text" name="telephone" placeholder="+32-0-000-00-00"
                     required value="<?php echo $telephone; ?>">
