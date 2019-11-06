@@ -13,7 +13,7 @@ print_r($invoice)
             </div>
             <div class="col-sm-12 col-md-4">
                 <label for="amount" class="grey-text font-weight-light">Amount</label>
-                <input type="text" id="amount" name="amount" class="form-control" <?php if (isset($invoice['amount'])) { ?> value="<?= htmlspecialchars($invoice['amount']) ?>" <?php } ?>>
+                <input type="number" id="amount" name="amount" class="form-control" <?php if (isset($invoice['amount'])) { ?> value="<?= htmlspecialchars($invoice['amount']) ?>" <?php } ?>>
             </div>
             <div class="col-sm-12 col-md-4">
                 <label for="amount" class="grey-text font-weight-light">Type</label>
@@ -43,7 +43,8 @@ print_r($invoice)
                 <?php
                 foreach ($companies as $companie) :
                     ?>
-                    <option value="<?= htmlspecialchars($companie['id']) ?>"><?= htmlspecialchars($companie['name']) ?></option>
+                    <option value="<?= htmlspecialchars($companie['id']) ?>" <?php
+                                                                                    if (isset($invoice['clientType']) && $invoice['clientType'] == "0" && $invoice['companyId'] == $companie['id']) { ?> selected <?php } ?>><?= htmlspecialchars($companie['name']) ?></option>
                 <?php endforeach;
                 ?>
             </select>
@@ -55,7 +56,8 @@ print_r($invoice)
                 <?php
                 foreach ($contacts as $contact) :
                     ?>
-                    <option value="<?= htmlspecialchars($contact['id']) ?>"><?= htmlspecialchars($contact['lastname']) ?> <?= htmlspecialchars($contact['firstname']) ?></option>
+                    <option value="<?= htmlspecialchars($contact['id']) ?>" <?php
+                                                                                if (isset($invoice['clientType']) && $invoice['clientType'] == "1" && $invoice['contactId'] == $contact['id']) { ?> selected <?php } ?>><?= htmlspecialchars($contact['lastname']) ?> <?= htmlspecialchars($contact['firstname']) ?></option>
                 <?php endforeach;
                 ?>
             </select>
@@ -83,12 +85,14 @@ require "components/footer.php";
 
         $('#companieList').hide();
         $('#contactList').hide();
-        <?php
-        if (isset($invoice['clienType']) && $invoice['clienType'] == "1") { ?> $('#contactList').show();
-        <?php }
 
-        if (isset($invoice['clienType']) && $invoice['clienType'] == "0") { ?> $('#companieList').show();
-        <?php } ?>
+
+        if ($('#clientType').val() == 0) {
+            $('#companieList').show();
+        }
+        if ($('#clientType').val() == 1) {
+            $('#contactList').show();
+        }
 
         $('select[name="clientType"]').change(function() {
             var valeur = $(this).val();
