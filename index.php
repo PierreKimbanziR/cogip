@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include "config/db.php";
 
 require 'controllers/Controller.php';

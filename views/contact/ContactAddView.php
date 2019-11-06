@@ -44,6 +44,8 @@ if ($update == true) {
 
 <div class="container">
     <h1 class="text-center"><?= ($update) ? 'Update ' : 'Add new ' ?> contact</h1>
+    <div class="col d-flex align-items-center justify-content-center">
+    <div class="row d-flex col-8 col-md-8 py-2 border shadow">
     <form method="post" action="">
 
         <div>
@@ -64,7 +66,7 @@ if ($update == true) {
         <div>
             <hr>
             <label for="Email" class="w-100 p-2">Email : </label>
-            <input title="Email" type="email" name="email" placeholder="Email" size="22" maxlength="30" required value="<?php echo $email; ?>"><?php echo $email_Error; ?>
+            <input title="Email" type="email" name="email" placeholder="Email" size="50" maxlength="50" required value="<?php echo $email; ?>"><?php echo $email_Error; ?>
         </div>
         <div>
 
@@ -100,8 +102,12 @@ Si Page ADD valeur 0 -> Please select a company -->
 
         <div>
         <!-- Nommer le bouton soit Add ou Update Contact Si True valeur = Update si False Add new -->
+        <hr>
             <button name="submit" value="submit" type="submit"><?= ($update) ? 'Update ' : 'Add new ' ?>contact !</button>
         </div>
+        </div>
+    </div>
+
     </form>
 </div>
 

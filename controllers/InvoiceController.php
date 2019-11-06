@@ -1,3 +1,4 @@
+
 <?php
 echo $id;
 
@@ -63,3 +64,4 @@ function updateInvoice($id)
         require "views/InvoiceAddView.php";
     }
 }
+

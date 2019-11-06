@@ -12,7 +12,7 @@ include "components/navbar.php";
                     <img alt="image" class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png">
                     <h3 class="m-b-xs"><strong><?=$user['firstname'] . ' ' . $user['lastname']?></strong></h3>
 
-                    <div class="font-bold"><?=$user['function']?></div>
+                    <div class="font-bold"><?=$user['jobTitle']?></div>
                     <address class="m-t-md">
                         <strong>COGIP</strong><br>
                         username : <?=$user['username']?><br>
