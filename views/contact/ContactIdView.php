@@ -23,10 +23,11 @@ $email = $contact['email'];
     <p>
         <a href="../contacts">Return to contacts</a> |
         <a href="../contacts/update/<?php echo $id; ?>">Modify</a> | 
-        <span data-toggle="modal" data-target="#deleteModal" data-itemid="<?= $id;?>" data-itemname="<?= $contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete</span></p>
+        <span class="delete pointer" data-toggle="modal" data-target="#deleteModal" data-itemid="<?= $id;?>" data-itemname="<?= $contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete</span></p>
 
 </div>
 
+<!-- Modal PopUP pour signaler que l'on va effacer ID -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -57,6 +58,20 @@ $email = $contact['email'];
 // Inclure Footer ...
 include "components/scripts.php";
 
+?>
+
+<script>
+$('.delete').click(e => {
+    let id = $(e.currentTarget).data('itemid');
+    let name = $(e.currentTarget).data('itemname');
+    let item = $(e.currentTarget).data('item');
+    let link = `/cogip/contacts/delete/${id}`;
+    $('#deleteModalName').text(name);
+    $('#deleteModalLabel').text("Delete " + item);
+    $('#deleteModalAction').attr("action", link);
+})
+</script>
+<?php
 include "components/footer.php";
 
 ?>
