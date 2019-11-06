@@ -53,7 +53,23 @@ function addInvoice()
 
 //Modify an invoice in the database
 function modifyInvoice($id)
-{ }
+{
+    global $conn;
+    $invoiceNumber = $_POST["invoiceNumber"];
+    $clientType = $_POST["clientType"];
+    $description = $_POST["description"];
+    $amount = $_POST["amount"];
+    $type = $_POST["type"];
+    if ($clientType == "1") {
+        $companie = NULL;
+        $contact = $_POST["contact"];
+    } elseif ($clientType == "0") {
+        $companie = $_POST["companie"];
+        $contact = NULL;
+    }
+    $sql = $conn->prepare("UPDATE invoices SET invoiceNumber = ?, companyId = ?, contactId = ?, clientType = ?, description = ?, amount = ?, type = ? WHERE ID = ?");
+    $sql->execute(array($invoiceNumber, $companie, $contact, $clientType, $description, $amount, $type, $id));
+}
 
 function showLatestsInvoices()
 {

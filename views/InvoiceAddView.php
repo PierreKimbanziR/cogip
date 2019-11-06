@@ -71,6 +71,7 @@ require "components/navbar.php";
             <input type="submit" class="btn btn-outline-danger waves-effect" <?php if (isset($invoice['invoiceNumber'])) { ?> value="Modify the invoice" <?php } else {
                                                                                                                                                                 ?> value="Add the invoice" <?php   } ?>>
         </div>
+        
     </form>
 </div>
 

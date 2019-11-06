@@ -36,7 +36,7 @@ $date = explode(" ", $invoice['createdAt']);
         <div class="col-md-3 offset-6">
             <?=$date[0]?><br>
             Invoice n° <?=htmlspecialchars($invoice['invoiceNumber'])?><br>
-            Type : <?=($invoice['type'] == 0) ? "OUT" : "IN"?>
+            Type : <?=($invoice['type'] == 1) ? "OUT" : "IN"?>
 
         </div>
     </div>
