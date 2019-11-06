@@ -45,3 +45,22 @@ function createInvoice()
         require "views/InvoiceAddView.php";
     }
 }
+function updateInvoice($id)
+{
+    require "models/InvoiceModel.php";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // if($verify == true){
+        modifyInvoice($id);
+        header('Location: /cogip/invoices?valide=1');
+        // }
+        /*else{
+            require "views/InvoiceAddView.php"
+        }*/
+    } else {
+        $companies = selectCompanies();
+        $contacts = selectContacts();
+        $lastId = lastIdInvoice();
+        $lastId = $lastId['id'] + 1;
+        require "views/InvoiceAddView.php";
+    }
+}

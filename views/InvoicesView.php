@@ -6,10 +6,19 @@ require "components/navbar.php";
 
 <div class="container">
     <?php
-    if (isset($_GET['valide'])) {
+    if (isset($_GET['valide']) && $_GET['valide'] == "0") {
         ?>
         <div class="alert alert-success" role="alert">
             Invoice sended !
+        </div>
+    <?php
+    }
+    ?>
+    <?php
+    if (isset($_GET['valide']) && $_GET['valide'] == "1") {
+        ?>
+        <div class="alert alert-success" role="alert">
+            Invoice modified !
         </div>
     <?php
     }

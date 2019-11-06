@@ -52,7 +52,7 @@ function addInvoice()
 }
 
 //Modify an invoice in the database
-function modifyInvoice($invoiceNumber)
+function modifyInvoice($id)
 { }
 
 function showLatestsInvoices()
