@@ -7,6 +7,13 @@ include "components/navbar.php";
 <div class="container">
     <h1 class="text-center">List of contacts</h1>
     <table id="searchShow" class="table table-striped table-bordered table-sm">
+
+        <!-- SESSION ADMIN -->
+        <?php if ($_SESSION['level'] == 3) : ?>
+
+            <a href="/cogip/contacts/create"><button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus-circle"></i> Add contact</button></a>
+
+        <?php endif ?>
         <thead class="grey darken-3 white-text">
             <tr>
                 <th class="th-sm">Firstname</th>
@@ -30,7 +37,6 @@ include "components/navbar.php";
                 <td><?php echo $contact['telephone'] ?></td>
                 <td><?php echo $contact['name']// name Table companies       ?></td>
                 <td><?php echo $contact['createdAt'] ?></td>
-
             </tr>
             <!-- Fin de endforeach  -->
             <?php endforeach?>
