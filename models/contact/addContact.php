@@ -30,7 +30,7 @@ function verifyContact(){
         //Honeypot 
             if ($_POST['vilainRobot']) 
                 {
-                    echo '!!!! SPAM !!!!';       
+                    echo "!!!! SPAM !!!!";       
                 // Stop le script de la page
                     return;
                 }
@@ -65,7 +65,7 @@ function verifyContact(){
 
                     
                     {   // Message d'erreurs
-                        $firstname_Error = "Only letters and white space allowed (fn)";   
+                        $firstname_Error = "Only letters and white space allowed";   
                     }
             }
 
@@ -87,7 +87,7 @@ function verifyContact(){
                 // si caractères spéciaux
                 if (!preg_match("/^[a-zA-Z ]*$/", $lastname))          
                     {   // Message d'erreurs
-                        $lastname_Error = "Only letters and white space allowed (No: éèêà ...)";   
+                        $lastname_Error = "Only letters and white space allowed (Not: *@éèêà ...)";   
                     }
             }
 
@@ -115,7 +115,7 @@ function verifyContact(){
     if (empty(trim($_POST["telephone"]))) 
             {
                 // si vide 
-                $telephone_Error = "Please enter a telephone number.";
+                $telephone_Error = "<p class='alert alert-danger'>Please enter a telephone number.</p>";
             } 
 
             else
@@ -148,7 +148,7 @@ function addContact(){
         {
         // connexion DB
         global $conn;
-        echo "NO ERROR";
+        //echo "NO ERROR";
         
         $sql = "INSERT INTO contacts (firstname,lastname,email,telephone,workingAt) VALUES('$firstname','$lastname','$email','$telephone','$company');";
 
@@ -159,12 +159,12 @@ function addContact(){
                 echo '<p>Data Base issues !</p>';
         }
     } else {
-        echo "ERROR";
-        echo $lastname_Error;
-        echo $firstname_Error;
-        echo $email_Error;
-        echo $telephone_Error;
-        echo $company_Error;
+        //echo "ERROR";
+        // echo $lastname_Error;
+        // echo $firstname_Error;
+        // echo $email_Error;
+        // echo $telephone_Error;
+        // echo $company_Error;
     }
 }
 
@@ -190,7 +190,7 @@ function patchContact($id)
     // Connection DB
     global $conn;
     $stmt = $conn->prepare("UPDATE contacts SET  firstname= ?, lastname= ?, email= ?, workingAt= ?, telephone= ? WHERE id = '$id' ");
-    $stmt->execute([$firstname, $lastname, $email, $workingAt, $telephone]);
+    $stmt->execute([$firstname, $lastname, $email, $company, $telephone]);
 
     header('location: /cogip/contacts');
 }
