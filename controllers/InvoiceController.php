@@ -32,7 +32,9 @@ function createInvoice()
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // if($verify == true){
         addInvoice();
+
         header('Location: /cogip/invoices?valide=1');
+
         // }
         /*else{
             require "views/InvoiceAddView.php"
@@ -42,6 +44,7 @@ function createInvoice()
         $contacts = selectContacts();
         $lastId = lastIdInvoice();
         $lastId = $lastId['id'] + 1;
+
         require "views/InvoiceAddView.php";
     }
 }

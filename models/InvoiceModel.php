@@ -40,6 +40,7 @@ function addInvoice()
     $description = $_POST["description"];
     $amount = $_POST["amount"];
     $type = $_POST["type"];
+
     if ($clientType == "1") {
         $companie = NULL;
         $contact = $_POST["contact"];
