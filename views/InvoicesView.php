@@ -5,6 +5,24 @@ require "components/navbar.php";
 ?>
 
 <div class="container">
+    <?php
+    if (isset($_GET['valide']) && $_GET['valide'] == "0") {
+        ?>
+        <div class="alert alert-success" role="alert">
+            Invoice sended !
+        </div>
+    <?php
+    }
+    ?>
+    <?php
+    if (isset($_GET['valide']) && $_GET['valide'] == "1") {
+        ?>
+        <div class="alert alert-success" role="alert">
+            Invoice modified !
+        </div>
+    <?php
+    }
+    ?>
     <a href="/cogip/invoices/create"><button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus-circle"></i> Add an invoice</button></a>
     <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <thead class="grey darken-3 white-text">
@@ -19,11 +37,7 @@ require "components/navbar.php";
                 </th>
                 <th class="th-sm">Type
                 </th>
-                <th class="th-sm">View
-                </th>
-                <th class="th-sm">Modify
-                </th>
-                <th class="th-sm">Delete
+                <th class="th-sm">Action
                 </th>
             </tr>
         </thead>
@@ -45,11 +59,10 @@ require "components/navbar.php";
                     <td><?= htmlspecialchars($invoice['name']) ?></td>
                     <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
                     <td><?= ($invoice['type'] == 0) ? "OUT" : "IN" ?></td>
-                    <td><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>">Voir</a></td>
-                    <td>Boutton modifier</td>
-                    <td><button type="button" class="btn btn-primary" invoiceNumber="<?= htmlspecialchars($invoice['invoiceNumber']) ?>" invoiceId="<?= htmlspecialchars($invoice['id']) ?>" data-toggle="modal" data-target="#basicExampleModal">
-                            Launch demo modal
-                        </button></td>
+                    <td class="text-center d-flex <?= ($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center' ?>"><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="far fa-lg fa-eye"></i></a>
+                        <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-edit"></i></a><?php } ?>
+                        <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-trash-alt pointer"></i></a><?php } ?>
+                    </td>
                 </tr>
 
 
@@ -65,11 +78,10 @@ require "components/navbar.php";
                     <td><?= htmlspecialchars($invoice['lastname']) ?><?= " " ?><?= htmlspecialchars($invoice['firstname']) ?></td>
                     <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
                     <td><?= ($invoice['type'] == 0) ? "OUT" : "IN" ?></td>
-                    <td><a href="/cogip/invoice/<?= htmlspecialchars($invoice['id']) ?>">Voir</a></td>
-                    <td>Boutton modifier</td>
-                    <td><button type="button" class="btn btn-primary" invoiceNumber="<?= htmlspecialchars($invoice['invoiceNumber']) ?>" invoiceId="<?= htmlspecialchars($invoice['id']) ?>" data-toggle="modal" data-target="#basicExampleModal">
-                            Launch demo modal
-                        </button></td>
+                    <td class="text-center d-flex <?= ($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center' ?>"><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="far fa-lg fa-eye"></i></a>
+                        <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-edit"></i></a><?php } ?>
+                        <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-trash-alt pointer"></i></a><?php } ?>
+                    </td>
                 </tr>
 
             <?php endforeach ?>
@@ -79,26 +91,6 @@ require "components/navbar.php";
 
 
         </tbody>
-        <tfoot>
-            <tr>
-                <th class="th-sm">Created At
-                </th>
-                <th class="th-sm">Invoice number
-                </th>
-                <th class="th-sm">Client
-                </th>
-                <th class="th-sm">Amount
-                </th>
-                <th class="th-sm">Type
-                </th>
-                <th class="th-sm">View
-                </th>
-                <th class="th-sm">Modify
-                </th>
-                <th class="th-sm">Delete
-                </th>
-            </tr>
-        </tfoot>
     </table>
 
 </div>
