@@ -1,3 +1,4 @@
+
 <?php
 //Show all invoices
 function getInvoices()
@@ -17,7 +18,7 @@ function getInvoices()
 function getInvoice($invoiceID)
 {
     global $conn;
-    $sql = $conn->prepare("SELECT invoices.invoiceNumber invoiceNumber, invoices.description description, invoices.amount amount, invoices.type type, invoices.createdAt createdAt, contacts.firstname firstname, contacts.lastname lastname, contacts.email email, contacts.telephone telephone, contacts.workingAt workingAt, companies.name name, companies.country country, companies.vat vat FROM invoices LEFT JOIN companies ON invoices.clientType = 0 AND invoices.companyId = companies.id LEFT JOIN contacts ON invoices.clientType = 1 AND invoices.contactId = contacts.id WHERE invoices.id = ?");
+    $sql = $conn->prepare("SELECT invoices.clientType clientType,invoices.companyId companyId, invoices.contactId contactId, invoices.invoiceNumber invoiceNumber, invoices.description description, invoices.amount amount, invoices.type type, invoices.createdAt createdAt, contacts.firstname firstname, contacts.lastname lastname, contacts.email email, contacts.telephone telephone, contacts.workingAt workingAt, companies.name name, companies.country country, companies.vat vat FROM invoices LEFT JOIN companies ON invoices.clientType = 0 AND invoices.companyId = companies.id LEFT JOIN contacts ON invoices.clientType = 1 AND invoices.contactId = contacts.id WHERE invoices.id = ?");
     $sql->execute(array($invoiceID));
     $getInvoice = $sql->fetch();
     return $getInvoice;
@@ -40,7 +41,6 @@ function addInvoice()
     $description = $_POST["description"];
     $amount = $_POST["amount"];
     $type = $_POST["type"];
-
     if ($clientType == "1") {
         $companie = NULL;
         $contact = $_POST["contact"];
@@ -95,3 +95,4 @@ function lastIdInvoice()
     $lastIdInvoice = $sql->fetch();
     return $lastIdInvoice;
 }
+
