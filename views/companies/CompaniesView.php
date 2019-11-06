@@ -6,7 +6,7 @@ include "components/navbar.php";
 
 <div class="container">
 <a href="/cogip/companies/create"><button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus-circle"></i> Add a company</button></a>
-    <h1 class="text-center ">List of companies</h1>
+    <h1 class="text-center ">List of <?= $page_title?></h1>
     <table id="searchCompany" class="table table-striped table-bordered table-sm">
         <thead class="grey darken-3 white-text">
             <tr>
