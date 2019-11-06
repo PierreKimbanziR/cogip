@@ -56,7 +56,7 @@ require "components/navbar.php";
                     <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
                     <td><?= htmlspecialchars($invoice['name']) ?></td>
                     <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
-                    <td><?= ($invoice['type'] == 0) ? "OUT" : "IN" ?></td>
+                    <td><?= ($invoice['type'] == 1) ? "OUT" : "IN" ?></td>
                     <td class="text-center d-flex <?= ($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center' ?>"><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="far fa-lg fa-eye"></i></a>
                         <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/update/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-edit"></i></a><?php } ?>
                         <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-trash-alt pointer"></i></a><?php } ?>
