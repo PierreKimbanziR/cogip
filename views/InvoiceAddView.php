@@ -1,7 +1,6 @@
 <?php
 require "components/header.php";
 require "components/navbar.php";
-print_r($invoice)
 ?>
 <div class="container">
     <form method="POST" action="">
