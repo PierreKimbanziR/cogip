@@ -5,28 +5,43 @@ include "components/navbar.php";
 $email = $contact['email'];
 ?>
 
-<div class="container col-8 border example hoverable ">
-    <div class="black white-text">
-        <h1 class="text-center "><strong>Contact
-                :</strong><?php echo $contact['firstname'] . ' ' . $contact['lastname']; ?></h1>
+<div class="container">
+    <h1 class="text-center">Contact Info</h1>
+    <div class="container d-flex justify-content-center">
+        <div class="row d-flex justify-content-center col-12 col-md-5 py-3 border shadow">
+            <div class="">
+                <div class="contact-box text-center">
+                    <img alt="image" class="rounded-circle" src="../design/img/avatar.png">
+                    <h3 class="m-b-xs"><strong><?=$contact['firstname'] . ' ' . $contact['lastname']?></strong></h3>
+
+                    <div class="font-bold"><?=$contact['telephone']?></div>
+                    <address class="m-t-md">
+                        Company : <?=$contact['companyName']?><br>
+                        email : <?php echo "<a href='mailto:".$contact['email']."'>".$contact['email']."</a>"; ?><br>
+                        Contact since : <?=$contact['createdAt']?><br>
+                    </address>
+                    <hr>
+                    <p>
+                        <a href="../contacts">Return to contacts</a>
+<!-- SESSION ADMIN -->
+<?php if ($_SESSION['level'] == 3) : ?>
+    |
+                        <a href="../contacts/update/<?php echo $id; ?>">Modify</a> |
+                        <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal" data-itemid="<?=$id;?>"data-itemname="<?=$contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete</span>
+
+<?php endif ?>
+
+                
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <p><strong>Contact : </strong><?php echo $contact['firstname'] . ' ' . $contact['lastname']; ?></p>
-    <p><strong>Company : </strong>
-
-        <a href="../companies/<?php echo $contact['workingAt']; ?>">
-            <?php echo $contact['companyName']; ?>
-
-        </a></p>
-
-    <p><strong>Email : </strong><?php echo "<a href='mailto:$email'>$email</a>"; ?></p>
-    <p><strong>Phone : </strong><?php echo $contact['telephone']; ?></p>
-    <p>
-        <a href="../contacts">Return to contacts</a> |
-        <a href="../contacts/update/<?php echo $id; ?>">Modify</a> |
-        <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal" data-itemid="<?=$id;?>"
-            data-itemname="<?=$contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete</span>
-    </p>
 </div>
+
+
+
+
 
 <?php
 // Inclure Footer ...
