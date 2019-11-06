@@ -40,15 +40,12 @@ function addInvoice()
     $description = $_POST["description"];
     $amount = $_POST["amount"];
     $type = $_POST["type"];
-    if ($_POST["companie"] == "") {
+    if ($clientType == "1") {
         $companie = NULL;
-    } else {
-        $companie = $_POST["companie"];
-    }
-    if ($_POST["contact"] == "") {
-        $contact = NULL;
-    } else {
         $contact = $_POST["contact"];
+    } elseif ($clientType == "0") {
+        $companie = $_POST["companie"];
+        $contact = NULL;
     }
     $sql = $conn->prepare("INSERT INTO invoices(invoiceNumber, companyId, contactId, clientType, description, amount, type) VALUES(?, ?, ?, ?, ?, ?, ?)");
     $sql->execute(array($invoiceNumber, $companie, $contact, $clientType, $description, $amount, $type));

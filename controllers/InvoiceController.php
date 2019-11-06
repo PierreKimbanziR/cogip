@@ -32,7 +32,7 @@ function createInvoice()
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // if($verify == true){
         addInvoice();
-        header('Location: /cogip/invoices');
+        header('Location: /cogip/invoices?valide=1');
         // }
         /*else{
             require "views/InvoiceAddView.php"
