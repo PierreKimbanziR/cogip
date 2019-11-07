@@ -23,7 +23,7 @@ require "components/navbar.php";
     }
     ?>
     <a href="/cogip/invoices/create"><button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus-circle"></i> Add an invoice</button></a>
-    <div class="table-responsive">
+    <div class="table-responsive col-12">
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead class="grey darken-3 white-text">
                 <tr>
