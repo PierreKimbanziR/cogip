@@ -3,7 +3,7 @@
 $name=$country=$vat=$role="";
 $name_error=$country_error=$vat_error=$role_error="";
 
-function patchCompanies($id)
+function patchCompany($id)
 {
 $name=$_POST["name"];
 $country=$_POST["country"];
@@ -14,4 +14,6 @@ global $conn;
 $stmt = $conn -> prepare("UPDATE companies SET name=?, country=?, vat=?, role=? WHERE id ='$id' ");
 $stmt->execute ([$name, $country, $vat, $role]);
 
-header('location: /cogip/contacts');
+
+header('location: /cogip/companies');
+}

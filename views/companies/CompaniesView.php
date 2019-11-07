@@ -58,7 +58,7 @@ $(document).ready(function() {
 <script>
 var linkTo = (id) => {
     //console.log(id);
-    document.location = `companies/${id}`;
+    document.location = `/cogip/companies/${id}`;
 }
 
 Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
