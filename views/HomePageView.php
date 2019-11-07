@@ -25,7 +25,7 @@ include "components/navbar.php";
     <div class="row mt-4">
         <h4>Latest Invoices</h4>
         <div class="table-responsive col-12">
-            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+            <table id="" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead class="grey darken-3 white-text">
                     <tr>
                         <th class="th-sm">
@@ -41,7 +41,7 @@ include "components/navbar.php";
                 </thead>
                 <tbody>
                     <?php foreach ($lastInvoices as $invoice): ?>
-                    <tr id="<?=$invoice['id']?>">
+                    <tr id="invoice-<?=$invoice['id']?>">
                         <td><?=$invoice['invoiceNumber']?></td>
                         <td><?=explode(' ', $invoice['createdAt'])[0]?></td>
                         <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
@@ -56,7 +56,7 @@ include "components/navbar.php";
     <div class="row mt-4">
         <h4>Last contacts</h4>
         <div class="table-responsive col-12">
-            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+            <table id="" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead class="grey darken-3 white-text">
                     <tr>
                         <th class="th-sm">Firstname
@@ -73,7 +73,7 @@ include "components/navbar.php";
                 </thead>
                 <tbody>
                     <?php foreach ($lastContacts as $contact): ?>
-                    <tr id="<?=$contact['id']?>">
+                    <tr id="contact-<?=$contact['id']?>">
                         <td><?=$contact['firstname']?></td>
                         <td><?=$contact['lastname']?></td>
                         <td><?=$contact['email']?></td>
@@ -88,7 +88,7 @@ include "components/navbar.php";
     <div class="row mt-4">
         <h4>Last Companies</h4>
         <div class="table-responsive col-12">
-            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+            <table id="" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead class="grey darken-3 white-text">
                     <tr>
                         <th class="th-sm">
@@ -104,7 +104,7 @@ include "components/navbar.php";
                 </thead>
                 <tbody>
                     <?php foreach ($lastCompanies as $company): ?>
-                    <tr id="<?=$company['id']?>">
+                    <tr id="company-<?=$company['id']?>">
                         <td><?=$company['name']?></td>
                         <td><?=$company['country']?></td>
                         <td><?=$company['vat']?></td>
