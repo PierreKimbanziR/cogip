@@ -3,6 +3,7 @@ require "components/header.php";
 require "components/navbar.php";
 ?>
 <div class="container">
+<h1 class="text-center">Invoices</h1>
     <?php
     if (isset($_GET['valide']) && $_GET['valide'] == "0") {
         ?>

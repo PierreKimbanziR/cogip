@@ -110,3 +110,10 @@ function lastIdInvoice()
     $lastIdInvoice = $sql->fetch();
     return $lastIdInvoice;
 }
+
+
+//verify data of invoices form
+function validationInvoice(){
+    $verify = true;
+    
+}
