@@ -26,3 +26,19 @@ function logout()
 {
     logMeOut();
 }
+
+function reset_password()
+{
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        resetPassword();
+    }
+    require "views/auth/reset-passwordView.php";
+
+}
+
+function showAccount($id)
+{
+    $user = getUser($id);
+    require "views/auth/accountView.php";
+
+}

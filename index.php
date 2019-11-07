@@ -14,7 +14,8 @@ if ($explode_url[0] == 'auth') {
     if ($explode_url[1] == 'logout') {
         logout();
         return;
-    } else {
+    }
+    if ($explode_url[1] == 'login') {
         login();
         return;
     }
@@ -128,6 +129,12 @@ if ($explode_url[0] == 'home') {
         showDashboard();
     }
 
+} elseif (($explode_url[0] == 'auth') && ($explode_url[1] == 'reset-password')) {
+    reset_password();
+    return;
+} elseif (($explode_url[0] == 'auth') && ($explode_url[1] == 'account')) {
+    showAccount($_SESSION['id']);
+    return;
 } else {
     header('Location: home');
 }

@@ -7,11 +7,11 @@ include "components/navbar.php";
 <div class="container">
     <h1 class="text-center">Admin Dashboard</h1>
     <div class="mt-4 row d-flex justify-content-around">
-        <button type="button" onclick="window.location.href = 'invoices/create'"
+        <button type="button" onclick="window.location.href = '/cogip/invoices/create'"
             class="btn btn-outline-danger waves-effect"><i class="fas fa-plus"></i> New Invoice</button>
-        <button type="button" onclick="window.location.href = 'contacts/create'"
+        <button type="button" onclick="window.location.href = '/cogip/contacts/create'"
             class="btn btn-outline-danger waves-effect"><i class="fas fa-plus"></i> Add Contact</button>
-        <button type="button" onclick="window.location.href = 'companies/create'"
+        <button type="button" onclick="window.location.href = '/cogip/companies/create'"
             class="btn btn-outline-danger waves-effect"><i class="fas fa-plus"></i> Add Company</button>
     </div>
     <div class="row mt-5 mb-5 d-flex justify-content-center">

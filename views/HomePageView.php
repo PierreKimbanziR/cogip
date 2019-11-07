@@ -41,7 +41,7 @@ include "components/navbar.php";
                 </thead>
                 <tbody>
                     <?php foreach ($lastInvoices as $invoice): ?>
-                    <tr id="invoice-<?=$invoice['id']?>">
+                    <tr id="invoice-<?=$invoice['id']?>" class="click">
                         <td><?=$invoice['invoiceNumber']?></td>
                         <td><?=explode(' ', $invoice['createdAt'])[0]?></td>
                         <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
@@ -135,6 +135,17 @@ getUserAsync('https://api.chucknorris.io/jokes/random');
 document.getElementById('newJoke').addEventListener('click', () => {
     getUserAsync('https://api.chucknorris.io/jokes/random');
 })
+
+var linkTo = (id) => {
+    //console.log(id);
+    id = id.split('-')[1]
+    document.location = `/cogip/contacts/${id}`;
+}
+
+Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
+    console.log($btn);
+    $btn.addEventListener('click', () => (linkTo($btn.id), false));
+});
 </script>
 <?php
 include "components/footer.php";
