@@ -82,6 +82,7 @@ global $descriptionMessage;
             <textarea class="form-control" id="description" rows="7" name="description"><?php if (isset($invoice['amount'])) {
                                                                                             echo htmlspecialchars($invoice['description']);
                                                                                         } ?></textarea>
+            <span class="help-block"><?= $descriptionMessage ?></span>
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-outline-danger waves-effect" value="validate">
