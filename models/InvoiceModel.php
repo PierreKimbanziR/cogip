@@ -38,6 +38,7 @@ function addInvoice()
     $invoiceNumber = $_POST["invoiceNumber"];
     $clientType = $_POST["clientType"];
     $description = $_POST["description"];
+    $description = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
     $amount = $_POST["amount"];
     $type = $_POST["type"];
     if ($clientType == "1") {
@@ -58,6 +59,7 @@ function modifyInvoice($id)
     $invoiceNumber = $_POST["invoiceNumber"];
     $clientType = $_POST["clientType"];
     $description = $_POST["description"];
+    $description = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
     $amount = $_POST["amount"];
     $type = $_POST["type"];
     if ($clientType == "1") {
