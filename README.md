@@ -14,8 +14,7 @@ It can manage contacts, clients, providers, invoices and users.
 
 ## Informations
 
-All tables have a search option and pagination.
-There is a special @Media print for printing beautyfull invoices from within the webpage 
+All tables have a search option and pagination. 
 The server is hosted on Online.net and fully configured using Docker.
 The database is hosted on AWS EDS.
 
@@ -32,8 +31,10 @@ The database is hosted on AWS EDS.
 
 ### Invoice Page
 
+There is a special @Media print for printing beautyfull invoices from within the webpage
 Barcode is generated automatically with the invoice number
 
+***
 [Manu's beautyfull MockUps](https://github.com/philesgilles/cogip/blob/master/infos/README.md)
 
 ### Flow Chart
