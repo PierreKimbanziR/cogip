@@ -16,6 +16,8 @@ It can manage contacts, clients, providers, invoices and users.
 
 All tables have a search option and pagination
 
+[Manu's beautyfull MockUps](https://github.com/philesgilles/cogip/blob/master/infos/README.md)
+
 ### Flow Chart
 
 ![Application flowChart](https://github.com/philesgilles/cogip/blob/master/infos/cogip%20flowchart.png 'Application FlowChart')
