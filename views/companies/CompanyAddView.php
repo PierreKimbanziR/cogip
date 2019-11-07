@@ -28,6 +28,9 @@ if ($update == true) {
         <form method="POST" action="">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9f530d0199ab4befba13a81c3db327588f832b88
                     <div class="form-group row">  
                         <div class="col-6"> 
     <label for="name" >Company Name: </label>
@@ -310,6 +313,7 @@ if ($update == true) {
     <label for="Telephone">Telephone : </label>
     <input title="Telephone" class="form-control"type="text" name="telephone" placeholder="Telephone">
     </div>
+<<<<<<< HEAD
 =======
             <div class="form-group row">
                 <div class="col-12 col-md-6">
@@ -578,6 +582,8 @@ if ($update == true) {
                 </div>
             </div>
 >>>>>>> bc2f182fe811f8f59d9bb66f0114efecdc957e15
+=======
+>>>>>>> 9f530d0199ab4befba13a81c3db327588f832b88
 
             <div class="form-group row">
                 <div class="col-12 col-md-6">
