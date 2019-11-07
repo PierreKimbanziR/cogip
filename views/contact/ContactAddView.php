@@ -24,55 +24,55 @@ global $company;
 // Voir modele update= TRUE pour updateContact($id) FALSE  pour createContact()
 // Valeur 0 (company si ADD )
 if ($update == false) {
-$contact['workingAt'] = 0;
+    $contact['workingAt'] = 0;
 }
 
 // SI ON UPDATE LE CONTACT, ON REPREND LES DATA DE LA DB
 // TRUE pour updateContact($id) alors on cherche les valeurs existantes de la DB
 // De la fonction getContact($id) -> $contact = getContact($id);
 if ($update == true) {
-    $firstname=$contact["firstname"];
-    $lastname=$contact["lastname"];
-    $email=$contact["email"];
-    $workingAt=$contact["workingAt"];
-    $telephone=$contact["telephone"];
-    $createdAt=$contact["createdAt"];
+    $firstname = $contact["firstname"];
+    $lastname  = $contact["lastname"];
+    $email     = $contact["email"];
+    $workingAt = $contact["workingAt"];
+    $telephone = $contact["telephone"];
+    $createdAt = $contact["createdAt"];
 }
 
 // Page Create et update
 ?>
 
 <div class="container">
-    <h1 class="text-center"><?= ($update) ? 'Update ' : 'Add new ' ?> contact</h1>
+    <h1 class="text-center"><?=($update) ? 'Update ' : 'Add new '?> contact</h1>
     <div class="col p-3 mb-5 bg-white rounded">
         <form method="post" action="">
             <div class="form-group row">
 
                 <div class="col-6  <?php echo (!empty($firstname_Error)) ? 'has-error' : ''; ?>">
                     <label for="Firstname">Firstname : </label>
-                    <input class="form-control" type="text" name="firstname" placeholder="Firstname"
-                    required value="<?php echo $firstname; ?>">
+                    <input class="form-control" type="text" name="firstname" placeholder="Firstname" required
+                        value="<?php echo $firstname; ?>">
                     <span class="help-block"><?php echo $firstname_Error; ?></span>
                 </div>
 
                 <div class="col-6  <?php echo (!empty($lastname_Error)) ? 'has-error' : ''; ?>">
                     <label for="lastname">lastname : </label>
-                    <input class="form-control" type="text" name="lastname" placeholder="lastname"
-                    required value="<?php echo $lastname; ?>">
+                    <input class="form-control" type="text" name="lastname" placeholder="lastname" required
+                        value="<?php echo $lastname; ?>">
                     <span class="help-block"><?php echo $lastname_Error; ?></span>
                 </div>
 
                 <div class="col-6  <?php echo (!empty($email_Error)) ? 'has-error' : ''; ?>">
                     <label for="email">Email : </label>
-                    <input class="form-control" type="email" name="email" placeholder="Email"
-                    required value="<?php echo $email; ?>">
+                    <input class="form-control" type="email" name="email" placeholder="Email" required
+                        value="<?php echo $email; ?>">
                     <span class="help-block"><?php echo $email_Error; ?></span>
                 </div>
 
                 <div class="col-6  <?php echo (!empty($telephone_Error)) ? 'has-error' : ''; ?>">
                     <label for="telephone">Telephone : </label>
-                    <input class="form-control" type="text" name="telephone" placeholder="+32-0-000-00-00"
-                    required value="<?php echo $telephone; ?>">
+                    <input class="form-control" type="text" name="telephone" placeholder="+32-0-000-00-00" required
+                        value="<?php echo $telephone; ?>">
                     <span class="help-block"><?php echo $telephone_Error; ?></span>
                 </div>
             </div>
@@ -81,16 +81,17 @@ if ($update == true) {
                 <?php echo $company_Error; ?>
                 <select name="workingAt" class="form-control selectSearch">
                     <option value="0" selected>Please select a company</option>
-        
-    <!-- Importer Companies de la DB du model Companies dans ADD
-    Afficher dans le SELECT sur selected le Nom de la compagnie 
+
+                    <!-- Importer Companies de la DB du model Companies dans ADD
+    Afficher dans le SELECT sur selected le Nom de la compagnie
     Si Page ADD valeur 0 -> Please select a company -->
 
-                <?php foreach ($compagnies as $company) : ?>
-                    <option value="<?= $company['id'] ?>" <?= ($company['id'] == $contact['workingAt']) ? 'selected' : '' ?> > <?= $company['name'] ?></option>
-                <?php endforeach  ?>
+                    <?php foreach ($compagnies as $company): ?>
+                    <option value="<?=$company['id']?>"
+                        <?=($company['id'] == $contact['workingAt']) ? 'selected' : ''?>> <?=$company['name']?></option>
+                    <?php endforeach?>
 
-    <!-- Fin import -->
+                    <!-- Fin import -->
 
                 </select>
             </div>
@@ -102,9 +103,10 @@ if ($update == true) {
             <!-- Fin input antiRobot -->
 
             <div>
-            <!-- Nommer le bouton soit Add ou Update Contact Si True valeur = Update si False Add new -->
-            <hr>
-                <button name="submit" value="submit" type="submit"><?= ($update) ? 'Update ' : 'Add new ' ?>contact !</button>
+                <!-- Nommer le bouton soit Add ou Update Contact Si True valeur = Update si False Add new -->
+                <hr>
+                <button class="btn btn-mdb-color" name="submit" value="submit"
+                    type="submit"><?=($update) ? 'Update ' : 'Add new '?>contact !</button>
             </div>
 
         </form>
@@ -113,7 +115,7 @@ if ($update == true) {
 
 <!-- Script bootstrap  -->
 <?php
-include('components/scripts.php');
+include 'components/scripts.php';
 
 // Inclure Footer ...
 include "components/footer.php";

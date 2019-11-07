@@ -16,9 +16,9 @@ include "components/navbar.php";
 
     <div class="mt-4 row d-flex justify-content-around">
         <button type="button" onclick="window.location.href = 'companies/clients'"
-            class="btn btn-lg btn-mdb-color waves-effect"><i class="fas fa-arrow-right"></i></i> Clients</button>
+            class="btn btn-mdb-color waves-effect"><i class="fas fa-arrow-right"></i></i> Clients</button>
         <button type="button" onclick="window.location.href = 'companies/providers'"
-            class="btn btn-lg btn-mdb-color"><i class="fas fa-arrow-right"></i></i> Providers</button>
+            class="btn btn-mdb-color"><i class="fas fa-arrow-right"></i></i> Providers</button>
     </div>
 
 
