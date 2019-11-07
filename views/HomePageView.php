@@ -18,7 +18,7 @@ include "components/navbar.php";
         <button type="button" onclick="window.location.href = 'companies/clients'"
             class="btn btn-lg btn-mdb-color waves-effect"><i class="fas fa-arrow-right"></i></i> Clients</button>
         <button type="button" onclick="window.location.href = 'companies/providers'"
-            class="btn btn-lg btn-mdb-color waves-effect"><i class="fas fa-arrow-right"></i></i> Providers</button>
+            class="btn btn-lg btn-mdb-color"><i class="fas fa-arrow-right"></i></i> Providers</button>
     </div>
 
 
