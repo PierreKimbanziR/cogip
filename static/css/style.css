@@ -70,6 +70,22 @@ footer.page-footer {
   display: none;
 }
 
-.form-control .selectSearch{
+.form-control .selectSearch {
   background-color: blue;
+}
+
+@media print {
+  header,
+  nav,
+  footer,
+  .btn {
+    display: none !important;
+  }
+  .shadow {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+  }
+
+  .border {
+    border: none !important;
+  }
 }

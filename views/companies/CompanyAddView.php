@@ -9,18 +9,16 @@ global $country_error;
 global $vat_error;
 global $role_error;
 
-
 global $name;
 global $country;
 global $vat;
 global $role;
 
-
-if ($update==TRUE){
-	$name=$company["name"];
-	$country=$company["country"];
-	$vat=$company["vat"];
-	$role=$company["role"];
+if ($update == true) {
+    $name    = $company["name"];
+    $country = $company["country"];
+    $vat     = $company["vat"];
+    $role    = $company["role"];
 }
 ?>
 
@@ -327,16 +325,16 @@ if ($update==TRUE){
 
 
 <!-- Script bootstrap  -->
-<?php 
-include('components/scripts.php');
+<?php
+include 'components/scripts.php';
 ?>
 <script>
 $("#country option").each(function() {
-    
-    if ($(this).text() == "<?=$company['country']?>"){
-        $(this).attr("selected","selected");
+
+    if ($(this).text() == "<?=$company['country']?>") {
+        $(this).attr("selected", "selected");
     }
-    
+
 });
 </script>
 <?php
