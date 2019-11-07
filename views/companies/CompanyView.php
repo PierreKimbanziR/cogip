@@ -13,15 +13,17 @@ include "components/navbar.php";
     <p><strong>Country: </strong><?php echo $company['country'];?></p>
     <p>
     <a href="../companies">Return to companies</a> | 
-
+    
     <?php if ($_SESSION['level'] == 3) : ?>
+        |
+        <a href="../contacts/update/<?php echo $id; ?>">Modify <i class="fas fa-lg fa-edit"></i></a> |
+        <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal" data-itemid="<?=$id;?>"data-itemname="<?=$contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete <i class="fas fa-lg fa-trash-alt pointer"></i></span>
         
+    <?php endif ?>
+
     <a href="../companies/update/<?php echo $id; ?>">Modify</a> | 
     <span data-toggle="modal" data-target="#deleteModal" data-itemid="<?= $id;?>" data-itemname="<?= $company['name'] ?>" data-item="companies">Delete</span>
     </p>
-       
-    <?php endif ?>
-
 </div>
 
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
