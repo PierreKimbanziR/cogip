@@ -39,8 +39,11 @@ function showCompanyId($id)
 
 function createCompany()
 {
-    require 'models/companies/CompanyAddModel.php';
-    $page_title = ' Add Company';
+    if ($_SERVER["REQUEST_METHOD"] =="POST"){
+        require 'models/companies/CompanyAddModel.php';
+        addCompany();
+    }
+    $page_title = 'Add Company';
     $update=false;
     include 'views/companies/CompanyAddView.php';
     

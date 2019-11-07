@@ -30,7 +30,7 @@ if ($update == true) {
                     <div class="form-group row">  
                         <div class="col-6"> 
     <label for="name" >Company Name: </label>
-    <input class="form-control" title="companyname" type="text" name="name" placeholder="Company name" size="22" maxlength="30" autofocus  id ='companyname' required value="<?php echo $name; ?>">
+    <input class="form-control" title="companyname" type="text" name="name" placeholder="Company name"   id ='companyname' required value="<?php echo $name; ?>">
 	<span class ="text-danger"><?php echo $name_error; ?></span>
     </div>
     
@@ -38,7 +38,7 @@ if ($update == true) {
     
     <div class="col-6">
     <label for="country">Company country: </label>
-	<select class="form-control selectSearch" id="country" name="country" placeholder="Company country"  maxlength ="30" title='country' required value ="<?php echo $country; ?>">
+	<select class="form-control selectSearch" id="country" name="country" placeholder="Company country"   required value ="<?php echo $country; ?>">
     <option value='0'>--</option>
 	<option value="">Select Country</option> 
 <option value="United States">United States</option> 
@@ -290,7 +290,7 @@ if ($update == true) {
     
     <div class="col-6">
     <label for="Vat"> Company Vat : </label>
-    <input  class ="form-control" title="Vat" type="number" name="vat" placeholder="Company Vat" size="22" maxlength="30" required value ="<?php echo $vat ?>">
+    <input  class ="form-control" title="Vat" type="number" name="vat" placeholder="Company Vat" required value ="<?php echo $vat ?>">
 	<span class ="text-danger"><?php echo $vat_error ?></span>
     </div>
     
@@ -298,7 +298,7 @@ if ($update == true) {
     
     <div class="col-6">
     <label for="role">Company role : </label>
-    <select class="form-control" id="companyrole" name="role" placeholder="Company role"  maxlength ="30" title ="companyrole" required value ="<?php echo $role ?>">
+    <select class="form-control" id="companyrole" name="role" placeholder="Company role"   title ="companyrole" required value ="<?php echo $role ?>">
     <option value ="1"<?=($company['role']==1)? "selected" :""?>>Provider</option>
     <option value ='0'<?=($company['role']==0)? "selected" :""?>>Client</option>
 	<span class ="text-danger"><?php echo $role_error ?></span>
@@ -307,7 +307,7 @@ if ($update == true) {
 
     <div><hr>
     <label for="Telephone">Telephone : </label>
-    <input title="Telephone" class="form-control"type="text" name="telephone" placeholder="Telephone" size="22" maxlength="30" >
+    <input title="Telephone" class="form-control"type="text" name="telephone" placeholder="Telephone">
     </div>
 
     
