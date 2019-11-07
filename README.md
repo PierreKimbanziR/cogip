@@ -14,7 +14,25 @@ It can manage contacts, clients, providers, invoices and users.
 
 ## Informations
 
-All tables have a search option and pagination
+All tables have a search option and pagination.
+There is a special @Media print for printing beautyfull invoices from within the webpage 
+The server is hosted on Online.net and fully configured using Docker.
+The database is hosted on AWS EDS.
+
+### Technologies used:
+
+- PHP
+- MySQL (MariaDB on AWS EDS)
+- Javascript
+- [JQuery](https://jquery.com)
+- [MDBootstrap](https://mdbootstrap.com/) (free version)
+- [Select2](https://select2.org/)
+- [JsBarcode](https://lindell.me/JsBarcode/)
+- [ChartJS](https://www.chartjs.org/)
+
+### Invoice Page
+
+Barcode is generated automatically with the invoice number
 
 [Manu's beautyfull MockUps](https://github.com/philesgilles/cogip/blob/master/infos/README.md)
 
@@ -29,23 +47,3 @@ All tables have a search option and pagination
 ### Screenshot
 
 ![Application screen](https://github.com/philesgilles/cogip/blob/master/infos/screenshot.png 'Application screen')
-
-### Technologies used:
-
-- PHP
-- MySQL (MariaDB on AWS EDS)
-- Javascript
-- [JQuery](https://jquery.com)
-- [MDBootstrap](https://mdbootstrap.com/) (free version)
-- [Select2](https://select2.org/)
-- [JsBarcode](https://lindell.me/JsBarcode/)
-- [ChartJS](https://www.chartjs.org/)
-
-There is a special @Media print for printing beautyfull invoices from within the webpage 
-
-The server is hosted on Online.net and fully configured using Docker.
-The database is hosted on AWS EDS.
-
-### Invoice Page
-
-Barcode is generated automatically with the invoice number
