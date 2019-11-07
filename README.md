@@ -37,6 +37,10 @@ Barcode is generated automatically with the invoice number
 ***
 [Manu's beautyfull MockUps](https://github.com/philesgilles/cogip/blob/master/infos/README.md)
 
+### Screenshot
+
+![Application screen](https://github.com/philesgilles/cogip/blob/master/infos/screenshot.png 'Application screen')
+
 ### Flow Chart
 
 ![Application flowChart](https://github.com/philesgilles/cogip/blob/master/infos/cogip%20flowchart.png 'Application FlowChart')
@@ -44,7 +48,3 @@ Barcode is generated automatically with the invoice number
 ### Database Structure
 
 ![Application Database](https://github.com/philesgilles/cogip/blob/master/infos/db-chart.png 'Database')
-
-### Screenshot
-
-![Application screen](https://github.com/philesgilles/cogip/blob/master/infos/screenshot.png 'Application screen')
