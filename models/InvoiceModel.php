@@ -111,9 +111,74 @@ function lastIdInvoice()
     return $lastIdInvoice;
 }
 
-
 //verify data of invoices form
-function validationInvoice(){
-    $verify = true;
-    
+function validationInvoice()
+{
+    global $verify;
+    global $invoice;
+    global $invoiceNumberMessage;
+    global $amountMessage;
+    global $typeMessage;
+    global $clientTypeMessage;
+    global $contactMessage;
+    global $companieMessage;
+    global $descriptionMessage;
+
+    $invoiceNumber = $_POST["invoiceNumber"];
+    $clientType = $_POST["clientType"];
+    $description = $_POST["description"];
+    $amount = $_POST["amount"];
+    $type = $_POST["type"];
+    if ($clientType == "1") {
+        $companie = NULL;
+        $contact = $_POST["contact"];
+    } elseif ($clientType == "0") {
+        $companie = $_POST["companie"];
+        $contact = NULL;
+    }
+
+    $invoice['invoiceNumber'] = $invoiceNumber;
+    $invoice['amount'] = $amount;
+    $invoice['type'] = $type;
+    $invoice['clientType'] = $clientType;
+    $invoice['contactId'] = $contact;
+    $invoice['companyId'] = $companie;
+    $invoice['description'] = $description;
+    $invoiceNumberTemplate = "COG" . date('Y') . "-";
+    if (!strstr($invoiceNumber, $invoiceNumberTemplate)) {
+        $verify = FALSE;
+
+        $invoiceNumberMessage = "Please enter an invoice number with this format " . $invoiceNumberTemplate;
+    }
+    if (is_numeric($amount) == FALSE) {
+        $verify = FALSE;
+
+        $amountMessage = "Please enter a number ";
+    }
+    if (is_numeric($type) == FALSE) {
+        $verify = FALSE;
+
+        $typeMessage = "Please select a type of invoice";
+    }
+    if (is_numeric($clientType) == FALSE) {
+        $verify = FALSE;
+
+        $clientTypeMessage = "Please select a type of client";
+    }
+    if (is_numeric($contact) == FALSE &&  !is_null($contact)) {
+        $verify = FALSE;
+
+        $contactMessage = "Please select a contact";
+    }
+    if (is_numeric($companie) == FALSE && !is_null($companie)) {
+        $verify = FALSE;
+
+        $companieMessage = "Please select a companie";
+    }
+    $description = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
+    if ($description == "") {
+        $verify = FALSE;
+
+        $descriptionMessage = "Please enter a description";
+    }
 }
