@@ -157,17 +157,17 @@ new Chart(document.getElementById("lineChart"), {
             'Octobre'
         ],
         datasets: [{
-            data: [1340, 2590, 3400, 543, 2331, 2892, 153, 2700, 783, 2478],
+            data: [1340, 2590, 3000, 1500, 2331, 2892, 953, 2700, 783, 2478],
             label: "Jean-Christian",
             borderColor: "#3e95cd",
             fill: false
         }, {
-            data: [1768, 930, 1700, 3452, 2250, 1300, 2690, 1402, 2700, 365],
+            data: [1768, 930, 1700, 3452, 2250, 1300, 2690, 1402, 2700, 965],
             label: "Murielle",
             borderColor: "#8e5ea2",
             fill: false
         }, {
-            data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
+            data: [1680, 1700, 1780, 1900, 2030, 2760, 2080, 947, 675, 734],
             label: "Guy-Allain",
             borderColor: "#3cba9f",
             fill: false
