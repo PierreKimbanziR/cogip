@@ -25,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $username  = $user['username'];
     $email     = $user['email'];
     $jobTitle  = $user['jobTitle'];
+    $userLevel = $user['userLevel'];
+    echo $userLevel;
 }
 
 ?>
@@ -51,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         <select class="form-control <?php echo (!empty($level_err)) ? 'has-error' : '' ?>"
                             name="userLevel">
                             <option value="2">Employee</option>
-                            <option value="3">SuperAdmin</option>
+                            <option value="3" <?=($userLevel == '3') ? 'selected' : ''?>>SuperAdmin</option>
                         </select>
                         <span class="help-block"><?php echo $level_err; ?></span>
                     </div>
