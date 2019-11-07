@@ -3,6 +3,8 @@ require "components/header.php";
 require "components/navbar.php";
 ?>
 <div class="container">
+<?php if (isset($invoice['invoiceNumber'])) { ?> <h1 class="text-center">Update an invoice</h1> <?php } else {
+                                                                                                                                                                ?> <h1 class="text-center">Add an invoice</h1> <?php   } ?>
     <form method="POST" action="">
         <div class="form-group row">
             <div class="col-sm-12 col-md-4">
@@ -88,10 +90,10 @@ require "components/footer.php";
         $('#contactList').hide();
 
 
-        if ($('#clientType').val() === 0) {
+        if ($('#clientType').val() == "0") {
             $('#companieList').show();
         }
-        if ($('#clientType').val() === 1) {
+        if ($('#clientType').val() == "1") {
             $('#contactList').show();
         }
 
