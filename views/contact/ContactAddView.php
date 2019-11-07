@@ -77,7 +77,7 @@ if ($update == true) {
                 </div>
             </div>
 
-            <div>
+            <div><label for="company">Company : </label>
                 <?php echo $company_Error; ?>
                 <select name="workingAt" class="form-control selectSearch">
                     <option value="0" selected>Please select a company</option>
