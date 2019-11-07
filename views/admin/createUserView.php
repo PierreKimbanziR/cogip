@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $email     = $user['email'];
     $jobTitle  = $user['jobTitle'];
     $userLevel = $user['userLevel'];
-    echo $userLevel;
 }
 
 ?>

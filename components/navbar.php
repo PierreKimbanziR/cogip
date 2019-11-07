@@ -61,7 +61,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-default"
                     aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" href="#"><i class="fas fa-lg fa-user-tie"></i> My Account</a>
+                    <a class="dropdown-item" href="/cogip/auth/account"><i class="fas fa-lg fa-user-tie"></i> My Account</a>
                     <a class="dropdown-item" href="/cogip/auth/logout"><i class="fas fa-lg fa-sign-in-alt"></i> Log
                         Out</a>
                 </div>

@@ -23,9 +23,9 @@ if ($update == true) {
 ?>
 
 <div class="container">
-    <h1 class="text-center"><?= $page_title?></h1>
-        <div class="col p-3 mb-5 bg-white rounded">
-            <form method="POST" action="">
+    <h1 class="text-center"><?=$page_title?></h1>
+    <div class="col p-3 mb-5 bg-white rounded">
+        <form method="POST" action="">
 
                     <div class="form-group row">  
                         <div class="col-6"> 
@@ -310,16 +310,43 @@ if ($update == true) {
     <input title="Telephone" class="form-control"type="text" name="telephone" placeholder="Telephone">
     </div>
 
-    
-    <div class="col-6">
-    <hr>
-    <button name="submit" value="submit" title="Add a new company !" type="submit"><?=$page_title?></button>
-    </div>
-    
+            <div class="form-group row">
+                <div class="col-12 col-md-6">
+                    <label for="Vat"> Company VAT :</label>
+                    <input class="form-control" title="Vat" type="number" name="vat" placeholder="Company Vat" size="22"
+                        maxlength="30" required value="<?php echo $vat ?>">
+                    <span class="text-danger"><?php echo $vat_error ?></span>
+                </div>
 
-    
-    </div>
-    </form>
+
+
+                <div class="col-12 col-md-6">
+                    <label for="role">Company role : </label>
+                    <select class="form-control" id="companyrole" name="role" placeholder="Company role" maxlength="30"
+                        title="companyrole" required value="<?php echo $role ?>">
+                        <option value="1" <?=($company['role'] == 1) ? "selected" : ""?>>Provider</option>
+                        <option value='0' <?=($company['role'] == 0) ? "selected" : ""?>>Client</option>
+                    </select>
+                    <span class="text-danger"><?php echo $role_error ?></span>
+                </div>
+            </div>
+            <div class="form-group">
+
+                    <label for="Telephone">Telephone : </label>
+                    <input class="form-control" type="text" name="telephone" placeholder="Telephone">
+
+            </div>
+            <div class="form-group row">
+                <div class="col-12 col-md-6">
+                    <button class="btn btn-mdb-color" name="submit" value="submit" title="Add a new company !"
+                        type="submit"><?=$page_title?></button>
+                </div>
+            </div>
+
+
+
+            </div>
+        </form>
     </div>
 </div>
 
