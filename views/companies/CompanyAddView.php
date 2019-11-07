@@ -293,7 +293,7 @@ if ($update == true) {
 
                 <div class="col-12 col-md-6">
                     <label for="role">Company role : </label>
-                    <select class="form-control" id="companyrole" name="role" placeholder="Company role"
+                    <select class="form-control" name="role" placeholder="Company role"
                         title="companyrole" required value="<?php echo $role ?>">
                         <option value="1" <?=($company['role'] == 1) ? "selected" : ""?>>Provider</option>
                         <option value='0' <?=($company['role'] == 0) ? "selected" : ""?>>Client</option>
