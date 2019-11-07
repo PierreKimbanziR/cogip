@@ -2,6 +2,7 @@
 // Inclure Header ...
 include "components/header.php";
 include "components/navbar.php";
+echo $company
 ?>
 
 <div class="container col-8 border example hoverable">
@@ -13,39 +14,20 @@ include "components/navbar.php";
     <p><strong>Country: </strong><?php echo $company['country'];?></p>
     <p>
     <a href="../companies">Return to companies</a> | 
-
+    
     <?php if ($_SESSION['level'] == 3) : ?>
+        |
+        <a href="../companies/update/<?php echo $id; ?>">Modify <i class="fas fa-lg fa-edit"></i></a> |
+        <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal" data-itemid="<?=$company['id'];?>"data-itemname="<?=$company['name']?>" data-item="companies">Delete <i class="fas fa-lg fa-trash-alt pointer"></i></span>
         
-    <a href="../companies/update/<?php echo $id; ?>">Modify</a> | 
-    <span data-toggle="modal" data-target="#deleteModal" data-itemid="<?= $id;?>" data-itemname="<?= $company['name'] ?>" data-item="companies">Delete</span>
-    </p>
-       
     <?php endif ?>
 
+    
+   
+    </p>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete <span class="font-weight-bold" id="deleteModalName"></span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                <form id="deleteModalAction" action="" method="post">
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
 </div>
 <?php
 // Inclure Footer ...

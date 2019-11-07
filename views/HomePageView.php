@@ -24,90 +24,96 @@ include "components/navbar.php";
 
     <div class="row mt-4">
         <h4>Latest Invoices</h4>
-        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-            <thead class="grey darken-3 white-text">
-                <tr>
-                    <th class="th-sm">
-                        Invoice #
-                    </th>
-                    <th class="th-sm">Date
-                    </th>
-                    <th class="th-sm">Client
-                    </th>
-                    <th class="th-sm">Amount
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($lastInvoices as $invoice): ?>
-                <tr id="<?=$invoice['id']?>">
-                    <td><?=$invoice['invoiceNumber']?></td>
-                    <td><?=explode(' ', $invoice['createdAt'])[0]?></td>
-                    <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
-                    </td>
-                    <td class="text-right"><?=$invoice['amount']?> €</td>
-                </tr>
-                <?php endforeach?>
-            </tbody>
-        </table>
+        <div class="table-responsive col-12">
+            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                <thead class="grey darken-3 white-text">
+                    <tr>
+                        <th class="th-sm">
+                            Invoice #
+                        </th>
+                        <th class="th-sm">Date
+                        </th>
+                        <th class="th-sm">Client
+                        </th>
+                        <th class="th-sm">Amount
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($lastInvoices as $invoice): ?>
+                    <tr id="<?=$invoice['id']?>">
+                        <td><?=$invoice['invoiceNumber']?></td>
+                        <td><?=explode(' ', $invoice['createdAt'])[0]?></td>
+                        <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
+                        </td>
+                        <td class="text-right"><?=$invoice['amount']?> €</td>
+                    </tr>
+                    <?php endforeach?>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="row mt-4">
         <h4>Last contacts</h4>
-        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-            <thead class="grey darken-3 white-text">
-                <tr>
-                    <th class="th-sm">Firstname
-                    </th>
-                    <th class="th-sm">Lastname
-                    </th>
-                    <th class="th-sm">Email
-                    </th>
-                    <th class="th-sm">Telephone
-                    </th>
-                    <th class="th-sm">Company
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($lastContacts as $contact): ?>
-                <tr id="<?=$contact['id']?>">
-                    <td><?=$contact['firstname']?></td>
-                    <td><?=$contact['lastname']?></td>
-                    <td><?=$contact['email']?></td>
-                    <td><?=$contact['telephone']?></td>
-                    <td><?=$contact['companyName']?></td>
-                </tr>
-                <?php endforeach?>
-            </tbody>
-        </table>
+        <div class="table-responsive col-12">
+            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                <thead class="grey darken-3 white-text">
+                    <tr>
+                        <th class="th-sm">Firstname
+                        </th>
+                        <th class="th-sm">Lastname
+                        </th>
+                        <th class="th-sm">Email
+                        </th>
+                        <th class="th-sm">Telephone
+                        </th>
+                        <th class="th-sm">Company
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($lastContacts as $contact): ?>
+                    <tr id="<?=$contact['id']?>">
+                        <td><?=$contact['firstname']?></td>
+                        <td><?=$contact['lastname']?></td>
+                        <td><?=$contact['email']?></td>
+                        <td><?=$contact['telephone']?></td>
+                        <td><?=$contact['companyName']?></td>
+                    </tr>
+                    <?php endforeach?>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="row mt-4">
         <h4>Last Companies</h4>
-        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-            <thead class="grey darken-3 white-text">
-                <tr>
-                    <th class="th-sm">
-                        Name
-                    </th>
-                    <th class="th-sm">Country
-                    </th>
-                    <th class="th-sm">VAT
-                    </th>
-                    <th class="th-sm">Role
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($lastCompanies as $company): ?>
-                <tr id="<?=$company['id']?>">
-                    <td><?=$company['name']?></td>
-                    <td><?=$company['country']?></td>
-                    <td><?=$company['vat']?></td>
-                    <td><?=($company['role'] == 0) ? 'Client' : 'Fournisseur'?></td>
-                </tr>
-                <?php endforeach?>
-            </tbody>
-        </table>
+        <div class="table-responsive col-12">
+            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                <thead class="grey darken-3 white-text">
+                    <tr>
+                        <th class="th-sm">
+                            Name
+                        </th>
+                        <th class="th-sm">Country
+                        </th>
+                        <th class="th-sm">VAT
+                        </th>
+                        <th class="th-sm">Role
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($lastCompanies as $company): ?>
+                    <tr id="<?=$company['id']?>">
+                        <td><?=$company['name']?></td>
+                        <td><?=$company['country']?></td>
+                        <td><?=$company['vat']?></td>
+                        <td><?=($company['role'] == 0) ? 'Client' : 'Fournisseur'?></td>
+                    </tr>
+                    <?php endforeach?>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 </div>
