@@ -5,6 +5,7 @@ require "components/navbar.php";
 $date = explode(" ", $invoice['createdAt']);
 ?>
 <div class="container">
+<h1 class="text-center">Invoice  <?=htmlspecialchars($invoice['invoiceNumber'])?></h1>
     <a href="/cogip/invoices"><button type="button" class="btn btn-outline-danger waves-effect"><i
                 class="fas fa-angle-double-left"></i> Return to Invoices</button></a>
 </div>
@@ -36,7 +37,7 @@ $date = explode(" ", $invoice['createdAt']);
         <div class="col-md-3 offset-6">
             <?=$date[0]?><br>
             Invoice n° <?=htmlspecialchars($invoice['invoiceNumber'])?><br>
-            Type : <?=($invoice['type'] == 0) ? "OUT" : "IN"?>
+            Type : <?=($invoice['type'] == 1) ? "OUT" : "IN"?>
 
         </div>
     </div>

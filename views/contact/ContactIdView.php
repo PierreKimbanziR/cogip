@@ -31,19 +31,6 @@ $email = $contact['email'];
                         email : <?php echo "<a href='mailto:".$contact['email']."'>".$contact['email']."</a>"; ?><br>
                         Contact since : <?=$contact['createdAt']?><br>
                     </address>
-                    <hr>
-                    <p>
-                        <a href="../contacts">Return to contacts</a>
-
-<!-- SESSION ADMIN -->
-<?php if ($_SESSION['level'] == 3) : ?>
-    |
-                        <a href="../contacts/update/<?php echo $id; ?>">Modify <i class="fas fa-lg fa-edit"></i></a> |
-                        <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal" data-itemid="<?=$id;?>"data-itemname="<?=$contact['firstname'] . ' ' . $contact['lastname']?>" data-item="contacts">Delete <i class="fas fa-lg fa-trash-alt pointer"></i></span>
-<?php endif ?>
-<!-- FIN SESSION ADMIN -->
-              
-                    </p>
                 </div>
             </div>
         </div>

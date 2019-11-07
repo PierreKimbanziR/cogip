@@ -1,10 +1,9 @@
 <?php
 require "components/header.php";
 require "components/navbar.php";
-
 ?>
-
 <div class="container">
+<h1 class="text-center">Invoices</h1>
     <?php
     if (isset($_GET['valide']) && $_GET['valide'] == "0") {
         ?>
@@ -58,10 +57,12 @@ require "components/navbar.php";
                     <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
                     <td><?= htmlspecialchars($invoice['name']) ?></td>
                     <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
-                    <td><?= ($invoice['type'] == 0) ? "OUT" : "IN" ?></td>
-                    <td class="text-center d-flex <?= ($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center' ?>"><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="far fa-lg fa-eye"></i></a>
+                    <td><?= ($invoice['type'] == 1) ? "OUT" : "IN" ?></td>
+                    <td class="text-center d-flex <?= ($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center' ?>"><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="far fa-lg fa-eye"></i></a>
                         <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/update/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-edit"></i></a><?php } ?>
-                        <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-trash-alt pointer"></i></a><?php } ?>
+                        <?php if (($_SESSION['level'] > 2)) { ?> <i class="fas fa-lg fa-trash-alt pointer toggleModal" data-itemid="<?=$invoice['id']?>"
+                            data-itemname="<?=$invoice['invoiceNumber']?>" data-item="invoices" data-toggle="modal"
+                            data-target="#deleteModal"></i><?php } ?>
                     </td>
                 </tr>
 
@@ -78,9 +79,11 @@ require "components/navbar.php";
                     <td><?= htmlspecialchars($invoice['lastname']) ?><?= " " ?><?= htmlspecialchars($invoice['firstname']) ?></td>
                     <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
                     <td><?= ($invoice['type'] == 0) ? "OUT" : "IN" ?></td>
-                    <td class="text-center d-flex <?= ($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center' ?>"><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="far fa-lg fa-eye"></i></a>
+                    <td class="text-center d-flex <?= ($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center' ?>"><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="far fa-lg fa-eye"></i></a>
                         <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/update/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-edit"></i></a><?php } ?>
-                        <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-trash-alt pointer"></i></a><?php } ?>
+                        <?php if (($_SESSION['level'] > 2)) { ?> <i class="fas fa-lg fa-trash-alt pointer toggleModal" data-itemid="<?=$invoice['id']?>"
+                            data-itemname="<?=$invoice['invoiceNumber']?>" data-item="invoices" data-toggle="modal"
+                            data-target="#deleteModal"></i><?php } ?>
                     </td>
                 </tr>
 

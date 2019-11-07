@@ -1,5 +1,5 @@
 <?php
-// http://localhost/cogip/contacts/create
+//  Celle page ajoute (ADD) et modifie les contacts (UPDATE)
 // Initialiser variables
 $firstname=$lastname=$company=$email=$telephone="";
 
@@ -25,12 +25,11 @@ function verifyContact(){
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-
         // -----------------------------------------------------------------------------
         //Honeypot 
             if ($_POST['vilainRobot']) 
                 {
-                    echo '!!!! SPAM !!!!';       
+                    echo "!!!! SPAM !!!!";       
                 // Stop le script de la page
                     return;
                 }
@@ -65,7 +64,7 @@ function verifyContact(){
 
                     
                     {   // Message d'erreurs
-                        $firstname_Error = "Only letters and white space allowed (fn)";   
+                        $firstname_Error = "Only letters and white space allowed";   
                     }
             }
 
@@ -79,7 +78,7 @@ function verifyContact(){
                 $lastname_Error = "Please enter a lastname.";
             } 
 
-        else 
+            else 
             {
                 // si correct on attribue applique htmlspecialchars
                 $lastname = htmlspecialchars($_POST["lastname"]);
@@ -87,7 +86,7 @@ function verifyContact(){
                 // si caractères spéciaux
                 if (!preg_match("/^[a-zA-Z ]*$/", $lastname))          
                     {   // Message d'erreurs
-                        $lastname_Error = "Only letters and white space allowed (No: éèêà ...)";   
+                        $lastname_Error = "Only letters and white space allowed (Not: *@éèêà ...)";   
                     }
             }
 
@@ -127,6 +126,8 @@ function verifyContact(){
 }}
 
 function addContact(){
+        // Checker si envoi a été par _POST (et non _GET = spam)
+        verifyContact();
     global $firstname_Error;
     global $lastname_Error;
     global $email_Error;
@@ -141,35 +142,36 @@ function addContact(){
     global $workingAt;
     global $telephone;
     global $company;
-    // Checker si envoi a été par _POST (et non _GET = spam)
-    verifyContact();
     // Si envoyé et error != ""
     if (empty($lastname_Error) && empty($firstname_Error) && empty($email_Error) && empty($telephone_Error) && empty($company_Error))
         {
         // connexion DB
         global $conn;
-        echo "NO ERROR";
+        //echo "NO ERROR";
         
         $sql = "INSERT INTO contacts (firstname,lastname,email,telephone,workingAt) VALUES('$firstname','$lastname','$email','$telephone','$company');";
 
         if ($conn->query($sql)) {
-                echo '<p>SUCCES</p>';
+                // echo '<p>SUCCES</p>';
                 header('location: /cogip/contacts');
         } else {
                 echo '<p>Data Base issues !</p>';
         }
     } else {
-        echo "ERROR";
-        echo $lastname_Error;
-        echo $firstname_Error;
-        echo $email_Error;
-        echo $telephone_Error;
-        echo $company_Error;
+        // echo "ERROR";
+        // echo $lastname_Error;
+        // echo $firstname_Error;
+        // echo $email_Error;
+        // echo $telephone_Error;
+        // echo $company_Error;
     }
 }
 
 function patchContact($id)
 { 
+        // Checker si envoi a été par _POST (et non _GET = spam)
+        verifyContact();
+
     global $firstname_Error;
     global $lastname_Error;
     global $email_Error;
@@ -184,13 +186,13 @@ function patchContact($id)
     global $workingAt;
     global $telephone;
     global $company;
-    // Checker si envoi a été par _POST (et non _GET = spam)
-    verifyContact();
 
-    // Connection DB
+    if (empty($lastname_Error) && empty($firstname_Error) && empty($email_Error) && empty($telephone_Error) && empty($company_Error)){
+            // Connection DB - UPDATE
     global $conn;
     $stmt = $conn->prepare("UPDATE contacts SET  firstname= ?, lastname= ?, email= ?, workingAt= ?, telephone= ? WHERE id = '$id' ");
-    $stmt->execute([$firstname, $lastname, $email, $workingAt, $telephone]);
+    $stmt->execute([$firstname, $lastname, $email, $company, $telephone]);
 
     header('location: /cogip/contacts');
+    }
 }

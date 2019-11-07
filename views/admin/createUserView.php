@@ -31,27 +31,30 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 
 <div class="container">
+    <h1 class="text-center"><?=($postPath == 'create') ? 'Create new' : 'Update'?> user</h1>
     <div class="row mt-4 p-3">
-        <div class="col shadow p-3 mb-5 bg-white rounded">
-            <h2><?=($postPath == 'create') ? 'Create new' : 'Update'?> user</h2>
+        <div class="col p-3 mb-5">
             <?php if ($postPath == "create"): ?>
-            <p>Please fill this form to create a new account.</p>
+            <p class="text-center">Please fill this form to create a new account.</p>
             <?php else: ?>
-            <p>Please modify the entries to update the account.</p>
+            <p class="text-center">Please modify the entries to update the account.</p>
             <?php endif?>
             <form action="/cogip/admin/users/<?=$postPath?>" method="post">
-                <div class="form-group <?php echo (!empty($level_err)) ? 'has-error' : ''; ?>">
-                    <label>User level</label>
-                    <select name="userLevel">
-                        <option value="2">Employee</option>
-                        <option value="3">SuperAdmin</option>
-                    </select>
-                    <span class="help-block"><?php echo $level_err; ?></span>
-                </div>
-                <div class="form-group <?php echo (!empty($jobTitle_err)) ? 'has-error' : ''; ?>">
-                    <label>Job Title :</label>
-                    <input type="text" name="jobTitle" class="form-control" value="<?php echo $jobTitle; ?>">
-                    <span class="help-block"><?php echo $jobTitle_err; ?></span>
+                <div class="form-group row">
+                    <div class="col-12 col-md-6 <?php echo (!empty($jobTitle_err)) ? 'has-error' : ''; ?>">
+                        <label>Job Title :</label>
+                        <input type="text" name="jobTitle" class="form-control" value="<?php echo $jobTitle; ?>">
+                        <span class="help-block"><?php echo $jobTitle_err; ?></span>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label>User level : </label>
+                        <select class="form-control <?php echo (!empty($level_err)) ? 'has-error' : '' ?>"
+                            name="userLevel">
+                            <option value="2">Employee</option>
+                            <option value="3">SuperAdmin</option>
+                        </select>
+                        <span class="help-block"><?php echo $level_err; ?></span>
+                    </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-12 col-md-6 <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">

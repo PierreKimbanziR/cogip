@@ -26,8 +26,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                     <a class="dropdown-item" href="/cogip/companies">All</a>
-                    <a class="dropdown-item" href="/cogip/companies">Clients</a>
-                    <a class="dropdown-item" href="/cogip/companies">Providers</a>
+                    <a class="dropdown-item" href="/cogip/companies/clients">Clients</a>
+                    <a class="dropdown-item" href="/cogip/companies/providers">Providers</a>
                 </div>
             </li>
             <li class="nav-item <?php echo ($page_title == 'Contacts') ? 'active' : '' ?>">

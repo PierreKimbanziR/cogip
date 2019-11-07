@@ -16,9 +16,9 @@ include "components/navbar.php";
 
     <div class="mt-4 row d-flex justify-content-around">
         <button type="button" onclick="window.location.href = 'companies/clients'"
-            class="btn btn-lg btn-elegant waves-effect"><i class="fas fa-arrow-right"></i></i> Clients</button>
+            class="btn btn-lg btn-mdb-color waves-effect"><i class="fas fa-arrow-right"></i></i> Clients</button>
         <button type="button" onclick="window.location.href = 'companies/providers'"
-            class="btn btn-lg btn-elegant waves-effect"><i class="fas fa-arrow-right"></i></i> Providers</button>
+            class="btn btn-lg btn-mdb-color waves-effect"><i class="fas fa-arrow-right"></i></i> Providers</button>
     </div>
 
 
@@ -36,8 +36,6 @@ include "components/navbar.php";
                     </th>
                     <th class="th-sm">Amount
                     </th>
-                    <th class="th-sm">
-                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -48,14 +46,6 @@ include "components/navbar.php";
                     <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
                     </td>
                     <td class="text-right"><?=$invoice['amount']?> €</td>
-                    <td
-                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center'?>">
-                        <a href="/cogip/invoices/<?=$invoice['id']?>"><i class="far fa-lg fa-eye"></i></a>
-                        <?php if ($_SESSION['level'] > 2): ?>
-                        <a href="/cogip/invoices/update/<?=$company['id']?>"><i class="fas fa-lg fa-edit"></i></a>
-                        <i class="fas fa-lg fa-trash-alt pointer"></i>
-                        <?php endif?>
-                    </td>
                 </tr>
                 <?php endforeach?>
             </tbody>
@@ -76,8 +66,6 @@ include "components/navbar.php";
                     </th>
                     <th class="th-sm">Company
                     </th>
-                    <th class="th-sm">
-                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -88,14 +76,6 @@ include "components/navbar.php";
                     <td><?=$contact['email']?></td>
                     <td><?=$contact['telephone']?></td>
                     <td><?=$contact['companyName']?></td>
-                    <td
-                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center'?>">
-                        <a href="/cogip/contacts/<?=$contact['id']?>"><i class="far fa-lg fa-eye"></i></a>
-                        <?php if ($_SESSION['level'] > 2): ?>
-                        <a href="/cogip/contacts/update/<?=$company['id']?>"><i class="fas fa-lg fa-edit"></i></a>
-                        <i class="fas fa-lg fa-trash-alt pointer"></i>
-                        <?php endif?>
-                    </td>
                 </tr>
                 <?php endforeach?>
             </tbody>
@@ -115,8 +95,6 @@ include "components/navbar.php";
                     </th>
                     <th class="th-sm">Role
                     </th>
-                    <th class="th-sm">
-                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -126,14 +104,6 @@ include "components/navbar.php";
                     <td><?=$company['country']?></td>
                     <td><?=$company['vat']?></td>
                     <td><?=($company['role'] == 0) ? 'Client' : 'Fournisseur'?></td>
-                    <td
-                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-between' : 'justify-content-center'?>">
-                        <a href="/cogip/companies/<?=$company['id']?>"><i class="far fa-lg fa-eye"></i></a>
-                        <?php if ($_SESSION['level'] > 2): ?>
-                        <a href="/cogip/companies/update/<?=$company['id']?>"><i class="fas fa-lg fa-edit"></i></a>
-                        <i class="fas fa-lg fa-trash-alt pointer"></i>
-                        <?php endif?>
-                    </td>
                 </tr>
                 <?php endforeach?>
             </tbody>

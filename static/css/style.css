@@ -65,3 +65,11 @@ footer.page-footer {
 .has-error > input {
   border-color: red;
 }
+
+.spam {
+  display: none;
+}
+
+.form-control .selectSearch{
+  background-color: blue;
+}
