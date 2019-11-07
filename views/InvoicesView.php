@@ -1,6 +1,7 @@
 <?php
 require "components/header.php";
 require "components/navbar.php";
+
 ?>
 <div class="container">
     <h1 class="text-center">Invoices</h1>
@@ -53,7 +54,7 @@ require "components/navbar.php";
                 foreach ($invoicescomp as $invoice) :
                     $date = explode(" ", $invoice['createdAt']);
                     ?>
-                    <tr id="<?= $invoice['id'] ?>" class="click hoverable">
+                    <tr id="<?= $invoice['id'] ?>" class="hoverable">
                         <td><?= htmlspecialchars($date[0]) ?></td>
                         <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
                         <td><?= htmlspecialchars($invoice['name']) ?></td>
@@ -72,7 +73,7 @@ require "components/navbar.php";
                 foreach ($invoicescont as $invoice) :
                     $date = explode(" ", $invoice['createdAt']);
                     ?>
-                    <tr id="<?= $invoice['id'] ?>" class="click hoverable">
+                    <tr id="<?= $invoice['id'] ?>" class="hoverable">
                         <td><?= htmlspecialchars($date[0]) ?></td>
                         <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
                         <td><?= htmlspecialchars($invoice['lastname']) ?><?= " " ?><?= htmlspecialchars($invoice['firstname']) ?></td>
@@ -95,25 +96,7 @@ require "components/navbar.php";
     </div>
 
 </div>
-<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">DELETE</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete the invoice <?= htmlspecialchars($invoice['invoiceNumber']) ?>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <?php
 
 require "components/scripts.php";
