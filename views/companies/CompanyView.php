@@ -12,7 +12,7 @@ include "components/navbar.php";
         <div class="row d-flex justify-content-center col-12 col-md-5 py-3 border shadow">
             <div class="">
                 <div class="contact-box text-center">
-                    <a href="cogip/companies">Return to companies</a>
+                    <a href="/cogip/companies">Return to companies</a>
 
 
 
