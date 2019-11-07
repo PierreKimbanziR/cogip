@@ -39,9 +39,14 @@ function showCompanyId($id)
 
 function createCompany()
 {
-    require 'models/companies/CompanyAddModel.php';
-    $page_title = ' Add Companies';
+    if ($_SERVER["REQUEST_METHOD"] =="POST"){
+        require 'models/companies/CompanyAddModel.php';
+        addCompany();
+    }
+    $page_title = 'Add Company';
+    $update=false;
     include 'views/companies/CompanyAddView.php';
+    
     
 }
 
@@ -55,13 +60,13 @@ function updateCompany($id)
     $company    = getCompany($id);
     $update = true;
     // Amener les noms des sociétes
-    require 'models/companies/CompaniesModel.php';
-    $compagnies=getCompanies();
+    
+    
     $page_title = 'Modify company';
     include 'views/companies/CompanyAddView.php';
 }
 function deleteCompany($id)
 {
-    require 'models/company/dropCompany.php';
+    require 'models/companies/dropCompany.php';
     dropCompany($id);
 }

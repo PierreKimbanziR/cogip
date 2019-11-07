@@ -5,17 +5,27 @@ include "components/navbar.php";
 ?>
 
 <div class="container">
-<a href="/cogip/companies/create"><button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus-circle"></i> Add a company</button></a>
+
     <h1 class="text-center ">List of <?= $page_title?></h1>
+    <div class="table-responsive">
+
+
+
+    <?php if ($_SESSION['level'] == 3) : ?>
+
+<a href="/cogip/companies/create"><button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus-circle"></i> Add a company</button></a>
+
+<?php endif ?>
+
     <table id="searchCompany" class="table table-striped table-bordered table-sm">
+
         <thead class="grey darken-3 white-text">
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Company name</th>
-                <th scope="col">Country</th>
-                <th scope="col">Vat</th>
-                <th scope="col">Role</th>
-                <th scope="col">Date</th>
+                <th class="th-sm">Company name</th>
+                <th class="th-sm">Country</th>
+                <th class="th-sm">Vat</th>
+                <th class="th-sm">Role</th>
+                <th class="th-sm">Date</th>
             </tr>
         </thead>
         <tbody>
@@ -25,12 +35,6 @@ include "components/navbar.php";
 
             <!-- id dans le tr pour appliquer un JS quand on clic sur tr-->
             <tr id="<?php echo $company['id']; ?>" class="example hoverable click">
-
-                <th scope="row">
-                    <a href='companies/<?php echo $company['id']; ?>'>
-                        <?php echo $company["id"]; ?></a>
-                </th>
-
                 <td><?php echo $company['name'] ?></td>
                 <td><?php echo $company['country'] ?></td>
                 <td><?php echo $company['vat'] ?></td>
@@ -45,6 +49,7 @@ include "components/navbar.php";
         </tbody>
     </table>
 </div>
+</div>
 
 <?php include 'components/scripts.php'?>
 <script>
@@ -58,7 +63,7 @@ $(document).ready(function() {
 <script>
 var linkTo = (id) => {
     //console.log(id);
-    document.location = `companies/${id}`;
+    document.location = `/cogip/companies/${id}`;
 }
 
 Array.from(document.querySelectorAll('tr.click')).forEach($btn => {

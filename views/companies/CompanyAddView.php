@@ -9,36 +9,38 @@ global $country_error;
 global $vat_error;
 global $role_error;
 
-
 global $name;
 global $country;
 global $vat;
 global $role;
 
-
-if ($update==TRUE){
-	$name=$companies["name"];
-	$country=$companies["country"];
-	$vat=$companies["vat"];
-	$role=$companies["role"];
+if ($update == true) {
+    $name    = $company["name"];
+    $country = $company["country"];
+    $vat     = $company["vat"];
+    $role    = $company["role"];
 }
 ?>
 
 <div class="container">
-    <h1 class="text-center"><?= $page_title?></h1>
-    <form method="POST" action="">
+    <h1 class="text-center"><?=$page_title?></h1>
+    <div class="col p-3 mb-5 bg-white rounded">
+        <form method="POST" action="">
 
-    <div>   
-    <label for="name" class="w-100 p-2">Company Name: </label>
-    <input title="companyname" type="text" name="companyname" placeholder="Company name" size="22" maxlength="30" autofocus  id ='companyname' required value="<?php echo $name; ?>">
+                    <div class="form-group row">  
+                        <div class="col-6"> 
+    <label for="name" >Company Name: </label>
+    <input class="form-control" title="companyname" type="text" name="name" placeholder="Company name"   id ='companyname' required value="<?php echo $name; ?>">
 	<span class ="text-danger"><?php echo $name_error; ?></span>
     </div>
+    
 
-    <div><hr>
-    <label for="country" class="w-100 p-2">Company country: </label>
-	<select class="w-100 p-2" id="country" name="country" placeholder="Company country"  maxlength ="30" title='country' required value ="<?php echo $country; ?>">
+    
+    <div class="col-6">
+    <label for="country">Company country: </label>
+	<select class="form-control selectSearch" id="country" name="country" placeholder="Company country"   required value ="<?php echo $country; ?>">
     <option value='0'>--</option>
-	<option value="" selected="selected">Select Country</option> 
+	<option value="">Select Country</option> 
 <option value="United States">United States</option> 
 <option value="United Kingdom">United Kingdom</option> 
 <option value="Afghanistan">Afghanistan</option> 
@@ -61,7 +63,7 @@ if ($update==TRUE){
 <option value="Bangladesh">Bangladesh</option> 
 <option value="Barbados">Barbados</option> 
 <option value="Belarus">Belarus</option> 
-<option value="Belgium">Belgium</option> 
+<option value="Belgium" >Belgium</option> 
 <option value="Belize">Belize</option> 
 <option value="Benin">Benin</option> 
 <option value="Bermuda">Bermuda</option> 
@@ -283,35 +285,86 @@ if ($update==TRUE){
 	</select>
 	<span class ="text-danger"><?php echo $country_error ?></span>
   </div>
+  
     
-    <div><hr>
-    <label for="Vat" class="w-100 p-2"> Company Vat : </label>
-    <input title="Vat" type="number" name="vat" placeholder="Company Vat" size="22" maxlength="30" required value ="<?php echo $vat ?>">
+    
+    <div class="col-6">
+    <label for="Vat"> Company Vat : </label>
+    <input  class ="form-control" title="Vat" type="number" name="vat" placeholder="Company Vat" required value ="<?php echo $vat ?>">
 	<span class ="text-danger"><?php echo $vat_error ?></span>
     </div>
+    
 
-    <div><hr>
-    <label for="role" class="w-100 p-2">Company role : </label>
-    <select class="w-100 p-2" id="companyrole" name="companyrole" placeholder="Company role"  maxlength ="30" title ="companyrole" required value ="<?php echo $role ?>">
-    <option value ="1">Provider</option>
-    <option value ='0'>Client</option>
+    
+    <div class="col-6">
+    <label for="role">Company role : </label>
+    <select class="form-control" id="companyrole" name="role" placeholder="Company role"   title ="companyrole" required value ="<?php echo $role ?>">
+    <option value ="1"<?=($company['role']==1)? "selected" :""?>>Provider</option>
+    <option value ='0'<?=($company['role']==0)? "selected" :""?>>Client</option>
 	<span class ="text-danger"><?php echo $role_error ?></span>
     </div>
+    
 
     <div><hr>
-    <label for="Telephone" class="w-100 p-2">Telephone : </label>
-    <input title="Telephone" type="text" name="telephone" placeholder="Telephone" size="22" maxlength="30" >
+    <label for="Telephone">Telephone : </label>
+    <input title="Telephone" class="form-control"type="text" name="telephone" placeholder="Telephone">
     </div>
 
-    <div>
-    <button name="submit" value="submit" title="Add a new company !" type="submit">Add a new company !</button>
-    </div> 
-    </form>
+            <div class="form-group row">
+                <div class="col-12 col-md-6">
+                    <label for="Vat"> Company VAT :</label>
+                    <input class="form-control" title="Vat" type="number" name="vat" placeholder="Company Vat" size="22"
+                        maxlength="30" required value="<?php echo $vat ?>">
+                    <span class="text-danger"><?php echo $vat_error ?></span>
+                </div>
+
+
+
+                <div class="col-12 col-md-6">
+                    <label for="role">Company role : </label>
+                    <select class="form-control" id="companyrole" name="role" placeholder="Company role" maxlength="30"
+                        title="companyrole" required value="<?php echo $role ?>">
+                        <option value="1" <?=($company['role'] == 1) ? "selected" : ""?>>Provider</option>
+                        <option value='0' <?=($company['role'] == 0) ? "selected" : ""?>>Client</option>
+                    </select>
+                    <span class="text-danger"><?php echo $role_error ?></span>
+                </div>
+            </div>
+            <div class="form-group">
+
+                    <label for="Telephone">Telephone : </label>
+                    <input class="form-control" type="text" name="telephone" placeholder="Telephone">
+
+            </div>
+            <div class="form-group row">
+                <div class="col-12 col-md-6">
+                    <button class="btn btn-mdb-color" name="submit" value="submit" title="Add a new company !"
+                        type="submit"><?=$page_title?></button>
+                </div>
+            </div>
+
+
+
+            </div>
+        </form>
+    </div>
 </div>
 
+
 <!-- Script bootstrap  -->
-<?php 
-include('components/scripts.php');
+<?php
+include 'components/scripts.php';
+?>
+<script>
+$("#country option").each(function() {
+
+    if ($(this).text() == "<?=$company['country']?>") {
+        $(this).attr("selected", "selected");
+    }
+
+});
+</script>
+<?php
 
 // Inclure Footer ...
 include "components/footer.php";

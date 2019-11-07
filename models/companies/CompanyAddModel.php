@@ -1,31 +1,18 @@
 <?php
 
-
-
-
-
-
 $name=$country=$vat=$role='';
 $name_error=$country_error=$vat_error=$role_error='';
 
 
 
-//function createCompany() {
-    
-
-
-
-
-
-
 if ($_SERVER['REQUEST_METHOD']=='POST'){
 
-    if (empty(trim($_POST['companyname']))){
+    if (empty(trim($_POST['name']))){
         $name_error ="Name of the company is required.";
     }
 
     else  {
-        $name=htmlspecialchars($_POST['companyname']);
+        $name=htmlspecialchars($_POST['name']);
  
          if (!preg_match('/^[a-z][a-z\s]*$/',$name))
          {
@@ -52,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     }
     else { 
         $vat=htmlspecialchars($_POST['vat']);
+
         if(!preg_match('/^[0-9]*$/',$vat))
         { 
             $vat_error='Only numbers are allowed.';
@@ -69,10 +57,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
     else {
     $role=htmlspecialchars($_POST['companyrole']);
 }
+}
 
 
-
-
+function addCompany() {
 
 
 if (empty($name_error) && empty($country_error) && empty($vat_error) && empty($role_error))
@@ -85,10 +73,10 @@ if (empty($name_error) && empty($country_error) && empty($vat_error) && empty($r
 
        if ($conn->query($sql)){
           // echo "gg bro";
-           //header('location: /cogip/companies');
+           header('location: /cogip/companies');
        }
        else {
-           //echo "va dormir bro";
+           echo '<p>Database issues, please contact BeCoder.';
        }
         
     }
