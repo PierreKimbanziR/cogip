@@ -25,7 +25,7 @@ if ($update==TRUE){
 ?>
 
 <div class="container">
-    <h1 class="text-center">Add a company</h1>
+    <h1 class="text-center"><?= $page_title?></h1>
     <form method="POST" action="">
 
     <div>   
