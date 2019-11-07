@@ -9,7 +9,7 @@ This project had been done in october 2019 with
 [Guillaume Dery](https://github.com/GuillaumeDery98),
 [Philippe Gilles](https://github.com/philesgilles)
 
-It is a full Administration Tool written in PHP.
+It is a full Administration Tool written in PHP and uses **routed VMC**.
 It can manage contacts, clients, providers, invoices and users.
 
 ## Informations
