@@ -15,10 +15,10 @@ include "components/navbar.php";
     </div>
 
     <div class="mt-4 row d-flex justify-content-around">
-        <button type="button" onclick="window.location.href = 'companies/clients'"
-            class="btn btn-lg btn-mdb-color waves-effect"><i class="fas fa-arrow-right"></i></i> Clients</button>
-        <button type="button" onclick="window.location.href = 'companies/providers'"
-            class="btn btn-lg btn-mdb-color"><i class="fas fa-arrow-right"></i></i> Providers</button>
+        <button type="button" onclick="window.location.href = '/cogip/companies/clients'"
+            class="btn btn-mdb-color waves-effect"><i class="fas fa-arrow-right"></i></i> Clients</button>
+        <button type="button" onclick="window.location.href = '/cogip/companies/providers'" class="btn btn-mdb-color"><i
+                class="fas fa-arrow-right"></i></i> Providers</button>
     </div>
 
 
@@ -35,18 +35,21 @@ include "components/navbar.php";
                         </th>
                         <th class="th-sm">Client
                         </th>
+                        <th class="th-sm">type
+                        </th>
                         <th class="th-sm">Amount
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($lastInvoices as $invoice): ?>
-                    <tr id="invoice-<?=$invoice['id']?>">
+                    <tr id="invoices-<?=$invoice['id']?>" class="click hoverable">
                         <td><?=$invoice['invoiceNumber']?></td>
                         <td><?=explode(' ', $invoice['createdAt'])[0]?></td>
                         <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
                         </td>
-                        <td class="text-right"><?=$invoice['amount']?> €</td>
+                        <td><?=($invoice['type'] == 1) ? "OUT" : "IN"?></td>
+                        <td class="text-right"><?=($invoice['type'] == 1) ? "- " : "+ "?><?=$invoice['amount']?> €</td>
                     </tr>
                     <?php endforeach?>
                 </tbody>
@@ -73,7 +76,7 @@ include "components/navbar.php";
                 </thead>
                 <tbody>
                     <?php foreach ($lastContacts as $contact): ?>
-                    <tr id="contact-<?=$contact['id']?>">
+                    <tr id="contacts-<?=$contact['id']?>" class="click hoverable">
                         <td><?=$contact['firstname']?></td>
                         <td><?=$contact['lastname']?></td>
                         <td><?=$contact['email']?></td>
@@ -104,7 +107,7 @@ include "components/navbar.php";
                 </thead>
                 <tbody>
                     <?php foreach ($lastCompanies as $company): ?>
-                    <tr id="company-<?=$company['id']?>">
+                    <tr id="companies-<?=$company['id']?>" class="click hoverable">
                         <td><?=$company['name']?></td>
                         <td><?=$company['country']?></td>
                         <td><?=$company['vat']?></td>
@@ -135,6 +138,18 @@ getUserAsync('https://api.chucknorris.io/jokes/random');
 document.getElementById('newJoke').addEventListener('click', () => {
     getUserAsync('https://api.chucknorris.io/jokes/random');
 })
+
+var linkTo = (id) => {
+    //console.log(id);
+
+    let route = id.split('-')
+    document.location = `/cogip/${route[0]}/${route[1]}`;
+}
+
+Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
+    console.log($btn);
+    $btn.addEventListener('click', () => (linkTo($btn.id), false));
+});
 </script>
 <?php
 include "components/footer.php";
