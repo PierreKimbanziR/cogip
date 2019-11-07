@@ -39,7 +39,6 @@ if ($update == true) {
                     <label for="country">Company country: </label>
                     <select class="form-control selectSearch" id="country" name="country" placeholder="Company country"
                         required value="<?php echo $country; ?>">
-                        <option value='0'>--</option>
                         <option value="">Select Country</option>
                         <option value="United States">United States</option>
                         <option value="United Kingdom">United Kingdom</option>
