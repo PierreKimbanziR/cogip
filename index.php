@@ -23,7 +23,7 @@ if ($explode_url[0] == 'auth') {
 //IF NOT LOGGED IN => login
 
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: auth/login");
+    header("location: /cogip/auth/login");
     exit;
 }
 
