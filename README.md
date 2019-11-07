@@ -37,6 +37,7 @@ All tables have a search option and pagination
 - [MDBootstrap](https://mdbootstrap.com/) (free version)
 - [Select2](https://select2.org/)
 - [JsBarcode](https://lindell.me/JsBarcode/)
+- [ChartJS](https://www.chartjs.org/)
 
 There is a special @Media print for printing beautyfull invoices from within the webpage 
 
