@@ -17,10 +17,10 @@ global $role;
 
 
 if ($update==TRUE){
-	$name=$companies["name"];
-	$country=$companies["country"];
-	$vat=$companies["vat"];
-	$role=$companies["role"];
+	$name=$company["name"];
+	$country=$company["country"];
+	$vat=$company["vat"];
+	$role=$company["role"];
 }
 ?>
 
@@ -30,15 +30,15 @@ if ($update==TRUE){
 
     <div>   
     <label for="name" class="w-100 p-2">Company Name: </label>
-    <input title="companyname" type="text" name="companyname" placeholder="Company name" size="22" maxlength="30" autofocus  id ='companyname' required value="<?php echo $name; ?>">
+    <input title="companyname" type="text" name="name" placeholder="Company name" size="22" maxlength="30" autofocus  id ='companyname' required value="<?php echo $name; ?>">
 	<span class ="text-danger"><?php echo $name_error; ?></span>
     </div>
 
     <div><hr>
     <label for="country" class="w-100 p-2">Company country: </label>
-	<select class="w-100 p-2" id="country" name="country" placeholder="Company country"  maxlength ="30" title='country' required value ="<?php echo $country; ?>">
+	<select class="w-100 p-2 selectSearch" id="country" name="country" placeholder="Company country"  maxlength ="30" title='country' required value ="<?php echo $country; ?>">
     <option value='0'>--</option>
-	<option value="" selected="selected">Select Country</option> 
+	<option value="">Select Country</option> 
 <option value="United States">United States</option> 
 <option value="United Kingdom">United Kingdom</option> 
 <option value="Afghanistan">Afghanistan</option> 
@@ -61,7 +61,7 @@ if ($update==TRUE){
 <option value="Bangladesh">Bangladesh</option> 
 <option value="Barbados">Barbados</option> 
 <option value="Belarus">Belarus</option> 
-<option value="Belgium">Belgium</option> 
+<option value="Belgium" >Belgium</option> 
 <option value="Belize">Belize</option> 
 <option value="Benin">Benin</option> 
 <option value="Bermuda">Bermuda</option> 
@@ -292,9 +292,9 @@ if ($update==TRUE){
 
     <div><hr>
     <label for="role" class="w-100 p-2">Company role : </label>
-    <select class="w-100 p-2" id="companyrole" name="companyrole" placeholder="Company role"  maxlength ="30" title ="companyrole" required value ="<?php echo $role ?>">
-    <option value ="1">Provider</option>
-    <option value ='0'>Client</option>
+    <select class="w-100 p-2" id="companyrole" name="role" placeholder="Company role"  maxlength ="30" title ="companyrole" required value ="<?php echo $role ?>">
+    <option value ="1"<?=($company['role']==1)? "selected" :""?>>Provider</option>
+    <option value ='0'<?=($company['role']==0)? "selected" :""?>>Client</option>
 	<span class ="text-danger"><?php echo $role_error ?></span>
     </div>
 
@@ -304,7 +304,7 @@ if ($update==TRUE){
     </div>
 
     <div>
-    <button name="submit" value="submit" title="Add a new company !" type="submit">Add a new company !</button>
+    <button name="submit" value="submit" title="Add a new company !" type="submit"><?=$page_title?></button>
     </div> 
     </form>
 </div>
@@ -312,6 +312,17 @@ if ($update==TRUE){
 <!-- Script bootstrap  -->
 <?php 
 include('components/scripts.php');
+?>
+<script>
+$("#country option").each(function() {
+    
+    if ($(this).text() == "<?=$company['country']?>"){
+        $(this).attr("selected","selected");
+    }
+    
+});
+</script>
+<?php
 
 // Inclure Footer ...
 include "components/footer.php";
