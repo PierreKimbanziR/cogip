@@ -29,6 +29,8 @@ function logout()
 
 function reset_password()
 {
+    $page_title = "Reset password";
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         resetPassword();
     }
@@ -38,6 +40,8 @@ function reset_password()
 
 function showAccount($id)
 {
+    $page_title = "My account";
+
     $user = getUser($id);
     require "views/auth/accountView.php";
 

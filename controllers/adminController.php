@@ -7,7 +7,7 @@ function showDashboard()
     require 'models/contact/getContacts.php';
     require 'models/InvoiceModel.php';
     require 'models/companies/CompanyModel.php';
-
+    $page_title    = "Dashboard";
     $lastInvoices  = showLatestsInvoices();
     $lastContacts  = getLastContacts();
     $lastCompanies = getLastCompanies();
