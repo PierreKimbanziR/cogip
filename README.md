@@ -40,7 +40,8 @@ All tables have a search option and pagination
 
 There is a special @Media print for printing beautyfull invoices from within the webpage 
 
-The server is hosted on Online.net and fully configured using Docker
+The server is hosted on Online.net and fully configured using Docker.
+The database is hosted on AWS EDS.
 
 ### Invoice Page
 
