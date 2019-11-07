@@ -2,7 +2,7 @@
 // Inclure Header ...
 include "components/header.php";
 include "components/navbar.php";
-echo $company
+
 ?>
 
 <div class="container col-8 border example hoverable">

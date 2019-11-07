@@ -40,7 +40,7 @@ function showCompanyId($id)
 function createCompany()
 {
     require 'models/companies/CompanyAddModel.php';
-    $page_title = ' Add Companies';
+    $page_title = ' Add Company';
     $update=false;
     include 'views/companies/CompanyAddView.php';
     
