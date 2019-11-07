@@ -24,17 +24,30 @@ function deleteInvoice($id)
     require "views/InvoicesView.php";
 }
 function createInvoice()
-
 {
+
     require "models/InvoiceModel.php";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // if($verify == true){
-        addInvoice();
-        header('Location: /cogip/invoices?valide=0');
-        // }
-        /*else{
-            require "views/InvoiceAddView.php"
-        }*/
+        global $verify;
+        $verify = TRUE;
+        validationInvoice();
+        global $invoice;
+        global $invoiceNumberMessage;
+        global $amountMessage;
+        global $typeMessage;
+        global $clientTypeMessage;
+        global $contactMessage;
+        global $companieMessage;
+        global $descriptionMessage;
+
+        if ($verify == TRUE) {
+            addInvoice();
+            header('Location: /cogip/invoices?valide=0');
+        } else {
+            $companies = selectCompanies();
+            $contacts = selectContacts();
+            require "views/InvoiceAddView.php";
+        }
     } else {
         $companies = selectCompanies();
         $contacts = selectContacts();
@@ -47,13 +60,14 @@ function updateInvoice($id)
 {
     require "models/InvoiceModel.php";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // if($verify == true){
-        modifyInvoice($id);
-        header('Location: /cogip/invoices?valide=1');
-        // }
-        /*else{
-            require "views/InvoiceAddView.php"
-        }*/
+        $verify = TRUE;
+        validationInvoice();
+        if ($verify == TRUE) {
+            modifyInvoice($id);
+            header('Location: /cogip/invoices?valide=1');
+        } else {
+            require "views/InvoiceAddView.php";
+        }
     } else {
         $companies = selectCompanies();
         $contacts = selectContacts();
