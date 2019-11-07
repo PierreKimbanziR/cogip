@@ -32,7 +32,7 @@ $email = $contact['email'];
                         Company : <?=$contact['companyName']?><br>
                         email :
                         <?php echo "<a href='mailto:" . $contact['email'] . "'>" . $contact['email'] . "</a>"; ?><br>
-                        Contact since : <?=$contact['createdAt']?><br>
+                        Contact since : <?=explode(" ", $contact['createdAt'])[0]?><br>
                     </address>
                 </div>
             </div>
