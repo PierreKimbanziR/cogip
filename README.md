@@ -1,15 +1,20 @@
-# cogip
+# COGIP
+###### Vive la COGIP
 
-Cogip Application at [BeCode](https://becode.org)
+Cogip Application Project at [BeCode](https://becode.org)
 
 This project had been done in october 2019 with
-[Pierre Kimbanzi](https://github.com/PierreKimbanziR)
-[Emmanuel Trepant](https://github.com/manutrepant)
-[Guillaume Dery](https://github.com/GuillaumeDery98)
+[Pierre Kimbanzi](https://github.com/PierreKimbanziR),
+[Emmanuel Trepant](https://github.com/manutrepant),
+[Guillaume Dery](https://github.com/GuillaumeDery98),
 [Philippe Gilles](https://github.com/philesgilles)
 
 It is a full Administration Tool written in PHP.
 It can manage contacts, clients, providers, invoices and users.
+
+## Informations
+
+All tables have a search option and pagination
 
 ### Flow Chart
 
@@ -19,19 +24,17 @@ It can manage contacts, clients, providers, invoices and users.
 
 ![Application Database](https://github.com/philesgilles/cogip/blob/master/infos/db-chart.png 'Database')
 
-## Informations
-
-All tables have a search option and pagination
-
-### technologies used:
+### Technologies used:
 
 - PHP
 - MySQL (MariaDB on AWS EDS)
 - Javascript
-- Jquery
-- MDBootstrap
-- Select2
-- Barcode.JS
+- [JQuery](https://jquery.com)
+- [MDBootstrap](https://mdbootstrap.com/) (free version)
+- [Select2](https://select2.org/)
+- [JsBarcode](https://lindell.me/JsBarcode/)
+
+There is a special @Media print for printing beautyfull invoices from within the webpage 
 
 The server is hosted on Online.net and fully configured using Docker
 
