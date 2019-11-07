@@ -1,22 +1,31 @@
 ### Login Page
-infos/MockUp/Login.jpg
+![mock1](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/Login.jpg 'mock1')
+
 ### Admin Page
-infos/MockUp/AdminDashboard.jpg
+![mock2](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/AdminDashboard.jpg 'mock2')
+
 ### Add Route Page
-infos/MockUp/add.jpg
+![mock3](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/add.jpg 'mock3')
+
 ### company ID Page
-infos/MockUp/companyId.jpg
+![mock4](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/companyId.jpg 'mock4')
+
 ### contactId Page
-infos/MockUp/contactId.jpg
+![mock5](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/contactId.jpg 'mock5')
+
 ### Home Page
-infos/MockUp/home.jpg
+![mock6](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/home.jpg 'mock6')
+
 ### list Route Page
-infos/MockUp/list.jpg
+![mock7](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/list.jpg 'mock7')
+
 ### navBarMenu
-infos/MockUp/navBarMenu.jpg
+![mock8](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/navBarMenu.jpg 'mock8')
+
 ### patch Route Page
-infos/MockUp/patch.jpg
+![mock9](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/patch.jpg 'mock9')
+
 ### userId Page
-infos/MockUp/userId.jpg
+![mock10](https://github.com/philesgilles/cogip/blob/master/infos/MockUp/userId.jpg 'mock10')
 
 
