@@ -24,6 +24,10 @@ All tables have a search option and pagination
 
 ![Application Database](https://github.com/philesgilles/cogip/blob/master/infos/db-chart.png 'Database')
 
+### Screenshot
+
+![Application screen](https://github.com/philesgilles/cogip/blob/master/infos/screenshot.png 'Application screen')
+
 ### Technologies used:
 
 - PHP
