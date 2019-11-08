@@ -71,6 +71,11 @@ Backup of the DB is in the backup folder
 - quick view of last 5 invoices,companies and clients.
 - quick add company,contact,invoice.
 
+### Users:
+
+Only accessible for Super Admins.
+- see/create/modify/delete users
+
 ***
 ### Mockups
 
