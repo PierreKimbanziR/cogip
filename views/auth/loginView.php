@@ -11,7 +11,7 @@ global $password;
 
 ?>
 
-    <div class="loginPage">
+    <div class="containter">
         <div class="row d-flex justify-content-center mt-3">
             <img src="/cogip/static/img/cogip-logo2.png" height="150px" alt="">
         </div>
