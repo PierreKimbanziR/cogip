@@ -18,7 +18,7 @@ include "components/navbar.php";
                         data-item="companies">Delete <i class="fas fa-lg fa-trash-alt pointer"></i></span>
                     <?php endif?>
                     <hr>
-                    <img alt="companyIcon" src="/cogip/static/img/company.png" class="rounded-circle">
+                    <img alt="companyIcon" src="/cogip/static/img/company.png" height="100px">
                     <h3 class="m-b-xs"><strong>Company Name : </strong><?=$company['name'];?></h3>
                     <address class="m-t-md">
                         Vat number : <?=$company['vat'];?><br>
