@@ -8,6 +8,10 @@ body {
   float: right;
 }
 
+a {
+  color: #212529;
+}
+
 table.dataTable thead .sorting,
 table.dataTable thead .sorting_asc,
 table.dataTable thead .sorting_desc,
