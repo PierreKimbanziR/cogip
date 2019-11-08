@@ -69,7 +69,7 @@ if ($explode_url[0] == 'home') {
     require 'controllers/CompaniesController.php';
     if (!empty($explode_url[1])) {
         if ($explode_url[1] == 'create') {
-            createCompany();
+            createCompany($explode_url[2]);
         } elseif ($explode_url[1] == 'update') {
             updateCompany($explode_url[2]);
         } elseif ($explode_url[1] == 'delete') {

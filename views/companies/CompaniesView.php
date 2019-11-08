@@ -9,43 +9,49 @@ include "components/navbar.php";
     <div class="table-responsive col-12">
 
         <?php if ($_SESSION['level'] == 3): ?>
+        <?php if ($option == 'company'): ?>
+        <a href="/cogip/companies/create">
+            <?else: ?>
+            <a href="/cogip/companies/create/<?=$option?>">
+                <?php endif?>
+                <button type="button" class="btn btn-outline-danger waves-effect">
+                    <i class="fas fa-plus-circle"></i> Add a <?=$option?>
+                </button>
+            </a>
+            <?else: ?>
+            <?php endif?>
 
-        <a href="/cogip/companies/create"><button type="button" class="btn btn-outline-danger waves-effect"><i
-                    class="fas fa-plus-circle"></i> Add a company</button></a>
+            <table id="searchCompany" class="table table-striped table-bordered table-sm">
 
-        <?php endif?>
+                <thead class="grey darken-3 white-text">
+                    <tr>
+                        <th class="th-sm">Company name</th>
+                        <th class="th-sm">Country</th>
+                        <th class="th-sm">Vat</th>
+                        <th class="th-sm">Role</th>
+                        <th class="th-sm">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-        <table id="searchCompany" class="table table-striped table-bordered table-sm">
+                    <!-- On pourrait utiliser { ... } à la place de :  -->
+                    <?php foreach ($companies as $company): ?>
 
-            <thead class="grey darken-3 white-text">
-                <tr>
-                    <th class="th-sm">Company name</th>
-                    <th class="th-sm">Country</th>
-                    <th class="th-sm">Vat</th>
-                    <th class="th-sm">Role</th>
-                    <th class="th-sm">Date</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <!-- On pourrait utiliser { ... } à la place de :  -->
-                <?php foreach ($companies as $company): ?>
-
-                <!-- id dans le tr pour appliquer un JS quand on clic sur tr-->
-                <tr id="<?php echo $company['id']; ?>" class="example hoverable click">
-                    <td><?php echo $company['name'] ?></td>
-                    <td><?php echo $company['country'] ?></td>
-                    <td><?php echo $company['vat'] ?></td>
-                    <td><?php echo ($company['role'] == 0) ? "Client" : "Provider" ?></td>
-                    <td><?=explode(" ", $company['createdAt'])[0]?></td>
-                </tr>
+                    <!-- id dans le tr pour appliquer un JS quand on clic sur tr-->
+                    <tr id="<?php echo $company['id']; ?>" class="example hoverable click">
+                        <td><?php echo $company['name'] ?></td>
+                        <td><?php echo $company['country'] ?></td>
+                        <td><?php echo $company['vat'] ?></td>
+                        <td><?php echo ($company['role'] == 0) ? "Client" : "Provider" ?></td>
+                        <td><?=explode(" ", $company['createdAt'])[0]?></td>
+                    </tr>
 
 
-                <!-- Fin de endforeach  -->
-                <?php endforeach?>
+                    <!-- Fin de endforeach  -->
+                    <?php endforeach?>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
     </div>
 </div>
 

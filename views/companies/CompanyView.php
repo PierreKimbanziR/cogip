@@ -2,6 +2,7 @@
 // Inclure Header ...
 include "components/header.php";
 include "components/navbar.php";
+
 ?>
 <div class="container">
     <h1 class="text-center">Company Infos</h1>
