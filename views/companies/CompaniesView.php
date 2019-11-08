@@ -9,8 +9,6 @@ include "components/navbar.php";
     <h1 class="text-center ">List of <?= $page_title?></h1>
     <div class="table-responsive col-12">
 
-
-
     <?php if ($_SESSION['level'] == 3) : ?>
 
 <a href="/cogip/companies/create"><button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus-circle"></i> Add a company</button></a>
