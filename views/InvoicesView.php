@@ -6,24 +6,25 @@ require "components/navbar.php";
 <div class="container">
     <h1 class="text-center">Invoices</h1>
     <?php
-    if (isset($_GET['valide']) && $_GET['valide'] == "0") {
-        ?>
-        <div class="alert alert-success" role="alert">
-            Invoice sended !
-        </div>
-    <?php
-    }
+if (isset($_GET['valide']) && $_GET['valide'] == "0") {
     ?>
+    <div class="alert alert-success" role="alert">
+        Invoice sended !
+    </div>
     <?php
-    if (isset($_GET['valide']) && $_GET['valide'] == "1") {
-        ?>
-        <div class="alert alert-success" role="alert">
-            Invoice modified !
-        </div>
+}
+?>
     <?php
-    }
+if (isset($_GET['valide']) && $_GET['valide'] == "1") {
     ?>
-    <a href="/cogip/invoices/create"><button type="button" class="btn btn-outline-danger waves-effect"><i class="fas fa-plus-circle"></i> Add an invoice</button></a>
+    <div class="alert alert-success" role="alert">
+        Invoice modified !
+    </div>
+    <?php
+}
+?>
+    <a href="/cogip/invoices/create"><button type="button" class="btn btn-outline-danger waves-effect"><i
+                class="fas fa-plus-circle"></i> Add an invoice</button></a>
     <div class="table-responsive col-12">
         <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
             <thead class="grey darken-3 white-text">
@@ -48,44 +49,67 @@ require "components/navbar.php";
 
 
                 <?php
-                $invoicescomp = $invoices['0'];
-                $invoicescont = $invoices['1'];
+$invoicescomp = $invoices['0'];
+$invoicescont = $invoices['1'];
 
-                foreach ($invoicescomp as $invoice) :
-                    $date = explode(" ", $invoice['createdAt']);
-                    ?>
-                    <tr id="<?= $invoice['id'] ?>" class="hoverable">
-                        <td><?= htmlspecialchars($date[0]) ?></td>
-                        <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
-                        <td><?= htmlspecialchars($invoice['name']) ?></td>
-                        <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
-                        <td><?= ($invoice['type'] == 1) ? "OUT" : "IN" ?></td>
-                        <td class="text-center d-flex <?= ($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center' ?>"><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="far fa-lg fa-eye"></i></a>
-                            <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/update/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-edit"></i></a><?php } ?>
-                            <?php if (($_SESSION['level'] > 2)) { ?> <i class="fas fa-lg fa-trash-alt pointer toggleModal" data-itemid="<?= $invoice['id'] ?>" data-itemname="<?= $invoice['invoiceNumber'] ?>" data-item="invoices" data-toggle="modal" data-target="#deleteModal"></i><?php } ?>
-                        </td>
-                    </tr>
+foreach ($invoicescomp as $invoice):
+    $date = explode(" ", $invoice['createdAt']);
+    ?>
+                <tr id="<?=$invoice['id']?>" class="hoverable">
+                    <td><?=htmlspecialchars($date[0])?></td>
+                    <td><?=htmlspecialchars($invoice['invoiceNumber'])?></td>
+                    <td><?=htmlspecialchars($invoice['name'])?></td>
+                    <td><?=htmlspecialchars($invoice['amount'] . "€")?></td>
+                    <td><?=($invoice['type'] == 1) ? "OUT" : "IN"?></td>
+                    <td
+                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center'?>">
+                        <a href="/cogip/invoices/<?=htmlspecialchars($invoice['id'])?>">
+                            <i class="far fa-lg fa-eye"></i>
+                        </a>
+                        <i data-printid="<?=$invoice['id']?>" class="fas fa-lg fa-print pointer"></i>
+                        <?php if (($_SESSION['level'] > 2)): ?>
+                        <a href="/cogip/invoices/update/<?=htmlspecialchars($invoice['id'])?>">
+                            <i class="fas fa-lg fa-edit"></i>
+                        </a>
+                        <i class="fas fa-lg fa-trash-alt pointer toggleModal" data-itemid="<?=$invoice['id']?>"
+                            data-itemname="<?=$invoice['invoiceNumber']?>" data-item="invoices" data-toggle="modal"
+                            data-target="#deleteModal"></i>
+                        <?php endif?>
+                    </td>
+                </tr>
 
 
 
                 <?php endforeach;
 
-                foreach ($invoicescont as $invoice) :
-                    $date = explode(" ", $invoice['createdAt']);
-                    ?>
-                    <tr id="<?= $invoice['id'] ?>" class="hoverable">
-                        <td><?= htmlspecialchars($date[0]) ?></td>
-                        <td><?= htmlspecialchars($invoice['invoiceNumber']) ?></td>
-                        <td><?= htmlspecialchars($invoice['lastname']) ?><?= " " ?><?= htmlspecialchars($invoice['firstname']) ?></td>
-                        <td><?= htmlspecialchars($invoice['amount'] . "€") ?></td>
-                        <td><?= ($invoice['type'] == 0) ? "OUT" : "IN" ?></td>
-                        <td class="text-center d-flex <?= ($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center' ?>"><a href="/cogip/invoices/<?= htmlspecialchars($invoice['id']) ?>"><i class="far fa-lg fa-eye"></i></a>
-                            <?php if (($_SESSION['level'] > 2)) { ?> <a href="/cogip/invoices/update/<?= htmlspecialchars($invoice['id']) ?>"><i class="fas fa-lg fa-edit"></i></a><?php } ?>
-                            <?php if (($_SESSION['level'] > 2)) { ?> <i class="fas fa-lg fa-trash-alt pointer toggleModal" data-itemid="<?= $invoice['id'] ?>" data-itemname="<?= $invoice['invoiceNumber'] ?>" data-item="invoices" data-toggle="modal" data-target="#deleteModal"></i><?php } ?>
-                        </td>
-                    </tr>
+foreach ($invoicescont as $invoice):
+    $date = explode(" ", $invoice['createdAt']);
+    ?>
+                <tr id="<?=$invoice['id']?>" class="hoverable">
+                    <td><?=htmlspecialchars($date[0])?></td>
+                    <td><?=htmlspecialchars($invoice['invoiceNumber'])?></td>
+                    <td><?=htmlspecialchars($invoice['lastname'])?><?=" "?><?=htmlspecialchars($invoice['firstname'])?>
+                    </td>
+                    <td><?=htmlspecialchars($invoice['amount'] . "€")?></td>
+                    <td><?=($invoice['type'] == 0) ? "OUT" : "IN"?></td>
+                    <td
+                        class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center'?>">
+                        <a href="/cogip/invoices/<?=htmlspecialchars($invoice['id'])?>">
+                            <i class="far fa-lg fa-eye"></i>
+                        </a>
+                        <i data-printid="<?=$invoice['id']?>" class="fas fa-lg fa-print pointer"></i>
+                        <?php if (($_SESSION['level'] > 2)): ?>
+                        <a href="/cogip/invoices/update/<?=htmlspecialchars($invoice['id'])?>">
+                            <i class="fas fa-lg fa-edit"></i>
+                        </a>
+                        <i class="fas fa-lg fa-trash-alt pointer toggleModal" data-itemid="<?=$invoice['id']?>"
+                            data-itemname="<?=$invoice['invoiceNumber']?>" data-item="invoices" data-toggle="modal"
+                            data-target="#deleteModal">
+                        </i><?php endif?>
+                    </td>
+                </tr>
 
-                <?php endforeach ?>
+                <?php endforeach?>
 
 
 
