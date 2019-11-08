@@ -26,11 +26,6 @@ if ($update == true) {
     <h1 class="text-center"><?=$page_title?></h1>
     <div class="col p-3 mb-5 bg-white rounded">
         <form method="POST" action="">
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 9f530d0199ab4befba13a81c3db327588f832b88
                     <div class="form-group row">  
                         <div class="col-6"> 
     <label for="name" >Company Name: </label>
@@ -313,23 +308,18 @@ if ($update == true) {
     <label for="Telephone">Telephone : </label>
     <input title="Telephone" class="form-control"type="text" name="telephone" placeholder="Telephone">
     </div>
-<<<<<<< HEAD
-=======
             <div class="form-group row">
                 <div class="col-12 col-md-6">
-                    <label for="name">Company Name : </label>
+                    <label for="name">Company Name: </label>
                     <input class="form-control" title="companyname" type="text" name="name" placeholder="Company name"
-                         id='companyname' required value="<?php echo $name; ?>">
-                    <span class="text-danger"><?php echo $name_error; ?></span>
+                        id='companyname' required value="<?=$name;?>">
+                    <span class="text-danger"><?=$name_error;?></span>
                 </div>
-
-
 
                 <div class="col-12 col-md-6">
                     <label for="country">Company country: </label>
                     <select class="form-control selectSearch" id="country" name="country" placeholder="Company country"
-                        maxlength="30" title='country' required value="<?php echo $country; ?>">
-                        <option value='0'>--</option>
+                        required value="<?=$country;?>">
                         <option value="">Select Country</option>
                         <option value="United States">United States</option>
                         <option value="United Kingdom">United Kingdom</option>
@@ -578,48 +568,30 @@ if ($update == true) {
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
-                    <span class="text-danger"><?php echo $country_error ?></span>
+                    <span class="text-danger"><?=$country_error?></span>
                 </div>
-            </div>
->>>>>>> bc2f182fe811f8f59d9bb66f0114efecdc957e15
-=======
->>>>>>> 9f530d0199ab4befba13a81c3db327588f832b88
-
-            <div class="form-group row">
-                <div class="col-12 col-md-6">
-                    <label for="Vat"> Company VAT :</label>
-                    <input class="form-control" title="Vat" type="number" name="vat" placeholder="Company Vat" size="22"
-                        maxlength="30" required value="<?php echo $vat ?>">
-                    <span class="text-danger"><?php echo $vat_error ?></span>
-                </div>
-
-
 
                 <div class="col-12 col-md-6">
                     <label for="role">Company role : </label>
-                    <select class="form-control" id="companyrole" name="role" placeholder="Company role" maxlength="30"
-                        title="companyrole" required value="<?php echo $role ?>">
+                    <select class="form-control" name="role" placeholder="Company role" title="companyrole" required
+                        value="<?=$role?>">
                         <option value="1" <?=($company['role'] == 1) ? "selected" : ""?>>Provider</option>
                         <option value='0' <?=($company['role'] == 0) ? "selected" : ""?>>Client</option>
                     </select>
-                    <span class="text-danger"><?php echo $role_error ?></span>
+                    <span class="text-danger"><?=$role_error?></span>
                 </div>
-            </div>
-            <div class="form-group">
-
-                    <label for="Telephone">Telephone : </label>
-                    <input class="form-control" type="text" name="telephone" placeholder="Telephone">
-
+                <div class="col-12 col-md-6">
+                    <label for="Vat"> Company VAT :</label>
+                    <input class="form-control" title="Vat" type="number" name="vat" placeholder="Company Vat" size="22"
+                        maxlength="30" required value="<?=$vat?>">
+                    <span class="text-danger"><?=$vat_error?></span>
+                </div>
             </div>
             <div class="form-group row">
                 <div class="col-12 col-md-6">
                     <button class="btn btn-mdb-color" name="submit" value="submit" title="Add a new company !"
                         type="submit"><?=$page_title?></button>
                 </div>
-            </div>
-
-
-
             </div>
         </form>
     </div>

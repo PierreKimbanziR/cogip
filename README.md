@@ -34,6 +34,11 @@ The database is hosted on AWS EDS.
 There is a special @Media print for printing beautyfull invoices from within the webpage
 Barcode is generated automatically with the invoice number
 
+### Dashboard Page
+
+We've added a chart showing sales of employees (ATM it's dummy datas).
+
+
 ***
 [Manu's beautyfull MockUps](https://github.com/philesgilles/cogip/blob/master/infos/README.md)
 

@@ -1,6 +1,7 @@
 <?php
 function showInvoices()
 {
+    $page_title = "Show Invoices";
     require "models/InvoiceModel.php";
     $invoices   = getInvoices();
     $page_title = 'Invoices';
@@ -9,23 +10,23 @@ function showInvoices()
 
 function showInvoiceId($id)
 {
+    $page_title = "Show Invoice";
     require "models/InvoiceModel.php";
     $invoice    = getInvoice($id);
-    $page_title = 'Invoices';
     require "views/InvoiceView.php";
 }
 
 function deleteInvoice($id)
 {
+    $page_title = "Show Invoices";
     require "models/InvoiceModel.php";
     $delete = dropInvoice($id);
     $invoices   = getInvoices();
-    $page_title = 'Invoices';
     require "views/InvoicesView.php";
 }
 function createInvoice()
 {
-
+    $page_title = "Add Invoice";
     require "models/InvoiceModel.php";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         global $verify;
@@ -58,17 +59,31 @@ function createInvoice()
 }
 function updateInvoice($id)
 {
+    $page_title = "Update Invoice";
     require "models/InvoiceModel.php";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        global $verify;
         $verify = TRUE;
         validationInvoice();
+        global $invoice;
+        global $invoiceNumberMessage;
+        global $amountMessage;
+        global $typeMessage;
+        global $clientTypeMessage;
+        global $contactMessage;
+        global $companieMessage;
+        global $descriptionMessage;
+
         if ($verify == TRUE) {
             modifyInvoice($id);
             header('Location: /cogip/invoices?valide=1');
         } else {
+            $companies = selectCompanies();
+            $contacts = selectContacts();
             require "views/InvoiceAddView.php";
         }
     } else {
+        $titre = "1";
         $companies = selectCompanies();
         $contacts = selectContacts();
         $invoice    = getInvoice($id);

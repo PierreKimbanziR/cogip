@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Abel:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Abel:400,700&display=swap");
 body {
-  font-family: 'Abel', sans-serif;
-  font-size: 1.1em;
+    font-family: "Abel", sans-serif;
+    font-size: 1.1em;
 }
 
 .dataTables_filter {
-  float: right;
+    float: right;
 }
 
 table.dataTable thead .sorting,
@@ -13,64 +13,70 @@ table.dataTable thead .sorting_asc,
 table.dataTable thead .sorting_desc,
 table.dataTable thead .sorting_asc_disabled,
 table.dataTable thead .sorting_desc_disabled {
-  cursor: pointer;
-  *cursor: hand;
-  background-repeat: no-repeat;
-  background-position: center right;
+    cursor: pointer;
+    *cursor: hand;
+    background-repeat: no-repeat;
+    background-position: center right;
 }
 
 table.dataTable thead .sorting {
-  background-image: url('../img/sort_both.png');
+    background-image: url("../img/sort_both.png");
 }
 
 table.dataTable thead .sorting_asc {
-  background-image: url('../img/sort_asc.png');
+    background-image: url("../img/sort_asc.png");
 }
 
 table.dataTable thead .sorting_desc {
-  background-image: url('../img/sort_desc.png');
+    background-image: url("../img/sort_desc.png");
 }
 
 .container {
-  margin-top: 30px;
-  margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 header {
-  background: url('../img/building.jpg');
-  background-size: 100% 100%;
+    background: url("../img/building.jpg");
+    background-size: 100% 100%;
 }
 
 footer.page-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 5;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
 }
 
 .click,
 .pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .hoverable,
 .hoverable:hover {
-  transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 .help-block {
-  color: red;
+    color: red;
 }
 
-.has-error > input {
-  border-color: red;
+.has-error>input,
+.has-error>select,
+.has-error>textarea {
+    border-color: red;
 }
 
 .spam {
-  display: none;
+    display: none;
 }
 
 .form-control .selectSearch {
+<<<<<<< HEAD
+    background-color: blue;
+}
+=======
   background-color: blue;
 }
 
@@ -89,3 +95,4 @@ footer.page-footer {
     border: none !important;
   }
 }
+>>>>>>> master

@@ -38,6 +38,7 @@ function addInvoice()
     $invoiceNumber = $_POST["invoiceNumber"];
     $clientType = $_POST["clientType"];
     $description = $_POST["description"];
+    $description = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
     $amount = $_POST["amount"];
     $type = $_POST["type"];
     if ($clientType == "1") {
@@ -58,6 +59,7 @@ function modifyInvoice($id)
     $invoiceNumber = $_POST["invoiceNumber"];
     $clientType = $_POST["clientType"];
     $description = $_POST["description"];
+    $description = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
     $amount = $_POST["amount"];
     $type = $_POST["type"];
     if ($clientType == "1") {
@@ -148,7 +150,7 @@ function validationInvoice()
     if (!strstr($invoiceNumber, $invoiceNumberTemplate)) {
         $verify = FALSE;
 
-        $invoiceNumberMessage = "Please enter an invoice number whith this format " . $invoiceNumberTemplate;
+        $invoiceNumberMessage = "Please enter an invoice number with this format " . $invoiceNumberTemplate;
     }
     if (is_numeric($amount) == FALSE) {
         $verify = FALSE;
@@ -165,12 +167,12 @@ function validationInvoice()
 
         $clientTypeMessage = "Please select a type of client";
     }
-    if (is_numeric($contact) == FALSE && $contact != NULL) {
+    if (is_numeric($contact) == FALSE &&  !is_null($contact)) {
         $verify = FALSE;
 
         $contactMessage = "Please select a contact";
     }
-    if (is_numeric($companie) == FALSE && $companie != NULL) {
+    if (is_numeric($companie) == FALSE && !is_null($companie)) {
         $verify = FALSE;
 
         $companieMessage = "Please select a companie";
