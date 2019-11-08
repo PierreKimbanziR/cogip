@@ -24,7 +24,7 @@ $email = $contact['email'];
                     <?php endif?>
                     <!-- FIN SESSION ADMIN -->
                     <hr>
-                    <img alt="image" class="rounded-circle" src="/cogip/static/img/avatar.png">
+                    <img alt="image" class="rounded-circle" height="140px" src="/cogip/static/img/avatar.png">
                     <h3 class="m-b-xs"><strong><?=$contact['firstname'] . ' ' . $contact['lastname']?></strong></h3>
 
                     <div class="font-bold"><?=$contact['telephone']?></div>
