@@ -25,7 +25,7 @@ global $new_password;
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
-                    <a class="btn btn-link" href="../index.php">Cancel</a>
+                    <a class="btn btn-link" href="/cogip/auth/account">Cancel</a>
                 </div>
             </form>
         </div>

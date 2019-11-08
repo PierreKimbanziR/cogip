@@ -5,12 +5,11 @@ include "components/navbar.php";
 
 <div class="container">
     <div class="alert alert-secondary shadow" role="alert">
-        <h1>Hi,<b><?php echo htmlspecialchars(!empty($_SESSION['firstname'])) ? ($_SESSION["firstname"]) : ($_SESSION["username"]); ?></b>.
-            did you know that :</h1>
+        <h1>Hi,<b><?php echo htmlspecialchars(!empty($_SESSION['firstname'])) ? ($_SESSION["firstname"]) : ($_SESSION["username"]); ?></b>.</h1>
         <p id="joke" class="lead">
         </p>
         <div class="d-flex justify-content-center">
-            <button id="newJoke" class="btn blue-gradient waves-effect">Learn something else</button>
+            <button id="newJoke" class="btn blue-gradient waves-effect">More joy</button>
         </div>
     </div>
 
@@ -23,7 +22,7 @@ include "components/navbar.php";
 
 
     <div class="row mt-4">
-        <h4>Latest Invoices</h4>
+        <h4>Latest Invoices <button onclick="window.location.href = '/cogip/invoices/create'" class="btn btn-sm addBtnHome waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
         <div class="table-responsive col-12">
             <table id="" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead class="grey darken-3 white-text">
@@ -57,7 +56,7 @@ include "components/navbar.php";
         </div>
     </div>
     <div class="row mt-4">
-        <h4>Last contacts</h4>
+        <h4>Last contacts <button onclick="window.location.href = '/cogip/contacts/create'" class="btn btn-sm addBtnHome waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
         <div class="table-responsive col-12">
             <table id="" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead class="grey darken-3 white-text">
@@ -89,7 +88,7 @@ include "components/navbar.php";
         </div>
     </div>
     <div class="row mt-4">
-        <h4>Last Companies</h4>
+        <h4>Last Companies <button onclick="window.location.href = '/cogip/companies/create'" class="btn btn-sm addBtnHome waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
         <div class="table-responsive col-12">
             <table id="" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead class="grey darken-3 white-text">
