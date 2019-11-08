@@ -2,25 +2,21 @@
 include "components/header.php";
 include "components/navbar.php";
 ?>
-
 <div class="container">
     <div class="alert alert-secondary shadow" role="alert">
         <h1>Hi,<b><?php echo htmlspecialchars(!empty($_SESSION['firstname'])) ? ($_SESSION["firstname"]) : ($_SESSION["username"]); ?></b>.</h1>
         <p id="joke" class="lead">
         </p>
         <div class="d-flex justify-content-center">
-            <button id="newJoke" class="btn blue-gradient waves-effect">More joy</button>
+            <button id="newJoke" class="btn peach-gradient waves-effect">More peache</button>
         </div>
     </div>
-
     <div class="mt-4 row d-flex justify-content-around">
         <button type="button" onclick="window.location.href = '/cogip/companies/clients'"
             class="btn btn-mdb-color waves-effect"><i class="fas fa-arrow-right"></i></i> Clients</button>
         <button type="button" onclick="window.location.href = '/cogip/companies/providers'" class="btn btn-mdb-color"><i
                 class="fas fa-arrow-right"></i></i> Providers</button>
     </div>
-
-
     <div class="row mt-4">
         <h4>Latest Invoices <button onclick="window.location.href = '/cogip/invoices/create'" class="btn btn-sm cogipBtn waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
         <div class="table-responsive col-12">
@@ -117,12 +113,9 @@ include "components/navbar.php";
             </table>
         </div>
     </div>
-
 </div>
-
 <?php include "components/scripts.php";
 ?>
-
 <script>
 getUserAsync = async (url) => {
     let response = await fetch(url);

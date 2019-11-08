@@ -27,7 +27,6 @@ if ($update == true) {
     <h1 class="text-center"><?=$page_title?></h1>
     <div class="col p-3 mb-5 bg-white rounded">
         <form method="POST" action="">
-
              <div class="form-group row">
                 <div class="col-12 col-md-6 <?php echo (!empty($name_error)) ? 'has-error' : ''; ?>">
                     <label for="name">Company Name: </label>
@@ -35,7 +34,6 @@ if ($update == true) {
                         placeholder="Company name" id='companyname' required value="<?=$name;?>">
                     <span class="help-block"><?php echo $name_error; ?></span>
                 </div>
-
                 <div class="col-12 col-md-6<?php echo (!empty($country_error)) ? 'has-error' : ''; ?>">
                     <label for="country">Company country: </label>
                     <select class="form-control selectSearch" id="country" name="country"
@@ -291,7 +289,6 @@ if ($update == true) {
                     </select>
                     <span class="help-block"><?php echo $country_error; ?></span>
                 </div>
-
                 <div class="col-12 col-md-6 <?php echo (!empty($role_error)) ? 'has-error' : ''; ?>">
                     <label for="role">Company role : </label>
                     <select class="form-control" name="role" placeholder="Company role">

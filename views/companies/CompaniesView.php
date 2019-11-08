@@ -1,13 +1,10 @@
 <?php
-
 include "components/header.php";
 include "components/navbar.php";
 ?>
 <div class="container">
-
     <h1 class="text-center ">List of <?=$page_title?></h1>
     <div class="table-responsive col-12">
-
         <?php if ($_SESSION['level'] == 3): ?>
         <?php if ($option == 'company'): ?>
         <a href="/cogip/companies/create">
@@ -20,9 +17,7 @@ include "components/navbar.php";
             </a>
             <?else: ?>
             <?php endif?>
-
             <table id="searchCompany" class="table table-striped table-bordered table-sm">
-
                 <thead class="grey darken-3 white-text">
                     <tr>
                         <th class="th-sm">Company name</th>
@@ -33,10 +28,8 @@ include "components/navbar.php";
                     </tr>
                 </thead>
                 <tbody>
-
                     <!-- On pourrait utiliser { ... } à la place de :  -->
                     <?php foreach ($companies as $company): ?>
-
                     <!-- id dans le tr pour appliquer un JS quand on clic sur tr-->
                     <tr id="<?php echo $company['id']; ?>" class="example hoverable click">
                         <td><?php echo $company['name'] ?></td>
@@ -45,16 +38,12 @@ include "components/navbar.php";
                         <td><?php echo ($company['role'] == 0) ? "Client" : "Provider" ?></td>
                         <td><?=explode(" ", $company['createdAt'])[0]?></td>
                     </tr>
-
-
                     <!-- Fin de endforeach  -->
                     <?php endforeach?>
-
                 </tbody>
             </table>
     </div>
 </div>
-
 <?php include 'components/scripts.php'?>
 <script>
 $(document).ready(function() {
@@ -62,8 +51,6 @@ $(document).ready(function() {
     $('.dataTables_length').addClass('bs-select');
 });
 </script>
-
-
 <script>
 var linkTo = (id) => {
     //console.log(id);
@@ -75,9 +62,7 @@ Array.from(document.querySelectorAll('tr.click')).forEach($btn => {
     $btn.addEventListener('click', () => (linkTo($btn.id), false));
 });
 </script>
-
 <?php
 // Inclure Footer ...
-
 include "components/footer.php";
 ?>
