@@ -9,7 +9,7 @@ include "components/navbar.php";
         <div class="row d-flex justify-content-center col-12 col-md-5 py-3 border shadow">
             <div class="">
                 <div class="contact-box text-center">
-                    <img alt="image" class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                    <img alt="image" class="rounded-circle" height="140px" src="/cogip/static/img/avatar.png">
                     <h3 class="m-b-xs"><strong><?=$user['firstname'] . ' ' . $user['lastname']?></strong></h3>
 
                     <div class="font-bold"><?=$user['jobTitle']?></div>

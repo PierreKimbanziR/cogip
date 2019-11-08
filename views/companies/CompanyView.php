@@ -18,7 +18,7 @@ include "components/navbar.php";
 
                     <?php if ($_SESSION['level'] == 3): ?>
                     |
-                    <a href="/cogip/companies/update/<?php echo $id; ?>">Modify <i class="fas fa-lg fa-edit"></i></a> |
+                    <a href="/cogip/companies/update/<?=$id;?>">Modify <i class="fas fa-lg fa-edit"></i></a> |
                     <span class="delete pointer toggleModal" data-toggle="modal" data-target="#deleteModal"
                         data-itemid="<?=$company['id'];?>" data-itemname="<?=$company['name']?>"
                         data-item="companies">Delete <i class="fas fa-lg fa-trash-alt pointer"></i></span>
@@ -26,13 +26,13 @@ include "components/navbar.php";
                     <?php endif?>
                     <hr>
                     <img alt="companyIcon" src="/cogip/static/img/company.png" class="rounded-circle">
-                    <h3 class="m-b-xs"><strong>Company Name : </strong><?php echo $company['name']; ?></h3>
+                    <h3 class="m-b-xs"><strong>Company Name : </strong><?=$company['name'];?></h3>
 
                     <address class="m-t-md">
-                        Vat number : <?php echo $company['vat']; ?><br>
+                        Vat number : <?=$company['vat'];?><br>
                         Role : <?=($invoice['role'] == 0) ? "Client" : "Provider"?><br>
-                        Country : <?php echo $company['country']; ?><br>
-                        In collaboration since : <?php echo $company['createdAt']; ?>
+                        Country : <?=$company['country'];?><br>
+                        In collaboration since : <?=explode(" ", $company['createdAt'])[0]?>
                     </address>
 
 
