@@ -15,18 +15,18 @@ global $descriptionMessage;
     <form method="POST" action="">
         <div class="form-group row">
             <div class="col-sm-12 col-md-4 <?php echo (!empty($invoiceNumberMessage)) ? 'has-error' : '' ?>">
-                <label for="invoiceNumber" class="grey-text font-weight-light">Invoice Number</label>
+                <label for="invoiceNumber">Invoice Number</label>
                 <input type="text" id="invoiceNumber" name="invoiceNumber" class="form-control" <?php if (!isset($invoice['invoiceNumber'])) { ?> value="COG<?= date('Y') ?>-<?= htmlspecialchars($lastId) ?>" <?php } else {
                                                                                                                                                                                                                     ?> value="<?= htmlspecialchars($invoice['invoiceNumber']) ?>" <?php   } ?>>
                 <span class="help-block"><?= $invoiceNumberMessage ?></span>
             </div>
             <div class="col-sm-12 col-md-4 <?php echo (!empty($amountMessage)) ? 'has-error' : '' ?>">
-                <label for="amount" class="grey-text font-weight-light">Amount</label>
+                <label for="amount">Amount</label>
                 <input type="number" id="amount" name="amount" class="form-control" <?php if (isset($invoice['amount'])) { ?> value="<?= htmlspecialchars($invoice['amount']) ?>" <?php } ?>>
                 <span class="help-block"><?= $amountMessage ?></span>
             </div>
             <div class="col-sm-12 col-md-4 <?php echo (!empty($typeMessage)) ? 'has-error' : '' ?>">
-                <label for="type" class="grey-text font-weight-light">Type</label>
+                <label for="type">Type</label>
                 <select name="type" id="type" class="custom-select">
                     <option value="">Please select</option>
                     <option value="0" <?php
@@ -38,7 +38,7 @@ global $descriptionMessage;
             </div>
         </div>
         <div class="form-group  <?php echo (!empty($clientTypeMessage)) ? 'has-error' : '' ?>">
-            <label for="clientType" class="grey-text font-weight-light">Client Type</label>
+            <label for="clientType">Client Type</label>
             <select name="clientType" id="clientType" class="custom-select">
                 <option value="">Please select</option>
                 <option value="1" <?php
@@ -49,7 +49,7 @@ global $descriptionMessage;
             <span class="help-block"><?= $clientTypeMessage ?></span>
         </div>
         <div class="form-group  <?php echo (!empty($companieMessage)) ? 'has-error' : '' ?>" id="companieList">
-            <label for="companie" class="grey-text font-weight-light">Companie</label>
+            <label for="companie">Companie</label>
             <select name="companie" id="companie" class="custom-select selectSearch">
                 <option value="">Please select</option>
                 <?php
@@ -63,7 +63,7 @@ global $descriptionMessage;
             <span class="help-block"><?= $companieMessage ?></span>
         </div>
         <div class="form-group <?php echo (!empty($contactMessage)) ? 'has-error' : '' ?>" id="contactList">
-            <label for="contact" class="grey-text font-weight-light">Contact</label>
+            <label for="contact">Contact</label>
             <select name="contact" id="contact" class="custom-select selectSearch2">
                 <option value="">Please select</option>
                 <?php
@@ -78,7 +78,7 @@ global $descriptionMessage;
             <span class="help-block"><?= $contactMessage ?></span>
         </div>
         <div class="form-group <?php echo (!empty($descriptionMessage)) ? 'has-error' : '' ?>">
-            <label for="description" class="grey-text font-weight-light">Description</label>
+            <label for="description">Description</label>
             <textarea class="form-control" id="description" rows="7" name="description"><?php if (isset($invoice['amount'])) {
                                                                                             echo htmlspecialchars($invoice['description']);
                                                                                         } ?></textarea>
