@@ -29,14 +29,15 @@ The database is hosted on AWS EDS.
 - [JsBarcode](https://lindell.me/JsBarcode/)
 - [ChartJS](https://www.chartjs.org/)
 
-### Invoice Page
+### Invoices:
 
-There is a special @Media print for printing beautyfull invoices from within the webpage
-Barcode is generated automatically with the invoice number
+- special @Media print for printing beautyfull invoices from within the webpage.
+- Print button on invoices page to print directly the invoice.
+- Barcode is generated automatically with the invoice number
 
-### Dashboard Page
+### Dashboard:
 
-We've added a chart showing sales of employees (ATM it's dummy datas).
+- added a chart showing sales of employees (ATM it's dummy datas).
 
 
 ***
