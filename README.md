@@ -4,9 +4,9 @@
 Cogip Application Project at [BeCode](https://becode.org)
 
 This project had been done in october 2019 with
-- [Pierre Kimbanzi](https://github.com/PierreKimbanziR)(*Companie MVC*),
-- [Emmanuel Trepant](https://github.com/manutrepant)(*Contact MVC, Mockups*),
-- [Guillaume Dery](https://github.com/GuillaumeDery98)(*Invoices MVC, upgrade/debug of contact and companie*)
+- [Pierre Kimbanzi](https://github.com/PierreKimbanziR) (*Companie MVC*),
+- [Emmanuel Trepant](https://github.com/manutrepant) (*Contact MVC, Mockups*),
+- [Guillaume Dery](https://github.com/GuillaumeDery98) (*Invoices MVC, upgrade/debug of contact and companie*)
 - [Philippe Gilles](https://github.com/philesgilles) (*Team leading, structure, design, dashboard and users sections, upgrades/debug and overview of team's work, implementation of JS libraries*)
 
 It is a full Administration Tool written in PHP and uses **routed VMC**.
