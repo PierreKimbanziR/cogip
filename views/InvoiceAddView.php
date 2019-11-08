@@ -13,17 +13,25 @@ global $descriptionMessage;
     <?php if ($titre == "1") { ?> <h1 class="text-center">Update an invoice</h1> <?php } else {
                                                                                         ?> <h1 class="text-center">Add an invoice</h1> <?php   } ?>
     <form method="POST" action="">
-        <div class="form-group row">
+        <div class="form-row">
             <div class="col-sm-12 col-md-4 <?php echo (!empty($invoiceNumberMessage)) ? 'has-error' : '' ?>">
                 <label for="invoiceNumber">Invoice Number</label>
                 <input type="text" id="invoiceNumber" name="invoiceNumber" class="form-control" <?php if (!isset($invoice['invoiceNumber'])) { ?> value="COG<?= date('Y') ?>-<?= htmlspecialchars($lastId) ?>" <?php } else {
                                                                                                                                                                                                                     ?> value="<?= htmlspecialchars($invoice['invoiceNumber']) ?>" <?php   } ?>>
                 <span class="help-block"><?= $invoiceNumberMessage ?></span>
             </div>
-            <div class="col-sm-12 col-md-4 <?php echo (!empty($amountMessage)) ? 'has-error' : '' ?>">
+            <div class="col-sm-12 col-md-4 <?php echo (!empty($amountMessage)) ? 'has-error' : '' ?> form-group">
+
                 <label for="amount">Amount</label>
-                <input type="number" id="amount" name="amount" class="form-control" <?php if (isset($invoice['amount'])) { ?> value="<?= htmlspecialchars($invoice['amount']) ?>" <?php } ?>>
-                <span class="help-block"><?= $amountMessage ?></span>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">€</span>
+                    </div>
+                    <input type="number" name="amount" class="form-control" <?php if (isset($invoice['amount'])) { ?> value="<?= htmlspecialchars($invoice['amount']) ?>" <?php } ?>>
+                    <div class="input-group-append">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                </div> <span class="help-block"><?= $amountMessage ?></span>
             </div>
             <div class="col-sm-12 col-md-4 <?php echo (!empty($typeMessage)) ? 'has-error' : '' ?>">
                 <label for="type">Type</label>
