@@ -20,10 +20,10 @@ global $descriptionMessage;
                                                                                                                                                                                                                     ?> value="<?= htmlspecialchars($invoice['invoiceNumber']) ?>" <?php   } ?>>
                 <span class="help-block"><?= $invoiceNumberMessage ?></span>
             </div>
-            <div class="col-sm-12 col-md-4 <?php echo (!empty($amountMessage)) ? 'has-error' : '' ?> form-group">
+            <div class="col-sm-12 col-md-4 form-group">
 
                 <label for="amount">Amount</label>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3 <?php echo (!empty($amountMessage)) ? 'has-error' : '' ?>">
                     <div class="input-group-prepend">
                         <span class="input-group-text">€</span>
                     </div>
