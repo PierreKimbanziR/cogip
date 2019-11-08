@@ -13,7 +13,7 @@ include "components/navbar.php";
             <!-- SESSION ADMIN -->
             <?php if ($_SESSION['level'] == 3): ?>
 
-            <a href="/cogip/contacts/create"><button type="button" class="btn cogipBtn waves-effect"><i
+            <a href="/cogip/contacts/create"><button type="button" class="btn btn-outline-danger waves-effect"><i
                         class="fas fa-plus-circle"></i> Add contact</button></a>
 
             <?php endif?>

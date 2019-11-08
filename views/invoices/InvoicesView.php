@@ -18,7 +18,7 @@ $invoicescont = $invoices['1'];
         Invoice modified !
     </div>
     <?php endif?>
-    <a href="/cogip/invoices/create"><button type="button" class="btn cogipBtn waves-effect">
+    <a href="/cogip/invoices/create"><button type="button" class="btn btn-outline-danger waves-effect">
             <i class="fas fa-plus-circle"></i> Add an invoice</button>
     </a>
     <div class="table-responsive col-12">
