@@ -6,7 +6,7 @@ include "components/navbar.php";
 
 <div class="container">
     <h1 class="text-center">List of contacts</h1>
-    <div class="table-responsive">
+    <div class="table-responsive col-12">
 
         <table id="searchShow" class="table table-striped table-bordered table-sm">
 
