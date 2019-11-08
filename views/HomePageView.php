@@ -22,7 +22,7 @@ include "components/navbar.php";
 
 
     <div class="row mt-4">
-        <h4>Latest Invoices <button onclick="window.location.href = '/cogip/invoices/create'" class="btn btn-sm addBtnHome waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
+        <h4>Latest Invoices <button onclick="window.location.href = '/cogip/invoices/create'" class="btn btn-sm cogipBtn waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
         <div class="table-responsive col-12">
             <table id="" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead class="grey darken-3 white-text">
@@ -56,7 +56,7 @@ include "components/navbar.php";
         </div>
     </div>
     <div class="row mt-4">
-        <h4>Last contacts <button onclick="window.location.href = '/cogip/contacts/create'" class="btn btn-sm addBtnHome waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
+        <h4>Last contacts <button onclick="window.location.href = '/cogip/contacts/create'" class="btn btn-sm cogipBtn waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
         <div class="table-responsive col-12">
             <table id="" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead class="grey darken-3 white-text">
@@ -88,7 +88,7 @@ include "components/navbar.php";
         </div>
     </div>
     <div class="row mt-4">
-        <h4>Last Companies <button onclick="window.location.href = '/cogip/companies/create'" class="btn btn-sm addBtnHome waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
+        <h4>Last Companies <button onclick="window.location.href = '/cogip/companies/create'" class="btn btn-sm cogipBtn waves-effect"><i class="fas fa-lg fa-plus"></i></button></h4>
         <div class="table-responsive col-12">
             <table id="" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
                 <thead class="grey darken-3 white-text">

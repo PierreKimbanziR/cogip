@@ -92,8 +92,8 @@ footer.page-footer {
   }
 }
 
-.addBtnHome {
-  border: 2px solid #404040 !important;
+.cogipBtn {
+  border: 2px solid #59698d !important;
   background-color: transparent !important;
-  color: #404040 !important;
+  color: #59698d !important;
 }
