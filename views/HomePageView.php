@@ -47,7 +47,7 @@ include "components/navbar.php";
                         <td><?=explode(' ', $invoice['createdAt'])[0]?></td>
                         <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
                         </td>
-                        <td><?=($invoice['type'] == 1) ? "OUT" : "IN"?></td>
+                        <td class="text-right"><?=($invoice['type'] == 1) ? "OUT" : "IN"?></td>
                         <td class="text-right"><?=($invoice['type'] == 1) ? "- " : "+ "?><?=$invoice['amount']?> €</td>
                     </tr>
                     <?php endforeach?>

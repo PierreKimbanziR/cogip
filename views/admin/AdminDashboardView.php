@@ -44,7 +44,7 @@ include "components/navbar.php";
                     <td><?=explode(' ', $invoice['createdAt'])[0]?></td>
                     <td><?=($invoice['clientType'] == 0) ? $invoice['companyName'] : $invoice['contactFirst'] . ' ' . $invoice['contactLast']?>
                     </td>
-                    <td class="text-right"><?=$invoice['amount']?> €</td>
+                    <td class="text-right"><?=($invoice['type'] == 1) ? "- " : "+ "?><?=$invoice['amount']?> €</td>
                     <td
                         class="text-center d-flex <?=($_SESSION['level'] > 2) ? 'justify-content-around' : 'justify-content-center'?>">
                         <a href="/cogip/invoices/<?=$invoice['id']?>"><i class="far fa-lg fa-eye"></i></a>
