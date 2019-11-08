@@ -29,6 +29,13 @@ The database is hosted on AWS EDS.
 - [JsBarcode](https://lindell.me/JsBarcode/)
 - [ChartJS](https://www.chartjs.org/)
 
+### Home Page:
+
+- Alert on top of the page greating the user with a speacial joke (different every time).
+- direct link to providers/clients
+- button to easy add an invoice, company or client.
+
+
 ### Invoices:
 
 - special @Media print for printing beautyfull invoices from within the webpage.
