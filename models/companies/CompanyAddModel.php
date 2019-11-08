@@ -6,6 +6,17 @@ $name_error = $country_error = $vat_error = $role_error = '';
 function addCompany()
 {
 
+global $name_error;
+global $country_error;
+global $vat_error;
+global $role_error;
+
+global $name;
+global $country;
+global $vat;
+global $role;
+
+
     if (empty(trim($_POST['name']))) {
         $name_error = "Name of the company is required.";
     } else {
