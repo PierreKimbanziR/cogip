@@ -7,7 +7,7 @@ include "components/navbar.php";
 <div class="container">
 
     <h1 class="text-center ">List of <?= $page_title?></h1>
-    <div class="table-responsive">
+    <div class="table-responsive col-12">
 
 
 
