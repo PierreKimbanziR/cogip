@@ -39,7 +39,7 @@ include "components/navbar.php";
                 <td><?php echo $company['country'] ?></td>
                 <td><?php echo $company['vat'] ?></td>
                 <td><?php echo ($company['role'] == 0) ? "Client" : "Provider" ?></td>
-                <td><?php echo $company['createdAt'] ?></td>
+                <td><?=explode(" ", $company['createdAt'])[0]?></td>
             </tr>
 
 
