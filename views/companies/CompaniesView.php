@@ -3,13 +3,10 @@
 include "components/header.php";
 include "components/navbar.php";
 ?>
-
 <div class="container">
 
     <h1 class="text-center ">List of <?= $page_title?></h1>
-    <div class="table-responsive">
-
-
+    <div class="table-responsive col-12">
 
     <?php if ($_SESSION['level'] == 3) : ?>
 
@@ -39,7 +36,7 @@ include "components/navbar.php";
                 <td><?php echo $company['country'] ?></td>
                 <td><?php echo $company['vat'] ?></td>
                 <td><?php echo ($company['role'] == 0) ? "Client" : "Provider" ?></td>
-                <td><?php echo $company['createdAt'] ?></td>
+                <td><?=explode(" ", $company['createdAt'])[0]?></td>
             </tr>
 
 
