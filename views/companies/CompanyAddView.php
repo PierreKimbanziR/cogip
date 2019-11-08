@@ -27,15 +27,15 @@ if ($update == true) {
     <div class="col p-3 mb-5 bg-white rounded">
         <form method="POST" action="">
 
-            <div class="form-group row">
-                <div class="col-12 col-md-6">
+             <div class="form-group row">
+                <div class="col-12 col-md-6 <?php echo (!empty($name_error)) ? 'has-error' : ''; ?>">
                     <label for="name">Company Name: </label>
                     <input class="form-control" title="companyname" type="text" name="name"
                         placeholder="Company name" id='companyname' required value="<?=$name;?>">
-                    <span class="text-danger"><?=$name_error;?></span>
+                    <span class="help-block"><?php echo $name_error; ?></span>
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6<?php echo (!empty($country_error)) ? 'has-error' : ''; ?>">
                     <label for="country">Company country: </label>
                     <select class="form-control selectSearch" id="country" name="country"
                         placeholder="Company country" required value="<?=$country;?>">
@@ -288,22 +288,22 @@ if ($update == true) {
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
-                    <span class="text-danger"><?=$country_error?></span>
+                    <span class="help-block"><?php echo $country_error; ?></span>
                 </div>
 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 <?php echo (!empty($role_error)) ? 'has-error' : ''; ?>">
                     <label for="role">Company role : </label>
                     <select class="form-control" name="role" placeholder="Company role">
                         <option value="1" <?=($company['role'] == 1) ? "selected" : ""?>>Provider</option>
                         <option value='0' <?=($company['role'] == 0) ? "selected" : ""?>>Client</option>
                     </select>
-                    <span class="text-danger"><?=$role_error?></span>
+                    <span class="help-block"><?php echo $role_error; ?></span>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 <?php echo (!empty($vat_error)) ? 'has-error' : ''; ?>">
                     <label for="Vat"> Company VAT :</label>
                     <input class="form-control" title="Vat" type="number" name="vat" placeholder="Company Vat"
                         size="22" maxlength="30" required value="<?=$vat?>">
-                    <span class="text-danger"><?=$vat_error?></span>
+                    <span class="help-block"><?php echo $vat_error; ?></span>
                 </div>
             </div>
             <div class="form-group row">
