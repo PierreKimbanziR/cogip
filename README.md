@@ -9,7 +9,7 @@ This project had been done in 2 weeks in October and November 2019 with:
 - [Guillaume Dery](https://github.com/GuillaumeDery98) (*invoices MVC, upgrade/debug of contact and companie*)
 - [Philippe Gilles](https://github.com/philesgilles) (*team leading, structure, design, dashboard and users sections, upgrades/debug and overview of team's work, implementation of JS libraries*)
 
-This project is a full Administration Tool written in PHP and uses **routed VMC** and some **JS Libraries**
+It is a full Administration Tool written in PHP and uses **routed VMC** and some **JS Libraries**
 It can manage contacts, clients, providers, invoices and users.
 
 ## Informations
