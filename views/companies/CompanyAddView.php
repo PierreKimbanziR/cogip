@@ -295,8 +295,9 @@ if ($update == true) {
                 <div class="col-12 col-md-6 <?php echo (!empty($role_error)) ? 'has-error' : ''; ?>">
                     <label for="role">Company role : </label>
                     <select class="form-control" name="role" placeholder="Company role">
+                        <option value='' disabled selected>Please select</option>
+                        <option value='0' <?=($company['role'] == '0') ? "selected" : ""?><?=($option == 'client') ? "selected" : ""?>>Client</option>
                         <option value="1" <?=($company['role'] == 1) ? "selected" : ""?><?=($option == 'provider') ? "selected" : ""?>>Provider</option>
-                        <option value='0' <?=($company['role'] == 0) ? "selected" : ""?><?=($option == 'provider') ? "selected" : ""?>>Client</option>
                     </select>
                     <span class="help-block"><?php echo $role_error; ?></span>
                 </div>
