@@ -10,8 +10,7 @@ function patchCompany($id)
         $name_error = "Name of the company is required.";
     } else {
         $name = htmlspecialchars($_POST['name']);
-
-        if (!preg_match('/^[a-z][a-z\s]*$/', $name)) {
+        if (!preg_match('/^[a-zA-Z ]*$/', $name)) {
             $name_error = "Only letters and white space allowed.";
         }
     }
@@ -34,14 +33,9 @@ function patchCompany($id)
         }
     }
 
-    if (empty(trim($_POST['role']))) {
-        $role_error = 'You must select the company role.';
-        echo $role_error;
-    } else {
-        $role = htmlspecialchars($_POST['role']);
-    }
+    $role = htmlspecialchars($_POST['role']);
 
-    if (empty($name_error) && empty($country_error) && empty($vat_error) && empty($role_error)) {
+    if (empty($name_error) && empty($country_error) && empty($vat_error)) {
         global $conn;
         $stmt = $conn->prepare("UPDATE companies SET name=?, country=?, vat=?, role=? WHERE id ='$id' ");
         $stmt->execute([$name, $country, $vat, $role]);
