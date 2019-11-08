@@ -3,7 +3,7 @@
 
 Cogip Application Project at [BeCode](https://becode.org)
 
-This project had been done in october 2019 with
+This project had been done in 2 weeks in October and November 2019 with: 
 - [Pierre Kimbanzi](https://github.com/PierreKimbanziR) (*companies MVC*),
 - [Emmanuel Trepant](https://github.com/manutrepant) (*contacts MVC, Mockups*),
 - [Guillaume Dery](https://github.com/GuillaumeDery98) (*invoices MVC, upgrade/debug of contact and companie*)
@@ -14,9 +14,10 @@ It can manage contacts, clients, providers, invoices and users.
 
 ## Informations
 
-All tables have a search option and pagination. 
+All tables have a search option and pagination.  
 The preview server is hosted on **Online.net** and fully configured using **Docker**.
-The database is hosted on **AWS EDS**.
+The database is hosted on **AWS EDS** and filed with dummy data (100+ contacts,companies and invoices).  
+Backup of the DB is in the backup folder
 
 ### Technologies used:
 
