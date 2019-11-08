@@ -40,10 +40,6 @@ $invoicescont = $invoices['1'];
                 </tr>
             </thead>
             <tbody>
-
-
-
-
                 <?php foreach ($invoicescomp as $invoice): ?>
                 <tr id="<?=$invoice['id']?>" class="hoverable">
                     <td><?=htmlspecialchars(explode(" ", $invoice['createdAt'])[0])?></td>
