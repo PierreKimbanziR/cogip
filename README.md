@@ -29,15 +29,23 @@ The database is hosted on AWS EDS.
 - [JsBarcode](https://lindell.me/JsBarcode/)
 - [ChartJS](https://www.chartjs.org/)
 
+### Users level
+
+- 2 levels of users (Super Admin and User) but the system is built to handle 4 levels (invitee,user,admin,superAdmin).
+- Admins can CRUD everything
+- Users can CR everything
+
 ### Home Page:
 
 - Alert on top of the page greating the user with a speacial joke (different every time).
 - direct link to providers/clients
 - button to easy add an invoice, company or client.
-
+- quick view of last 5 invoices,companies and clients
 
 ### Invoices:
 
+- View all invoices
+- CRUD invoices
 - special @Media print for printing beautyfull invoices from within the webpage.
 - Print button on invoices page to print directly the invoice.
 - Barcode is generated automatically with the invoice number
@@ -46,13 +54,21 @@ The database is hosted on AWS EDS.
 
 ### Companies:
 
+- View all companies
+- View only providers/clients
+- CRUD companies
 - **Add company**: Different 'company type' (none/provider/client) selection if we add from the companies/providers or clients page.
 
+### Contacts
+
+- View all contacts
+- CRUD contacts
 
 ### Dashboard:
 
-- added a chart showing sales of employees (ATM it's dummy datas).
-
+- chart showing sales of employees (ATM it's dummy datas).
+- quick view of last 5 invoices,companies and clients.
+- quick add company,contact,invoice.
 
 ***
 ### Mockups
