@@ -4,10 +4,10 @@
 Cogip Application Project at [BeCode](https://becode.org)
 
 This project had been done in october 2019 with
-[Pierre Kimbanzi](https://github.com/PierreKimbanziR),
-[Emmanuel Trepant](https://github.com/manutrepant),
-[Guillaume Dery](https://github.com/GuillaumeDery98),
-[Philippe Gilles](https://github.com/philesgilles)
+[Pierre Kimbanzi](https://github.com/PierreKimbanziR)(Companie MVC),
+[Emmanuel Trepant](https://github.com/manutrepant)(Contact MVC),
+[Guillaume Dery](https://github.com/GuillaumeDery98)(Invoices MVC, amelioration/debug of contact and companie)
+[Philippe Gilles](https://github.com/philesgilles) (amelioration/debug of contact, companie and invoice, design, barecode, charts, rooter and select2)
 
 It is a full Administration Tool written in PHP and uses **routed VMC**.
 It can manage contacts, clients, providers, invoices and users.
@@ -34,6 +34,7 @@ The database is hosted on AWS EDS.
 - special @Media print for printing beautyfull invoices from within the webpage.
 - Print button on invoices page to print directly the invoice.
 - Barcode is generated automatically with the invoice number
+- The form for add an invoice is dynamic in function of the type of client
 
 ### Dashboard:
 
