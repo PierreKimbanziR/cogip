@@ -5,7 +5,7 @@ function showInvoices()
     require "models/InvoiceModel.php";
     $invoices   = getInvoices();
     $page_title = 'Invoices';
-    require "views/InvoicesView.php";
+    require "views/invoices/InvoicesView.php";
 }
 
 function showInvoiceId($id)
@@ -13,7 +13,7 @@ function showInvoiceId($id)
     $page_title = "Show Invoice";
     require "models/InvoiceModel.php";
     $invoice    = getInvoice($id);
-    require "views/InvoiceView.php";
+    require "views/invoices/InvoiceView.php";
 }
 
 function deleteInvoice($id)
@@ -22,7 +22,7 @@ function deleteInvoice($id)
     require "models/InvoiceModel.php";
     $delete = dropInvoice($id);
     $invoices   = getInvoices();
-    require "views/InvoicesView.php";
+    require "views/invoices/InvoicesView.php";
 }
 function createInvoice()
 {
@@ -47,14 +47,14 @@ function createInvoice()
         } else {
             $companies = selectCompanies();
             $contacts = selectContacts();
-            require "views/InvoiceAddView.php";
+            require "views/invoices/InvoiceAddView.php";
         }
     } else {
         $companies = selectCompanies();
         $contacts = selectContacts();
         $lastId = lastIdInvoice();
         $lastId = $lastId['id'] + 1;
-        require "views/InvoiceAddView.php";
+        require "views/invoices/InvoiceAddView.php";
     }
 }
 function updateInvoice($id)
@@ -80,13 +80,13 @@ function updateInvoice($id)
         } else {
             $companies = selectCompanies();
             $contacts = selectContacts();
-            require "views/InvoiceAddView.php";
+            require "views/invoices/InvoiceAddView.php";
         }
     } else {
         $titre = "1";
         $companies = selectCompanies();
         $contacts = selectContacts();
         $invoice    = getInvoice($id);
-        require "views/InvoiceAddView.php";
+        require "views/invoices/InvoiceAddView.php";
     }
 }

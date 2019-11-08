@@ -9,7 +9,7 @@ require "components/navbar.php";
     if (isset($_GET['valide']) && $_GET['valide'] == "0") {
         ?>
         <div class="alert alert-success" role="alert">
-            Invoice added!
+            Invoice sended !
         </div>
     <?php
     }
