@@ -43,48 +43,54 @@ if ($update == true) {
 ?>
 
 <div class="container">
-    <h1 class="text-center"><?= ($update) ? 'Update ' : 'Add new ' ?> contact</h1>
+    <h1 class="text-center"><?=($update) ? 'Update ' : 'Add new '?> contact</h1>
     <div class="col p-3 mb-5 bg-white rounded">
         <form method="post" action="">
             <div class="form-group row">
 
                 <div class="col-6  <?php echo (!empty($firstname_Error)) ? 'has-error' : ''; ?>">
                     <label for="Firstname">Firstname : </label>
-                    <input class="form-control" type="text" name="firstname" placeholder="Firstname" required value="<?php echo $firstname; ?>">
+                    <input class="form-control" type="text" name="firstname" placeholder="Firstname" required
+                        value="<?php echo $firstname; ?>">
                     <span class="help-block"><?php echo $firstname_Error; ?></span>
                 </div>
 
                 <div class="col-6  <?php echo (!empty($lastname_Error)) ? 'has-error' : ''; ?>">
                     <label for="lastname">lastname : </label>
-                    <input class="form-control" type="text" name="lastname" placeholder="lastname" required value="<?php echo $lastname; ?>">
+                    <input class="form-control" type="text" name="lastname" placeholder="lastname" required
+                        value="<?php echo $lastname; ?>">
                     <span class="help-block"><?php echo $lastname_Error; ?></span>
                 </div>
 
                 <div class="col-6  <?php echo (!empty($email_Error)) ? 'has-error' : ''; ?>">
                     <label for="email">Email : </label>
-                    <input class="form-control" type="email" name="email" placeholder="Email" required value="<?php echo $email; ?>">
+                    <input class="form-control" type="email" name="email" placeholder="Email" required
+                        value="<?php echo $email; ?>">
                     <span class="help-block"><?php echo $email_Error; ?></span>
                 </div>
 
                 <div class="col-6  <?php echo (!empty($telephone_Error)) ? 'has-error' : ''; ?>">
                     <label for="telephone">Telephone : </label>
-                    <input class="form-control" type="number" name="telephone" placeholder="+32-0-000-00-00" required value="<?php echo $telephone; ?>">
+                    <input class="form-control" type="number" name="telephone" placeholder="+32-0-000-00-00" required
+                        value="<?php echo $telephone; ?>">
 
                 </div>
             </div>
 
             <div><label for="company">Company : </label>
 
-                <select name="workingAt" class="form-control selectSearch <?php echo (!empty($telephone_Error)) ? 'has-error' : ''; ?>">
+                <select name="workingAt"
+                    class="form-control selectSearch <?php echo (!empty($telephone_Error)) ? 'has-error' : ''; ?>">
                     <option value="0" selected>Please select a company</option>
 
                     <!-- Importer Companies de la DB du model Companies dans ADD
     Afficher dans le SELECT sur selected le Nom de la compagnie
     Si Page ADD valeur 0 -> Please select a company -->
 
-                    <?php foreach ($compagnies as $company) : ?>
-                        <option value="<?= $company['id'] ?>" <?= ($company['id'] == $contact['workingAt']) ? 'selected' : '' ?>> <?= $company['name'] ?></option>
-                    <?php endforeach ?>
+                    <?php foreach ($compagnies as $company): ?>
+                    <option value="<?=$company['id']?>"
+                        <?=($company['id'] == $contact['workingAt']) ? 'selected' : ''?>> <?=$company['name']?></option>
+                    <?php endforeach?>
 
                     <!-- Fin import -->
 
@@ -101,7 +107,8 @@ if ($update == true) {
             <div>
                 <!-- Nommer le bouton soit Add ou Update Contact Si True valeur = Update si False Add new -->
                 <hr>
-                <button class="btn btn-mdb-color" name="submit" value="submit" type="submit"><?= ($update) ? 'Update ' : 'Add new ' ?>contact !</button>
+                <button class="btn btn-mdb-color" name="submit" value="submit"
+                    type="submit"><?=($update) ? 'Update ' : 'Add new '?>contact !</button>
             </div>
 
         </form>

@@ -30,8 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 ?>
 
-
 <div class="container">
+    <?php if ($_SESSION["level"] !== "3"): ?>
+    <h5 class='text-center mt-5'>not authorized !</h5>
+    <?php else: ?>
     <h1 class="text-center"><?=($postPath == 'create') ? 'Create new' : 'Update'?> user</h1>
     <div class="row mt-4 p-3">
         <div class="col p-3 mb-5">
@@ -100,6 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             </form>
         </div>
     </div>
+    <?php endif?>
 </div>
 
 
