@@ -136,5 +136,5 @@ if ($explode_url[0] == 'home') {
     showAccount($_SESSION['id']);
     return;
 } else {
-    header('Location: home');
+    show404($url);
 }

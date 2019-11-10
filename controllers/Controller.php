@@ -16,3 +16,8 @@ function showHome()
     $page_title = 'Home';
     require 'views/HomePageView.php';
 }
+
+function show404($route)
+{
+    require 'views/404.php';
+}
