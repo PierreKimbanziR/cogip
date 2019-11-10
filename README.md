@@ -9,7 +9,7 @@ This project had been done in 2 weeks in October and November 2019 with:
 - [Pierre Kimbanzi](https://github.com/PierreKimbanziR) (*companies MVC*),
 - [Emmanuel Trepant](https://github.com/manutrepant) (*contacts MVC, Mockups*),
 - [Guillaume Dery](https://github.com/GuillaumeDery98) (*invoices MVC, upgrade/debug of contact and companie*)
-- [Philippe Gilles](https://github.com/philesgilles) (*team leading, structure, design, auth system, dashboard and users sections, upgrades/debug and overview of team's work, implementation of JS libraries*)
+- [Philippe Gilles](https://github.com/philesgilles) (*team leading, structure, design, auth system, dashboard and users sections, upgrades/debug and overview of team's work, flowcharts, server and database setup and management and implementation of JS libraries*)
 
 It is a full Administration Tool written in PHP and uses **routed VMC** and some **JS Libraries**
 It can manage contacts, clients, providers, invoices and users.
@@ -18,7 +18,7 @@ It can manage contacts, clients, providers, invoices and users.
 
 All tables have a search option and pagination.  
 The preview server is hosted on **Online.net** and fully configured using **Docker**.
-The database is hosted on **AWS EDS** and filed with dummy data (100+ contacts,companies and invoices).  
+The database is hosted on **AWS RDS** and filed with dummy data (100+ contacts,companies and invoices).  
 Backup of the DB is in the backup folder
 
 ### Technologies used:
