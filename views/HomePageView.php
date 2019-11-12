@@ -4,7 +4,7 @@ include "components/navbar.php";
 ?>
 <div class="container">
     <div class="alert alert-secondary shadow" role="alert">
-        <h1>Hi,<b><?php echo htmlspecialchars(!empty($_SESSION['firstname'])) ? ($_SESSION["firstname"]) : ($_SESSION["username"]); ?></b>.</h1>
+        <h1>Good day, <b><?php echo htmlspecialchars(!empty($_SESSION['firstname'])) ? ($_SESSION["firstname"]) : ($_SESSION["username"]); ?></b>.</h1>
         <p id="joke" class="lead">
         </p>
         <div class="d-flex justify-content-center">
