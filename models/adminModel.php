@@ -156,6 +156,7 @@ function addUser()
 function patchUser($id)
 {
     if ($_SESSION['level'] != "3") {
+        header('location: /cogip/DONT_TRY_TO_HACK_ME');
         return;
     }
 
@@ -188,6 +189,7 @@ function patchUser($id)
 function dropUser($id)
 {
     if ($_SESSION['level'] != "3") {
+        header('location: /cogip/DONT_TRY_TO_HACK_ME');
         return;
     }
 

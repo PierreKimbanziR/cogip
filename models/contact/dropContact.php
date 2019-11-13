@@ -2,7 +2,7 @@
 function dropContact($id)
 {
     if ($_SESSION['level'] != "3") {
-        echo 'no no no !!!!';
+        header('location: /cogip/DONT_TRY_TO_HACK_ME');
         return;
     }
 

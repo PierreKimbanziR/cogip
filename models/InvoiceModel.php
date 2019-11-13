@@ -27,7 +27,7 @@ function getInvoice($invoiceID)
 function dropInvoice($invoiceID)
 {
     if ($_SESSION['level'] != "3") {
-        echo 'no no no !!!!';
+        header('location: /cogip/DONT_TRY_TO_HACK_ME');
         return;
     }
 
@@ -61,7 +61,7 @@ function addInvoice()
 function modifyInvoice($id)
 {
     if ($_SESSION['level'] != "3") {
-        echo 'no no no !!!!';
+        header('location: /cogip/DONT_TRY_TO_HACK_ME');
         return;
     }
 
