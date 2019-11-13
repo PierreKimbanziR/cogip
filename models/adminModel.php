@@ -155,6 +155,10 @@ function addUser()
 
 function patchUser($id)
 {
+    if ($_SESSION['level'] != "3") {
+        return;
+    }
+
     verifyData();
     global $lastname_err;
     global $firstname_err;
@@ -183,6 +187,10 @@ function patchUser($id)
 
 function dropUser($id)
 {
+    if ($_SESSION['level'] != "3") {
+        return;
+    }
+
     global $conn;
     $stmt = $conn->prepare("DELETE FROM users WHERE id = '$id'");
     $stmt->execute();

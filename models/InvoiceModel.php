@@ -26,6 +26,11 @@ function getInvoice($invoiceID)
 //Delete an invoice from database
 function dropInvoice($invoiceID)
 {
+    if ($_SESSION['level'] != "3") {
+        echo 'no no no !!!!';
+        return;
+    }
+
     global $conn;
     $sql = $conn->prepare("DELETE FROM invoices WHERE id = ?");
     $sql->execute(array($invoiceID));
@@ -36,17 +41,17 @@ function addInvoice()
 {
     global $conn;
     $invoiceNumber = $_POST["invoiceNumber"];
-    $clientType = $_POST["clientType"];
-    $description = $_POST["description"];
-    $description = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
-    $amount = $_POST["amount"];
-    $type = $_POST["type"];
+    $clientType    = $_POST["clientType"];
+    $description   = $_POST["description"];
+    $description   = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
+    $amount        = $_POST["amount"];
+    $type          = $_POST["type"];
     if ($clientType == "1") {
-        $companie = NULL;
-        $contact = $_POST["contact"];
+        $companie = null;
+        $contact  = $_POST["contact"];
     } elseif ($clientType == "0") {
         $companie = $_POST["companie"];
-        $contact = NULL;
+        $contact  = null;
     }
     $sql = $conn->prepare("INSERT INTO invoices(invoiceNumber, companyId, contactId, clientType, description, amount, type) VALUES(?, ?, ?, ?, ?, ?, ?)");
     $sql->execute(array($invoiceNumber, $companie, $contact, $clientType, $description, $amount, $type));
@@ -55,19 +60,24 @@ function addInvoice()
 //Modify an invoice in the database
 function modifyInvoice($id)
 {
+    if ($_SESSION['level'] != "3") {
+        echo 'no no no !!!!';
+        return;
+    }
+
     global $conn;
     $invoiceNumber = $_POST["invoiceNumber"];
-    $clientType = $_POST["clientType"];
-    $description = $_POST["description"];
-    $description = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
-    $amount = $_POST["amount"];
-    $type = $_POST["type"];
+    $clientType    = $_POST["clientType"];
+    $description   = $_POST["description"];
+    $description   = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
+    $amount        = $_POST["amount"];
+    $type          = $_POST["type"];
     if ($clientType == "1") {
-        $companie = NULL;
-        $contact = $_POST["contact"];
+        $companie = null;
+        $contact  = $_POST["contact"];
     } elseif ($clientType == "0") {
         $companie = $_POST["companie"];
-        $contact = NULL;
+        $contact  = null;
     }
     $sql = $conn->prepare("UPDATE invoices SET invoiceNumber = ?, companyId = ?, contactId = ?, clientType = ?, description = ?, amount = ?, type = ? WHERE ID = ?");
     $sql->execute(array($invoiceNumber, $companie, $contact, $clientType, $description, $amount, $type, $id));
@@ -91,7 +101,6 @@ function selectContacts()
     $contacts = $sql->fetchAll();
     return $contacts;
 }
-
 
 //data for companie select input
 function selectCompanies()
@@ -127,59 +136,59 @@ function validationInvoice()
     global $descriptionMessage;
 
     $invoiceNumber = $_POST["invoiceNumber"];
-    $clientType = $_POST["clientType"];
-    $description = $_POST["description"];
-    $amount = $_POST["amount"];
-    $type = $_POST["type"];
+    $clientType    = $_POST["clientType"];
+    $description   = $_POST["description"];
+    $amount        = $_POST["amount"];
+    $type          = $_POST["type"];
     if ($clientType == "1") {
-        $companie = NULL;
-        $contact = $_POST["contact"];
+        $companie = null;
+        $contact  = $_POST["contact"];
     } elseif ($clientType == "0") {
         $companie = $_POST["companie"];
-        $contact = NULL;
+        $contact  = null;
     }
 
     $invoice['invoiceNumber'] = $invoiceNumber;
-    $invoice['amount'] = $amount;
-    $invoice['type'] = $type;
-    $invoice['clientType'] = $clientType;
-    $invoice['contactId'] = $contact;
-    $invoice['companyId'] = $companie;
-    $invoice['description'] = $description;
-    $invoiceNumberTemplate = "COG" . date('Y') . "-";
+    $invoice['amount']        = $amount;
+    $invoice['type']          = $type;
+    $invoice['clientType']    = $clientType;
+    $invoice['contactId']     = $contact;
+    $invoice['companyId']     = $companie;
+    $invoice['description']   = $description;
+    $invoiceNumberTemplate    = "COG" . date('Y') . "-";
     if (!strstr($invoiceNumber, $invoiceNumberTemplate)) {
-        $verify = FALSE;
+        $verify = false;
 
         $invoiceNumberMessage = "Please enter an invoice number with this format " . $invoiceNumberTemplate;
     }
-    if (is_numeric($amount) == FALSE) {
-        $verify = FALSE;
+    if (is_numeric($amount) == false) {
+        $verify = false;
 
         $amountMessage = "Please enter a number ";
     }
-    if (is_numeric($type) == FALSE) {
-        $verify = FALSE;
+    if (is_numeric($type) == false) {
+        $verify = false;
 
         $typeMessage = "Please select a type of invoice";
     }
-    if (is_numeric($clientType) == FALSE) {
-        $verify = FALSE;
+    if (is_numeric($clientType) == false) {
+        $verify = false;
 
         $clientTypeMessage = "Please select a type of client";
     }
-    if (is_numeric($contact) == FALSE &&  !is_null($contact)) {
-        $verify = FALSE;
+    if (is_numeric($contact) == false && !is_null($contact)) {
+        $verify = false;
 
         $contactMessage = "Please select a contact";
     }
-    if (is_numeric($companie) == FALSE && !is_null($companie)) {
-        $verify = FALSE;
+    if (is_numeric($companie) == false && !is_null($companie)) {
+        $verify = false;
 
         $companieMessage = "Please select a companie";
     }
     $description = preg_replace("/\<script(?:.*?)\<\/script\>/", "", $description);
     if ($description == "") {
-        $verify = FALSE;
+        $verify = false;
 
         $descriptionMessage = "Please enter a description";
     }
