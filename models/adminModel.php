@@ -155,11 +155,6 @@ function addUser()
 
 function patchUser($id)
 {
-    if ($_SESSION['level'] != "3") {
-        header('location: /cogip/DONT_TRY_TO_HACK_ME');
-        return;
-    }
-
     verifyData();
     global $lastname_err;
     global $firstname_err;
@@ -188,11 +183,6 @@ function patchUser($id)
 
 function dropUser($id)
 {
-    if ($_SESSION['level'] != "3") {
-        header('location: /cogip/DONT_TRY_TO_HACK_ME');
-        return;
-    }
-
     global $conn;
     $stmt = $conn->prepare("DELETE FROM users WHERE id = '$id'");
     $stmt->execute();

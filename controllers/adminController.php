@@ -41,6 +41,11 @@ function createUser()
 
 function updateUser($id)
 {
+    if ($_SESSION['level'] != "3") {
+        header('location: /cogip/DONT_TRY_TO_HACK_ME');
+        return;
+    }
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         patchUser($id);
     }
@@ -53,5 +58,10 @@ function updateUser($id)
 
 function deleteUser($id)
 {
+    if ($_SESSION['level'] != "3") {
+        header('location: /cogip/DONT_TRY_TO_HACK_ME');
+        return;
+    }
+
     dropUser($id);
 }

@@ -5,11 +5,6 @@ $name_error = $country_error = $vat_error = $role_error = "";
 
 function patchCompany($id)
 {
-    if ($_SESSION['level'] != "3") {
-        header('location: /cogip/DONT_TRY_TO_HACK_ME');
-        return;
-    }
-
     global $name_error;
     global $country_error;
     global $vat_error;

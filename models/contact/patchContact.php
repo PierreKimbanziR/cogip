@@ -7,11 +7,6 @@ $firstname_Error = $lastname_Error = $company_Error = $email_Error = $telephone_
 // Quand envoi via POST (getContact ID )
 function patchContact($id)
 {
-    if ($_SESSION['level'] != "3") {
-        header('location: /cogip/DONT_TRY_TO_HACK_ME');
-        return;
-    }
-
     $firstname = $_POST['firstname'];
     $lastname  = $_POST['lastname'];
     $email     = $_POST['email'];

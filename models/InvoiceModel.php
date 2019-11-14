@@ -26,11 +26,6 @@ function getInvoice($invoiceID)
 //Delete an invoice from database
 function dropInvoice($invoiceID)
 {
-    if ($_SESSION['level'] != "3") {
-        header('location: /cogip/DONT_TRY_TO_HACK_ME');
-        return;
-    }
-
     global $conn;
     $sql = $conn->prepare("DELETE FROM invoices WHERE id = ?");
     $sql->execute(array($invoiceID));
@@ -60,11 +55,6 @@ function addInvoice()
 //Modify an invoice in the database
 function modifyInvoice($id)
 {
-    if ($_SESSION['level'] != "3") {
-        header('location: /cogip/DONT_TRY_TO_HACK_ME');
-        return;
-    }
-
     global $conn;
     $invoiceNumber = $_POST["invoiceNumber"];
     $clientType    = $_POST["clientType"];

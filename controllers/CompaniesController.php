@@ -53,6 +53,11 @@ function createCompany($option)
 
 function updateCompany($id)
 {
+    if ($_SESSION['level'] != "3") {
+        header('location: /cogip/DONT_TRY_TO_HACK_ME');
+        return;
+    }
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require 'models/companies/patchCompany.php';
         patchCompany($id);
@@ -67,6 +72,11 @@ function updateCompany($id)
 }
 function deleteCompany($id)
 {
+    if ($_SESSION['level'] != "3") {
+        header('location: /cogip/DONT_TRY_TO_HACK_ME');
+        return;
+    }
+
     require 'models/companies/dropCompany.php';
     dropCompany($id);
 }
